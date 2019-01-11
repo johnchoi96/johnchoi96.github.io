@@ -1,0 +1,18 @@
+body {
+    font-family: Verdana, Geneva, sans-serif;
+    margin: 10px 10px 10px; 10px;
+}
+
+code {
+    font-family: "Courier New", Courier, monospace;
+}
+
+div.sourceCode {
+    background-color: #ddd;
+    padding: 0px 10px 0px; 10px;
+}
+
+h1 { border-bottom: 3px solid red; }
+h2 { border-bottom: 2px solid red; }
+h3 { border-bottom: 1px solid red; }
+h4 { border-bottom: 1px solid gray; }
