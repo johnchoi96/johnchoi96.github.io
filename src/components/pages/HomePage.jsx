@@ -1,7 +1,8 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {isMobile} from 'react-device-detect'
-import osu_engineering_img from '../assets/images/OSU-Engineering.png'
+import osu_engineering_img from '../../assets/images/OSU-Engineering.png'
+import './HomePage.styles.css'
 
 const AboutPage = () => {
     return (
@@ -16,7 +17,7 @@ const AboutPage = () => {
                     <p className='text-start'>Software Engineering Track</p>
                 </div>
                 <div className='col-sm-5'>
-                    <img className='pt-2' src={osu_engineering_img} alt='osu-engineering' />
+                    <img className='osu-engineering pt-2' src={osu_engineering_img} alt='osu-engineering' />
                 </div>
             </div>
 
