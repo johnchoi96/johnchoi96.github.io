@@ -5,7 +5,7 @@ import {
 
 const Header = () => {
     return (
-        <div className='container-fullwidth'>
+        <header className='container-fullwidth'>
             <nav className='navbar navbar-expand-md navbar-dark bg-dark'>
                 <ul className='navbar-nav text-start px-2'>
                     <li className='nav-item'>
@@ -28,7 +28,7 @@ const Header = () => {
                     </li>
                 </ul>
             </nav>
-        </div>
+        </header>
     )
 }
 
