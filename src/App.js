@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import HomePage from './components/pages/HomePage'
 import MyWorkspacePage from './components/pages/MyWorkspacePage'
+import CertificatePage from './components/pages/CertificatePage'
+import DiplomaPage from './components/pages/DiplomaPage'
 import Error404 from './components/pages/Error404'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -24,6 +26,8 @@ function App() {
         <Routes>
           <Route exact path='/' element={<HomePage/>} />
           <Route exact path='/myworkspace' element={<MyWorkspacePage />} />
+          <Route exact path='/certificates' element={<CertificatePage />} />
+          <Route exact path='/diplomas' element={<DiplomaPage />} />
           <Route path='*' element={<Error404 />} />
         </Routes>
         <BrowserView>
