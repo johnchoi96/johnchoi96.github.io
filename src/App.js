@@ -1,26 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+
+import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import HomePage from './components/HomePage'
+import AboutPage from './components/AboutPage'
+import MyWorkspacePage from './components/MyWorkspacePage'
+import Error from './components/Error'
+import Header from './components/Header'
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>You've come to the right place! It's just...</p>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Under construction using <code>React.js</code>
-        </p>
-        <a
-          className="my-resume"
-          href="/assets/files/Resume.pdf"
-          target="_self"
-          rel="noopener noreferrer"
-        >
-          My Resume
-        </a>
-      </header>
+    <div className='App'>
+      <Router>
+        <Header />
+        <Routes>
+          <Route exact path='/' element={<HomePage/>} />
+          <Route exact path='/about' element={<AboutPage />} />
+          <Route exact path='/myworkspace' element={<MyWorkspacePage />} />
+          <Route path='*' element={<Error/>}/>
+        </Routes>
+      </Router>
     </div>
-  );
+
+  )
 }
 
-export default App;
+export default App
