@@ -5,11 +5,14 @@ import {
 
 const Header = () => {
     return (
-        <div className='container'>
-            <nav className="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <div className='container-fullwidth'>
+            <nav className="navbar navbar-expand-md navbar-dark bg-dark">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item">
                         <NavLink className='navbar-brand' to='/'>Home</NavLink>
+                    </li>
+                    <li className="nav-item">
+                        <NavLink className='nav-link' to='/about'>About Me</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink className='nav-link' to='/myworkspace'>My Workspace</NavLink>
