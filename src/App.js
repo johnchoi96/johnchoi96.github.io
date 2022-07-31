@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <p>You've come to the right place! It's just...</p>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Under construction using <code>React.js</code>
