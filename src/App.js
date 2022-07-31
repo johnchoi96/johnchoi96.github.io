@@ -3,7 +3,6 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import HomePage from './components/HomePage'
-import AboutPage from './components/AboutPage'
 import MyWorkspacePage from './components/MyWorkspacePage'
 import Error from './components/Error'
 import Header from './components/Header'
@@ -21,7 +20,6 @@ function App() {
         <Header />
         <Routes>
           <Route exact path='/' element={<HomePage/>} />
-          <Route exact path='/about' element={<AboutPage />} />
           <Route exact path='/myworkspace' element={<MyWorkspacePage />} />
           <Route path='*' element={<Error/>}/>
         </Routes>

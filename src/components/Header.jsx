@@ -7,12 +7,9 @@ const Header = () => {
     return (
         <div className='container-fullwidth'>
             <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-                <ul className="navbar-nav mr-auto">
+                <ul className="navbar-nav text-start px-2">
                     <li className="nav-item">
-                        <NavLink className='navbar-brand px-3' to='/'>Home</NavLink>
-                    </li>
-                    <li className="nav-item">
-                        <NavLink className='nav-link' to='/about'>About Me</NavLink>
+                        <NavLink className='navbar-brand' to='/'>Home</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink className='nav-link' to='/myworkspace'>My Workspace</NavLink>
