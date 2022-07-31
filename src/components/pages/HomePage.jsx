@@ -17,7 +17,9 @@ const AboutPage = () => {
                     <p className='text-start'>Software Engineering Track</p>
                 </div>
                 <div className='col-sm-5'>
-                    <img className='osu-engineering pt-2' src={osu_engineering_img} alt='osu-engineering' />
+                    <a href="https://www.cse.osu.edu/">
+                        <img className='osu-engineering pt-2' src={osu_engineering_img} alt='osu-engineering' />
+                    </a>
                 </div>
             </div>
 

@@ -21,6 +21,9 @@ const Header = () => {
                         <a className='nav-link' href='https://www.linkedin.com/in/johnchoi96'>LinkedIn</a>
                     </li>
                     <li className='nav-item'>
+                        <a className='nav-link' href='https://orcid.org/0000-0003-4898-323X'>ORCID</a>
+                    </li>
+                    <li className='nav-item'>
                         <a className='nav-link' href={process.env.PUBLIC_URL + '/assets/files/Resume.pdf'}>Resume</a>
                     </li>
                 </ul>
