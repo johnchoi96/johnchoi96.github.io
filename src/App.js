@@ -1,6 +1,5 @@
 import logo from './logo.svg';
 import './App.css';
-import resume_pdf from './assets/files/Resume.pdf'
 
 function App() {
   return (
@@ -12,7 +11,7 @@ function App() {
         </p>
         <a
           className="my-resume"
-          href={resume_pdf}
+          href="/assets/files/Resume.pdf"
           target="_self"
           rel="noopener noreferrer"
         >
