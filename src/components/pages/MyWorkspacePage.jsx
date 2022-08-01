@@ -1,6 +1,6 @@
 import React from 'react'
 import ProjectCard from './ProjectCard'
-import filenames from '../../assets/software_files.json'
+import filenames from '../../assets/my-workspace-list.json'
 
 const MyWorkspacePage = () => {
 
@@ -8,14 +8,13 @@ const MyWorkspacePage = () => {
 
     return (
         <div className='container'>
-
             <h3>Software and Files</h3>
             <br />
             <div className='row row-cols-1 row-cols-md-3 g-4'>
                 {
                     files.map((file) => {
                         return (
-                            <div className='col'>
+                            <div className='col-lg-4 mb-3'>
                                 <ProjectCard
                                     className='card'
                                     key={file.path}
@@ -30,13 +29,14 @@ const MyWorkspacePage = () => {
                 }
             </div>
 
+            <br />
             <h3>Music Work</h3>
             <br />
             <div className='row row-cols-1 row-cols-md-3 g-4'>
                 {
                     music_works.map((music_work) => {
                         return (
-                            <div className='col'>
+                            <div className='col-lg-4 mb-3'>
                                 <ProjectCard
                                     className='card'
                                     key={music_work.path}

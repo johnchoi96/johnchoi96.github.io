@@ -29,13 +29,23 @@
             "name": "Windows Folder Locker Source Code (Windows Batch Script)",
             "path": "/assets/softwares/Windows_Folder_Locker_Source_Code.txt",
             "isExternalPath": false
+        },
+        {
+            "name": "University work",
+            "path": "https://www.github.com/choi1655",
+            "isExternalPath": true
         }
     ],
     "music_works": [
         {
             "name": "Three Degrees 2015 EP",
-            "path": "/assets/files/Three_Degrees_2015_EP.zip",
-            "isExternalPath": false
+            "path": "https://threedegreesband.bandcamp.com/releases",
+            "isExternalPath": true
+        },
+        {
+            "name": "2011-2017 Compilation",
+            "path": "https://youtube.com/playlist?list=PLzSF0uzve8SNz6nASFx1tez8l7wjrpHkI",
+            "isExternalPath": true
         }
     ]
 }
