@@ -1,31 +1,41 @@
 {
     "files": [
         {
+            "name": "GeoPic - iOS",
+            "path": "https://cse5236-geopic.github.io/GeoPic-iOS/",
+            "isExternalPath": true
+        },
+        {
+            "name": "Employee Manager - iOS",
+            "path": "https://johnchoi96.github.io/EmployeeManager-iOS/",
+            "isExternalPath": true
+        },
+        {
             "name": "Employee Manager 2.1",
             "path": "/assets/softwares/EmployeeManager.zip",
-            "id": 0
+            "isExternalPath": false
         },
         {
             "name": "GPA Calculator (command line interface) V3",
             "path": "/assets/softwares/GPACalculator.zip",
-            "id": 1
+            "isExternalPath": false
         },
         {
             "name": "Grocery Store Manager",
             "path": "/assets/softwares/GroceryStoreManager.zip",
-            "id": 2
+            "isExternalPath": false
         },
         {
             "name": "Windows Folder Locker Source Code (Windows Batch Script)",
             "path": "/assets/softwares/Windows_Folder_Locker_Source_Code.txt",
-            "id": 3
+            "isExternalPath": false
         }
     ],
     "music_works": [
         {
             "name": "Three Degrees 2015 EP",
             "path": "/assets/files/Three_Degrees_2015_EP.zip",
-            "id": 0
+            "isExternalPath": false
         }
     ]
 }

@@ -10,6 +10,7 @@ const MyWorkspacePage = () => {
         <div className='container'>
 
             <h3>Software and Files</h3>
+            <br />
             <div className='row row-cols-1 row-cols-md-3 g-4'>
                 {
                     files.map((file) => {
@@ -17,9 +18,10 @@ const MyWorkspacePage = () => {
                             <div className='col'>
                                 <ProjectCard
                                     className='card'
-                                    key={file.name.id}
+                                    key={file.path}
                                     title={file.name}
                                     path={file.path}
+                                    isExternalPath={file.isExternalPath}
                                 />
                             </div>
 
@@ -29,6 +31,7 @@ const MyWorkspacePage = () => {
             </div>
 
             <h3>Music Work</h3>
+            <br />
             <div className='row row-cols-1 row-cols-md-3 g-4'>
                 {
                     music_works.map((music_work) => {
@@ -36,9 +39,10 @@ const MyWorkspacePage = () => {
                             <div className='col'>
                                 <ProjectCard
                                     className='card'
-                                    key={music_work.name.id}
+                                    key={music_work.path}
                                     title={music_work.name}
                                     path={music_work.path}
+                                    isExternalPath={music_work.isExternalPath}
                                 />
                             </div>
                         )

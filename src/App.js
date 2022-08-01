@@ -1,6 +1,6 @@
-
+import React from 'react'
 import './App.css'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import HomePage from './components/pages/HomePage'
 import MyWorkspacePage from './components/pages/MyWorkspacePage'

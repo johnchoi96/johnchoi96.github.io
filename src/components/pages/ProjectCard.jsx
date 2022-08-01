@@ -6,7 +6,7 @@ const ProjectCard = ({title, path, isExternalPath}) => {
     return (
         <div className='card-body'>
             <h6>{title}</h6>
-            <a href={process.env.PUBLIC_URL + path}>
+            <a href={isExternalPath ? path : process.env.PUBLIC_URL + path}>
                 <img className='download-btn' src={downloadBtn} alt='download button'/>
             </a>
         </div>
