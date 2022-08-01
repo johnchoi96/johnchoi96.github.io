@@ -1,0 +1,31 @@
+{
+    "files": [
+        {
+            "name": "Employee Manager 2.1",
+            "path": "/assets/softwares/EmployeeManager.zip",
+            "id": 0
+        },
+        {
+            "name": "GPA Calculator (command line interface) V3",
+            "path": "/assets/softwares/GPACalculator.zip",
+            "id": 1
+        },
+        {
+            "name": "Grocery Store Manager",
+            "path": "/assets/softwares/GroceryStoreManager.zip",
+            "id": 2
+        },
+        {
+            "name": "Windows Folder Locker Source Code (Windows Batch Script)",
+            "path": "/assets/softwares/Windows_Folder_Locker_Source_Code.txt",
+            "id": 3
+        }
+    ],
+    "music_works": [
+        {
+            "name": "Three Degrees 2015 EP",
+            "path": "/assets/files/Three_Degrees_2015_EP.zip",
+            "id": 0
+        }
+    ]
+}
