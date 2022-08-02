@@ -9,7 +9,7 @@ const Header = () => {
             <nav className='navbar navbar-expand-md navbar-dark bg-dark'>
                 <ul className='navbar-nav text-start px-2'>
                     <li className='nav-item'>
-                        <NavLink className='navbar-brand ' to='/'>Home</NavLink>
+                        <NavLink className='nav-link fw-bold' to='/'>Home</NavLink>
                     </li>
                     <li className='nav-item'>
                         <NavLink className='nav-link' to='/myworkspace'>My Workspace</NavLink>
