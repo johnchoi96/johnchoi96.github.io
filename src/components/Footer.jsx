@@ -12,7 +12,13 @@ const Footer = () => {
                         <span className='nav-link justify-content-center'>|</span>
                     </li>
                     <li className='nav-item'>
-                        <span className='nav-link justify-content-center'>2022</span>
+                        <a className='nav-link justify-content-center' href='mailto:choi.1655@osu.edu'>contact me</a>
+                    </li>
+                    <li className='nav-item'>
+                        <span className='nav-link justify-content-center'>|</span>
+                    </li>
+                    <li className='nav-item'>
+                        <a className='nav-link' href='https://github.com/johnchoi96/johnchoi96.github.io'>source</a>
                     </li>
                 </ul>
             </nav>
