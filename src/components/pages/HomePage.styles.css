@@ -1,4 +1,14 @@
 img.osu-engineering {
     height: 75%;
     width: 75%;
+
+    animation-name : mymove;
+    animation-iteration-count : infinite;
+    animation-direction : alternate;
+    animation-duration : 0.75s;
+}
+
+@keyframes mymove {
+    from {transform: translateY(0px);}
+    to {transform: translateY(20px);}
 }
