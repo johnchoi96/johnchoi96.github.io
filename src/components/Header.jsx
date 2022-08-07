@@ -19,9 +19,28 @@ const Header = () => {
                             <li className='nav-item'>
                                 <NavLink className='nav-link' to='/myworkspace'>My Workspace</NavLink>
                             </li>
-                            <li className='nav-item'>
-                                <a className='nav-link' href='https://www.github.com/johnchoi96'>GitHub</a>
-                            </li>
+
+                            <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavDarkDropdown' aria-controls='navbarNavDarkDropdown' aria-expanded='false' aria-label='Toggle navigation'>
+                                <span className='navbar-toggler-icon'></span>
+                            </button>
+                            <div className='collapse navbar-collapse' id='navbarNavDarkDropdown'>
+                                <ul className='navbar-nav'>
+                                    <li className='nav-item dropdown'>
+                                        <button className='dropdown-button nav-link dropdown-toggle' id='navbarDarkDropdownMenuLink' data-bs-toggle='dropdown' aria-expanded='false'>
+                                            GitHub
+                                        </button>
+                                        <ul className='dropdown-menu dropdown-menu-dark' aria-labelledby='navbarDarkDropdownMenuLink'>
+                                            <li className='nav-item'>
+                                                <a className='nav-link text-light' href='https://www.github.com/johnchoi96'>johnchoi96</a>
+                                            </li>
+                                            <li className='nav-item'>
+                                                <a className='nav-link text-light' href='https://github.com/johnchoi96/johnchoi96.github.io'>Source</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
                             <li className='nav-item'>
                                 <a className='nav-link' href='https://www.linkedin.com/in/johnchoi96'>LinkedIn</a>
                             </li>
@@ -36,8 +55,8 @@ const Header = () => {
                 </header>
             </BrowserView>
             <MobileView>
-                <header className="mobile-header collapse align-items-start justify-content-start" id="navbarToggle">
-                    <div className="bg-dark p-4">
+                <header className='mobile-header collapse align-items-start justify-content-start' id='navbarToggle'>
+                    <div className='bg-dark p-4'>
                         <span className='nav-link fw-bold text-white'>
                             <a className='nav-link' href='/'>
                                 <h4>Home</h4>
@@ -63,23 +82,23 @@ const Header = () => {
                                 <h6>Resume</h6>
                             </a>
                         </span>
-                        <div className="nav-link d-flex justify-content-center align-items-center">
-                            <li className="nav-item dropdown">
-                                <button className="nav-link dropdown-toggle" id="navbarScrollingDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div className='nav-link d-flex justify-content-center align-items-center'>
+                            <li className='nav-item dropdown'>
+                                <button className='nav-link dropdown-toggle' id='navbarScrollingDropdown' data-bs-toggle='dropdown' aria-expanded='false'>
                                     GitHub
                                 </button>
-                                <ul className="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
-                                    <li><a className="dropdown-item" href='https://www.github.com/johnchoi96'>GitHub</a></li>
-                                    <li><a className="dropdown-item" href='https://github.com/johnchoi96/johnchoi96.github.io'>Source</a></li>
+                                <ul className='dropdown-menu' aria-labelledby='navbarScrollingDropdown'>
+                                    <li><a className='dropdown-item' href='https://www.github.com/johnchoi96'>GitHub</a></li>
+                                    <li><a className='dropdown-item' href='https://github.com/johnchoi96/johnchoi96.github.io'>Source</a></li>
                                 </ul>
                             </li>
                         </div>
                     </div>
                 </header>
-                <nav className="navbar navbar-dark bg-dark">
-                    <div className="container-fluid">
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
+                <nav className='navbar navbar-dark bg-dark'>
+                    <div className='container-fluid'>
+                        <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarToggle' aria-controls='navbarToggle' aria-expanded='false' aria-label='Toggle navigation'>
+                            <span className='navbar-toggler-icon'></span>
                         </button>
                     </div>
                 </nav>
