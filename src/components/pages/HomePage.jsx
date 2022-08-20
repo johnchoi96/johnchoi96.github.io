@@ -30,10 +30,8 @@ const AboutPage = () => {
             <br />
 
             <div className='row'>
-                <div className='col-sm-8'>
+                <div className='col'>
                     <h4 className={isMobile ? 'text-center' : 'text-start'}>Info</h4>
-                </div>
-                <div className='col-sm-4'>
                     <p className={isMobile ? 'text-center' : 'text-start'}>Email: <a href='mailto:choi.1655@osu.edu'>choi.1655@osu.edu</a></p>
                     <p className={isMobile ? 'text-center' : 'text-start'}>Website: <Link to='/'>johnchoi96.github.io</Link></p>
                     <p className={isMobile ? 'text-center' : 'text-start'}>Address: Columbus, OH</p>
