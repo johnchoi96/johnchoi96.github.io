@@ -1,6 +1,7 @@
 import React from 'react'
 import {
-    NavLink
+    NavLink,
+    Link
 } from 'react-router-dom'
 import {BrowserView, MobileView} from 'react-device-detect'
 
@@ -17,7 +18,7 @@ const Header = () => {
                                 <NavLink className='nav-link fw-bold' to='/'>Home</NavLink>
                             </li>
                             <li className='nav-item'>
-                                <NavLink className='nav-link' to='/myworkspace'>My Workspace</NavLink>
+                                <Link className='nav-link' to='/myworkspace'>My Workspace</Link>
                             </li>
 
                             <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavDarkDropdown' aria-controls='navbarNavDarkDropdown' aria-expanded='false' aria-label='Toggle navigation'>
@@ -31,7 +32,7 @@ const Header = () => {
                                         </button>
                                         <ul className='dropdown-menu dropdown-menu-dark' aria-labelledby='navbarDarkDropdownMenuLink'>
                                             <li className='nav-item'>
-                                                <a className='nav-link text-light' href='https://www.github.com/johnchoi96'>johnchoi96</a>
+                                                <a className='nav-link text-light' href='https://www.github.com/johnchoi96'>Profile</a>
                                             </li>
                                             <li className='nav-item'>
                                                 <a className='nav-link text-light' href='https://github.com/johnchoi96/johnchoi96.github.io'>Source</a>
