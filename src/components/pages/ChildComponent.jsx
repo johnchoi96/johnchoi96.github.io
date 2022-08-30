@@ -3,6 +3,7 @@ import './AboutPage.styles.css'
 
 const ChildComponent = ({data, setClick}) => {
     const imagePath = '/assets/logo/'
+
     return (
         <div style={{
                 backgroundColor: data.color + 'd0'
@@ -24,6 +25,7 @@ const ChildComponent = ({data, setClick}) => {
             }}>
                 {data.company}
             </h5>
+
         </div>
     )
 }
