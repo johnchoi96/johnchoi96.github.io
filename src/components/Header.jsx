@@ -18,6 +18,9 @@ const Header = () => {
                                 <NavLink className='nav-link fw-bold' to='/'>Home</NavLink>
                             </li>
                             <li className='nav-item'>
+                                <Link className='nav-link' to='/about'>About</Link>
+                            </li>
+                            <li className='nav-item'>
                                 <Link className='nav-link' to='/myworkspace'>My Workspace</Link>
                             </li>
 
@@ -61,6 +64,11 @@ const Header = () => {
                         <span className='nav-link fw-bold text-white'>
                             <a className='nav-link' href='/'>
                                 <h4>Home</h4>
+                            </a>
+                        </span>
+                        <span className='nav-link text-white-50'>
+                            <a className='nav-link' href='/about'>
+                                <h4>About</h4>
                             </a>
                         </span>
                         <span className='nav-link text-white-50'>
