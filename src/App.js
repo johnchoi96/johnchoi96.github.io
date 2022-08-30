@@ -3,6 +3,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 import HomePage from './components/pages/HomePage'
+import AboutPage from './components/pages/AboutPage'
 import MyWorkspacePage from './components/pages/MyWorkspacePage'
 import CertificatePage from './components/pages/CertificatePage'
 import DiplomaPage from './components/pages/DiplomaPage'
@@ -24,7 +25,8 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route exact path='/' element={<HomePage/>} />
+          <Route exact path='/' element={<HomePage />} />
+          <Route exact path='/about' element={<AboutPage />} />
           <Route exact path='/myworkspace' element={<MyWorkspacePage />} />
           <Route exact path='/certificates' element={<CertificatePage />} />
           <Route exact path='/diplomas' element={<DiplomaPage />} />
