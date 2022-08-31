@@ -1,7 +1,7 @@
 import React from 'react';
 import './AboutPage.styles.css'
 
-const ChildComponent = ({data, setClick}) => {
+const CompanyBubble = ({data, setClick}) => {
     const imagePath = '/assets/logo/'
 
     return (
@@ -30,4 +30,4 @@ const ChildComponent = ({data, setClick}) => {
     )
 }
 
-export default ChildComponent
+export default CompanyBubble

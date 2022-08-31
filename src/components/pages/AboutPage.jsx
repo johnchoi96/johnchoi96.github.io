@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import './AboutPage.styles.css'
 import BubbleUI from 'react-bubble-ui';
 import 'react-bubble-ui/dist/index.css';
-import ChildComponent from './ChildComponent.jsx'
+import CompanyBubble from './CompanyBubble.jsx'
 import CompanyModal from './CompanyModal.component'
 
 import {companies} from './aboutCareerData'
@@ -26,10 +26,10 @@ const About = () => {
 		minSize: 50,
 		gutter: 10,
 		provideProps: true,
-		numCols: 4,
+		numCols: 3,
 		fringeWidth: 200,
-		yRadius: 130,
-		xRadius: 170,
+		yRadius: 100,
+		xRadius: 100,
 		cornerRadius: 50,
 		showGuides: false,
 		compact: true,
@@ -38,7 +38,7 @@ const About = () => {
 
     const children = companies?.map((data, i) => {
         return (
-            <ChildComponent
+            <CompanyBubble
                 data={data}
                 key={i}
                 className='child'

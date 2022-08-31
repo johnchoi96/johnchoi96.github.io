@@ -13,6 +13,17 @@ export const companies = [
         ]
     },
     {
+        company: 'Ohio State College of Engineering',
+        position: 'CSE Teaching Assistant',
+        start: 'Aug 2021',
+        end: 'May 2022',
+        image: 'ohio-state-coe.svg',
+        color: '#ba0c2f',
+        descriptions: [
+            'TA/Grader for CSE1223, Intro to Computer Programming in Java.'
+        ]
+    },
+    {
         company: 'Apple Inc.',
         position: 'Software Engineering Intern',
         start: 'May 2021',
@@ -35,17 +46,6 @@ export const companies = [
             'Undergraduate assistant under the supervision of Dr. DK Kang sponsored by NASA THP project titled SWE Retrieval Performance Using Active and Passive Microwave Observations”',
             'Duties included developing and maintaining applications mainly written in C, C++, MATLAB, and Python.',
             'Co-authored an abstract titled “Physically Based Hydrology Model in a Snowmelt-Dominant Watershed” for 2020 AGU Fall Meeting.'
-        ]
-    },
-    {
-        company: 'Ohio State College of Engineering',
-        position: 'CSE Teaching Assistant',
-        start: 'Aug 2021',
-        end: 'May 2022',
-        image: 'ohio-state-coe.svg',
-        color: '#ba0c2f',
-        descriptions: [
-            'TA/Grader for CSE1223, Intro to Computer Programming in Java.'
         ]
     },
     {
