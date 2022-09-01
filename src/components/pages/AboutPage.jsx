@@ -44,7 +44,6 @@ const About = () => {
             isLeft = !isLeft
         }
         setOrderedCompanies(orderedList)
-        console.log('here')
     }, [])
 
     const options = {
