@@ -5,7 +5,8 @@
 	border-radius: 50px;
     background-color: gray;
     justify-content: 'center';
-    align-items: 'center';
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .child {
