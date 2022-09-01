@@ -77,5 +77,17 @@ export const companies = [
             'Responsible for developing software solution that automates a significant number of repetitive tasks performed by the employees.',
             'Utilized Java with JavaFX framework and used multithreading to perform multiple GET REST calls simultaneously.'
         ]
+    },
+    {
+        company: 'NC State Power Sound of the South',
+        position: 'Drumline - Snare',
+        location: 'Raleigh, NC',
+        start: 'Aug 2017',
+        end: 'Nov 2017',
+        image: 'ncsu.svg',
+        color: '#CC0000',
+        descriptions: [
+            "1 out of 8 snare drummers selected for the NC State's 2017 football season"
+        ]
     }
 ]
