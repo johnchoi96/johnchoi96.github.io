@@ -20,9 +20,9 @@ const CompanyModal = ({show, data, onHide}) => {
     }
 
     const textAreaStyle = {
-        height: window.screen.height * (isMobile ? 0.60 * 0.6 : 0.4 * 0.8),
+        height: window.screen.height * (isMobile ? 0.60 * 0.5 : 0.4 * 0.5),
         overflow: 'auto',
-        margin: '20px',
+        margin: '5px',
         textAlign: 'justify',
         padding: '20px'
     }
