@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 
 import './AboutPage.styles.css'
 import BubbleUI from 'react-bubble-ui';
@@ -11,6 +11,7 @@ import {companies} from './aboutCareerData'
 const About = () => {
     const [modalShow, setModalShow] = useState(false)
     const [selectedCompany, setSelectedCompany] = useState(companies[0])
+    const [orderedCompanies, setOrderedCompanies] = useState(companies)
 
     function openModal(data) {
         setSelectedCompany(data)
@@ -20,6 +21,31 @@ const About = () => {
     function closeModal() {
         setModalShow(false)
     }
+
+    useEffect(() => {
+        const midpoint = companies.length / 2
+        const orderedList = [...companies]
+
+        var left = midpoint - 1
+        var right = midpoint
+        var i = 0
+        if (orderedList.length % 2 === 1) {
+            // insert center if odd number of elements
+            orderedList[midpoint] = companies[i++]
+            right++
+        }
+        var isLeft = false
+        for (; i < orderedList.length; i++) {
+            if (isLeft) {
+                orderedList[left--] = companies[i]
+            } else {
+                orderedList[right++] = companies[i]
+            }
+            isLeft = !isLeft
+        }
+        setOrderedCompanies(orderedList)
+        console.log('here')
+    }, [])
 
     const options = {
 		size: 200,
@@ -36,7 +62,7 @@ const About = () => {
 		gravitation: 10
 	}
 
-    const children = companies?.map((data, i) => {
+    const children = orderedCompanies.map((data, i) => {
         return (
             <CompanyBubble
                 data={data}
