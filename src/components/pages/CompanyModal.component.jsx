@@ -43,6 +43,8 @@ const CompanyModal = ({show, data, onHide}) => {
                     <hr />
                     <Typography id='modal-modal-subtitle' variant='h6' component='h5'>
                         {data.position}
+                        <br />
+                        {data.location}
                     </Typography>
                     <Typography id='modal-modal-description' sx={{ mt: 2 }}>
                         <div style={textAreaStyle}>

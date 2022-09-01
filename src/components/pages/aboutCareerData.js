@@ -2,6 +2,7 @@ export const companies = [
     {
         company: 'JPMorgan Chase & Co.',
         position: 'Software Engineer',
+        location: 'Columbus, OH',
         start: 'July 2022',
         end: 'Present',
         image: 'chase.svg',
@@ -15,6 +16,7 @@ export const companies = [
     {
         company: 'Ohio State College of Engineering',
         position: 'CSE Teaching Assistant',
+        location: 'Columbus, OH',
         start: 'Aug 2021',
         end: 'May 2022',
         image: 'ohio-state-coe.svg',
@@ -26,6 +28,7 @@ export const companies = [
     {
         company: 'Apple Inc.',
         position: 'Software Engineering Intern',
+        location: 'Cupertino, CA (Remote)',
         start: 'May 2021',
         end: 'Aug 2021',
         image: 'apple.svg',
@@ -38,6 +41,7 @@ export const companies = [
     {
         company: 'NASA',
         position: 'Undergraduate Research Software Engineer',
+        location: 'College Park, MD (Remote)',
         start: 'Oct 2018',
         end: 'May 2021',
         image: 'nasa.svg',
@@ -51,6 +55,7 @@ export const companies = [
     {
         company: 'SAS Software Inc.',
         position: 'iOS R&D Technical Intern',
+        location: 'Cary, NC',
         start: 'May 2020',
         end: 'Aug 2020',
         image: 'sas.svg',
@@ -63,6 +68,7 @@ export const companies = [
     {
         company: 'Lenovo',
         position: 'Software Development Intern',
+        location: 'Morrisville, NC',
         start: 'May 2019',
         end: 'Jan 2020',
         image: 'lenovo.svg',
