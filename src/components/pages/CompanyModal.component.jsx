@@ -54,8 +54,8 @@ const CompanyModal = ({show, data, onHide}) => {
                             <br />
                             <ul>
                             {
-                                data.descriptions.map((desc) => (
-                                    <li>{desc}</li>
+                                data.descriptions.map((desc, i) => (
+                                    <li key={i}>{desc}</li>
                                 ))
                             }
                             </ul>

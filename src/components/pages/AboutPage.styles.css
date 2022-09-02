@@ -1,24 +1,3 @@
-.myBubbleUI {
-	height: 500px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.child {
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    cursor: pointer;
-    width: 100%;
-    height: 100%;
-    transition: opacity 0.1s ease;
-}
-
-.child:hover {
-    opacity: 0.5;
-}
 
 h1 {
     margin-top: 30px;
