@@ -2,7 +2,7 @@ import React from 'react';
 import './AboutPage.styles.css'
 
 const CompanyBubble = ({data, setClick}) => {
-    const imagePath = '/assets/logo/'
+    const imagePath = '/assets/images/logo/'
 
     return (
         <div style={{
