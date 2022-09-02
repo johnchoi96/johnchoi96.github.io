@@ -22,7 +22,7 @@ const CompanyBubbleUI = () => {
     }
 
     useEffect(() => {
-        const midpoint = companies.length / 2
+        const midpoint = Math.floor(companies.length / 2)
         const orderedList = [...companies]
 
         var left = midpoint - 1
