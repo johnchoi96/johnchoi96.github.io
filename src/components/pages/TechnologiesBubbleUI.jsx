@@ -36,7 +36,7 @@ const TechnologyBubbleUI = () => {
         setOrderedTechnologies(orderedList)
 
 
-        const bubbles = document.querySelector('._2MD0k');
+        const bubbles = document.querySelectorAll('._2MD0k');
         const dragspeed = 2;
         let isDown = false;
         let startX;
