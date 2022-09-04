@@ -25,7 +25,7 @@ const TechnologyBubbleUI = () => {
         }
         const orderedList = [...technologies]
 
-        for (var i = orderedList.length - 1; i > 0; i--) {
+        for (let i = orderedList.length - 1; i > 0; i--) {
             var j = Math.floor(Math.random() * (i + 1))
             var temp = orderedList[i]
             orderedList[i] = orderedList[j]
@@ -34,42 +34,6 @@ const TechnologyBubbleUI = () => {
             orderedList[j].color = getRandomColor()
         }
         setOrderedTechnologies(orderedList)
-
-
-        const bubbles = document.querySelector('._2MD0k');
-        const dragspeed = 2;
-        let isDown = false;
-        let startX;
-        let startY;
-        let scrollLeft;
-        let scrollTop;
-
-        bubbles.addEventListener('mousedown', (e) => {
-            isDown = true;
-            bubbles.classList.add('active');
-            startX = e.pageX - bubbles.offsetLeft;
-            startY = e.pageY - bubbles.offsetTop;
-            scrollLeft = bubbles.scrollLeft;
-            scrollTop = bubbles.scrollTop;
-        });
-        bubbles.addEventListener('mouseleave', () => {
-            isDown = false;
-            bubbles.classList.remove('active');
-        });
-        bubbles.addEventListener('mouseup', () => {
-            isDown = false;
-            bubbles.classList.remove('active');
-        });
-        bubbles.addEventListener('mousemove', (e) => {
-            if(!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - bubbles.offsetLeft;
-            const y = e.pageY - bubbles.offsetTop;
-            const walk = (x - startX) * dragspeed;
-            const topwalk = (y - startY) * dragspeed;
-            bubbles.scrollLeft = scrollLeft - walk;
-            bubbles.scrollTop = scrollTop - topwalk;
-        });
     }, [])
 
     const options = {
