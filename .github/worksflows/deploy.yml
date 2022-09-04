@@ -27,13 +27,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: npm ci
-      - run: npm run build
-        env:
-          CI: false
-      - run: git config user.name github-actions
-      - run: git config user.email github-actions@github.com
-      - run: git --work-tree build add --all
-      - run: git commit -m "Automatic Deploy action run by github-actions"
-      - run: git push origin HEAD:gh-pages --force
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+      - name: Deploy React app to GitHub Pages
+        run: |
+          cd ${{ github.workspace }}
+          npm run deploy
+      - run: echo "🍏 This job's status is ${{ job.status }}."
