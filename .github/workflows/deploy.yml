@@ -29,4 +29,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Deploy to GitHub Pages
-        run: npm run deploy
+        run: |
+          git config --global user.email "johnchoi1003@icloud.com"
+          git config --global user.name "johnchoi96"
+          npm run deploy
