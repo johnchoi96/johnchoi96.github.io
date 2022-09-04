@@ -20,16 +20,13 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
-
-      # Runs a single command using the runners shell
-      - name: Do npm install
-        run: npm install
-
-      # Runs a set of commands using the runners shell
-      - name: Deploy to GitHub Pages
-        run: |
-          git config --global user.email "johnchoi1003@icloud.com"
-          git config --global user.name "johnchoi96"
-          npm run deploy
+      - run: npm ci
+      - run: npm run build
+        env:
+          CI: false
+      - run: git config user.name "github-actions"
+      - run: git config user.email "github-actions@github.com"
+      - run: git --work-tree build add --all
+      - run: git commit -m "Automatic Deploy action run by github-actions"
+      - run: git push origin HEAD:gh-pages --force
