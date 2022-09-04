@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: npm ci
-      - run: npm build
+      - run: npm run build
         env:
           CI: false
       - run: git config user.name "github-actions"
