@@ -26,5 +26,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - run: npm ci
-      - run: npm run build
-      - run: npm run test
+      - run: npm build
+      - run: npm test
