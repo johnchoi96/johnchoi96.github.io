@@ -1,5 +1,5 @@
 // images from https://devicon.dev
-export const technologies = [
+const technologies = [
     {
         name: 'Java',
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'
@@ -145,3 +145,26 @@ export const technologies = [
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg'
     }
 ]
+
+function getRandomColor() {
+    const colors = [
+        '#4fafc7',
+        '#2a4d85',
+        '#e99862',
+        '#f4d3a8',
+        '#90cdb7'
+    ]
+    return colors[Math.floor(Math.random() * colors.length)]
+}
+
+export function getTechnologies() {
+    for (let i = technologies.length - 1; i >= 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1))
+        const temp = technologies[i]
+        technologies[i] = technologies[j]
+        technologies[i].color = getRandomColor()
+        technologies[j] = temp
+        technologies[j].color = getRandomColor()
+    }
+    return technologies
+}
