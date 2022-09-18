@@ -12,12 +12,11 @@ const MyWorkspacePage = () => {
             <br />
             <div className='row row-cols-1 row-cols-md-3 g-4'>
                 {
-                    files.map((file) => {
+                    files.map((file, i) => {
                         return (
-                            <div className='col-lg-4 mb-3'>
+                            <div className='col-lg-4 mb-3' key={i}>
                                 <ProjectCard
                                     className='card'
-                                    key={file.path}
                                     title={file.name}
                                     path={file.path}
                                     isExternalPath={file.isExternalPath}
@@ -34,12 +33,11 @@ const MyWorkspacePage = () => {
             <br />
             <div className='row row-cols-1 row-cols-md-3 g-4'>
                 {
-                    music_works.map((music_work) => {
+                    music_works.map((music_work, i) => {
                         return (
-                            <div className='col-lg-4 mb-3'>
+                            <div className='col-lg-4 mb-3' key={i}>
                                 <ProjectCard
                                     className='card'
-                                    key={music_work.path}
                                     title={music_work.name}
                                     path={music_work.path}
                                     isExternalPath={music_work.isExternalPath}
