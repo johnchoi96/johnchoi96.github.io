@@ -37,7 +37,7 @@ const TechnologyBubbleUI = () => {
     }, [])
 
     const options = {
-		size: 180,
+		size: 150,
 		minSize: 20,
 		gutter: 8,
 		provideProps: true,

@@ -1,5 +1,6 @@
 import React from 'react';
 import './AboutPage.styles.css'
+import {fontColorForBackground} from './Utils/colorUtils';
 
 const CompanyBubble = ({data, setClick}) => {
     const imagePath = '/assets/images/logo/'
@@ -19,7 +20,7 @@ const CompanyBubble = ({data, setClick}) => {
                 }}
             />
             <h5 style={{
-                color: 'white',
+                color: `${fontColorForBackground(data.color)}`,
                 justifyContent: 'center',
                 alignContent: 'center'
             }}>
