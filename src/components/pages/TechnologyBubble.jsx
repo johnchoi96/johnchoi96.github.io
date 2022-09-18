@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {fontColorForBackground} from './Utils/colorUtils';
+
 const TechnologyBubble = ({data}) => {
 
     return (
@@ -14,7 +16,7 @@ const TechnologyBubble = ({data}) => {
                 }}
             />
             <h5 style={{
-                color: 'white',
+                color: `${fontColorForBackground(data.color)}`,
                 justifyContent: 'center',
                 alignContent: 'center'
             }}>
