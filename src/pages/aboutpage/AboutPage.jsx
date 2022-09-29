@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import './AboutPage.styles.css'
-import CompanyBubbleUI from './CompanyBubbleUI'
-import TechnologyBubbleUI from './TechnologiesBubbleUI'
+import CompanyBubbleUI from '../../components/CompanyBubbleUI'
+import TechnologyBubbleUI from '../../components/TechnologiesBubbleUI'
 
 const About = () => {
 
