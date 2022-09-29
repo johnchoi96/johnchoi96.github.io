@@ -1,7 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event'
 import App from './App';
-import AboutPage from './components/pages/AboutPage'
 
 describe('Header Button Rendering', () => {
   test('renders Home', () => {
