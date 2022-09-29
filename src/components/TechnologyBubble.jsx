@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {fontColorForBackground} from './Utils/colorUtils';
+import {fontColorForBackground} from '../pages/Utils/colorUtils';
 
 const TechnologyBubble = ({data}) => {
 

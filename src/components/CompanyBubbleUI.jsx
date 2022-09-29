@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react'
 
 import BubbleUI from 'react-bubble-ui'
-import {companies} from './aboutCareerData'
+import {companies} from '../pages/aboutpage/aboutCareerData'
 import CompanyBubble from './CompanyBubble.jsx'
 import 'react-bubble-ui/dist/index.css';
 import './bubble.styles.css'
-import CompanyModal from './CompanyModal.component'
+import CompanyModal from '../components/CompanyModal.component'
 
 const CompanyBubbleUI = () => {
     const [modalShow, setModalShow] = useState(false)

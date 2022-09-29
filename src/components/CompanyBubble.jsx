@@ -1,6 +1,6 @@
 import React from 'react';
-import './AboutPage.styles.css'
-import {fontColorForBackground} from './Utils/colorUtils';
+import '../pages/aboutpage/AboutPage.styles.css'
+import {fontColorForBackground} from '../pages/Utils/colorUtils';
 
 const CompanyBubble = ({data, setClick}) => {
     const imagePath = '/assets/images/logo/'
