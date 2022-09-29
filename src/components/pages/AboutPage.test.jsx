@@ -7,7 +7,7 @@ test('AboutPage loads', async () => {
     act(async () => {
         await render(<AboutPage />)
     })
-    waitFor(async () => {
+    waitFor(() => {
         const headingText = screen.getByRole('heading', {name: "Places I've been to..."})
         expect(headingText).toBeInTheDocument()
     })
