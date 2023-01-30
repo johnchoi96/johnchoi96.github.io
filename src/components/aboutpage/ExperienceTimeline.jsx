@@ -27,6 +27,7 @@ export default function ExperienceTimeline() {
                             }} src={imagePath + company.image} alt='company logo' />}
                         >
                             <h3 className="vertical-timeline-element-title">{company.position}</h3>
+                            <h4 className='vertical-timeline-element-subtitle'>{company.company}</h4>
                             <h4 className="vertical-timeline-element-subtitle">{company.location}</h4>
                             {
                                 company.descriptions.map((desc, i) => {
