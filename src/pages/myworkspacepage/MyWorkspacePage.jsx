@@ -1,5 +1,5 @@
 import React from 'react'
-import ProjectCard from '../../components/ProjectCard'
+import ProjectCard from '../../components/myworkspacepage/ProjectCard'
 import filenames from '../../assets/my-workspace-list.json'
 
 const MyWorkspacePage = () => {

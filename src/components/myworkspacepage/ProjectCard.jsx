@@ -1,6 +1,6 @@
 import React from 'react'
 import './ProjectCard.styles.css'
-import downloadBtn from '../assets/images/download_btn.png'
+import downloadBtn from '../../assets/images/download_btn.png'
 
 const ProjectCard = ({title, path, isExternalPath}) => {
     return (

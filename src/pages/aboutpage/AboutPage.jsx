@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import './AboutPage.styles.css'
-import TechnologyBubbleUI from '../../components/TechnologiesBubbleUI'
+import TechnologyBubbleUI from '../../components/aboutpage/TechnologiesBubbleUI'
 import MyInfoBanner from '../../components/aboutpage/MyInfoBanner'
 import ExperienceTimeline from '../../components/aboutpage/ExperienceTimeline'
 import EducationTimeline from '../../components/aboutpage/EducationTimeline'
