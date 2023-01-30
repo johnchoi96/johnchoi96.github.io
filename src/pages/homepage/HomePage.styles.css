@@ -1,14 +1,27 @@
-img.osu-engineering {
-    height: 75%;
-    width: 75%;
 
-    animation-name : mymove;
-    animation-iteration-count : infinite;
-    animation-direction : alternate;
-    animation-duration : 0.75s;
+h1 span, h6 span {
+    position: relative;
+    opacity: 0;
+    animation: move-text 0.75s forwards;
+    position: 'absolute';
+    left: '50%';
+    top: '50%';
+    transform: 'translate(-50%, -50%)';
 }
 
-@keyframes mymove {
-    from {transform: translateY(0px);}
-    to {transform: translateY(20px);}
+@keyframes move-text {
+    0% { bottom: -0.2em; opacity: 1; }
+    50% { bottom: 0.2em; }
+    100% { bottom: 0; opacity: 1; }
+}
+
+.backgroundGif {
+    background: url('../../assets/images/dark_background.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    z-index: -1;
 }

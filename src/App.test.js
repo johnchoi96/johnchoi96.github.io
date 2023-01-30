@@ -14,11 +14,11 @@ describe('Header Button Rendering', () => {
     expect(linkElement).toBeInTheDocument()
   })
 
-  test('renders My Workspace', () => {
-    render(<App />)
-    const linkElement = screen.getByText(/My Workspace/i)
-    expect(linkElement).toBeInTheDocument()
-  })
+  // test('renders My Workspace', () => {
+  //   render(<App />)
+  //   const linkElement = screen.getByText(/My Workspace/i)
+  //   expect(linkElement).toBeInTheDocument()
+  // })
 
   test('renders LinkedIn', () => {
     render(<App />)

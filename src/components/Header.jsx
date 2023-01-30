@@ -20,9 +20,9 @@ const Header = () => {
                             <li className='nav-item'>
                                 <Link className='nav-link' to='/about'>About</Link>
                             </li>
-                            <li className='nav-item'>
+                            {/* <li className='nav-item'>
                                 <Link className='nav-link' to='/myworkspace'>My Workspace</Link>
-                            </li>
+                            </li> */}
 
                             <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavDarkDropdown' aria-controls='navbarNavDarkDropdown' aria-expanded='false' aria-label='Toggle navigation'>
                                 <span className='navbar-toggler-icon'></span>
@@ -71,11 +71,11 @@ const Header = () => {
                                 <h4>About</h4>
                             </a>
                         </span>
-                        <span className='nav-link text-white-50'>
+                        {/* <span className='nav-link text-white-50'>
                             <a className='nav-link' href='/myworkspace'>
                                 <h6>My Workspace</h6>
                             </a>
-                        </span>
+                        </span> */}
                         <span className='nav-link text-white-50'>
                             <a className='nav-link' href='https://www.linkedin.com/in/johnchoi96'>
                                 <h6>LinkedIn</h6>

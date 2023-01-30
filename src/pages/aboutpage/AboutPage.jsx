@@ -1,7 +1,9 @@
 import React, {useEffect} from 'react'
 import './AboutPage.styles.css'
-import CompanyBubbleUI from '../../components/CompanyBubbleUI'
-import TechnologyBubbleUI from '../../components/TechnologiesBubbleUI'
+import TechnologyBubbleUI from '../../components/aboutpage/TechnologiesBubbleUI'
+import MyInfoBanner from '../../components/aboutpage/MyInfoBanner'
+import ExperienceTimeline from '../../components/aboutpage/ExperienceTimeline'
+import EducationTimeline from '../../components/aboutpage/EducationTimeline'
 
 const About = () => {
 
@@ -50,8 +52,11 @@ const About = () => {
 
     return (
         <div>
-            <h1>Places I've been to...</h1>
-            <CompanyBubbleUI />
+            <MyInfoBanner />
+            <h1>Experiences</h1>
+            <ExperienceTimeline />
+            <h1>Education</h1>
+            <EducationTimeline />
             <h1>Technologies I've used...</h1>
             <TechnologyBubbleUI />
         </div>

@@ -8,9 +8,9 @@ export const companies = [
         image: 'chase.svg',
         color: '#117aca',
         descriptions: [
-            'Assisting in developing a REST API backend application using Java Spring Boot, MyBatis, and Oracle DB for the Core Engineering Services team.',
-            'Assisting in developing a full stack application by utilizing React.JS, Bootstrap, and Java Spring Boot.',
-            'Collaborating with other developers in an Agile team environment.'
+            'Currently assisting in developing a REST API backend application using Java, Spring Boot, MyBatis, and Oracle DB for the Core Engineering Services team.',
+            'Currently assisting in developing a full stack application by utilizing React.JS, Bootstrap, and Spring Boot.',
+            'Collaborates with other developers in an Agile team environment.'
         ]
     },
     {
