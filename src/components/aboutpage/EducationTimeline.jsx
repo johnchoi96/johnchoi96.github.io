@@ -26,7 +26,7 @@ export default function EducationTimeline() {
             >
                 <h4 className="vertical-timeline-element-title">The Ohio State University, Columbus, OH</h4>
                 <h4 className='vertical-timeline-element-subtitle'>College of Engineering</h4>
-                <p>BS Computer Science and Engineering '22</p>
+                <p>BS Computer Science and Engineering</p>
                 <p>Software Engineering Specialization</p>
             </VerticalTimelineElement>
         </VerticalTimeline>
