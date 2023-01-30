@@ -8,7 +8,7 @@ const MyWorkspacePage = () => {
 
     return (
         <div className='container'>
-            <h3>Software and Files</h3>
+            <h3 className='text-white'>Software and Files</h3>
             <br />
             <div className='row row-cols-1 row-cols-md-3 g-4'>
                 {
@@ -29,7 +29,7 @@ const MyWorkspacePage = () => {
             </div>
 
             <br />
-            <h3>Music Work</h3>
+            <h3 className='text-white'>Music Work</h3>
             <br />
             <div className='row row-cols-1 row-cols-md-3 g-4'>
                 {
