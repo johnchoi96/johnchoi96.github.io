@@ -3,7 +3,7 @@ import photo_of_me from '../../assets/images/photo_of_me.png'
 
 import Emoji from '../Utils/Emoji'
 
-import { isMobile } from 'react-device-detect'
+import { isMobile, BrowserView } from 'react-device-detect'
 
 export default function MyInfoBanner() {
 
@@ -22,14 +22,17 @@ export default function MyInfoBanner() {
                     <img className='rounded-circle' src={photo_of_me} alt='John Choi Pic' height='100%' />
                 </div>
                 <div className='col-sm-9'>
-                    <div className='col align-self-center text-white' style={{
-                        fontSize: '2rem',
-                        marginTop: '1rem'
-                    }}>
-                        Hi <Emoji symbol='👋' />, I'm John Choi,
-                        <br />
-                        Full Stack Software Engineer at JPMorgan Chase & Co.
-                    </div>
+                    <BrowserView>
+                        <div className='col align-self-center text-white' style={{
+                            fontSize: '2rem',
+                            marginTop: '1rem'
+                        }}>
+                            Hi <Emoji symbol='👋' />, I'm John Choi,
+                            <br />
+                            Full Stack Software Engineer at JPMorgan Chase & Co.
+                        </div>
+                    </BrowserView>
+
                 </div>
             </div>
         </div>
