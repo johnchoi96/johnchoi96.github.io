@@ -71,11 +71,11 @@ const Header = () => {
                                 <h4>About</h4>
                             </a>
                         </span>
-                        <span className='nav-link text-white-50'>
+                        {/* <span className='nav-link text-white-50'>
                             <a className='nav-link' href='/myworkspace'>
                                 <h6>My Workspace</h6>
                             </a>
-                        </span>
+                        </span> */}
                         <span className='nav-link text-white-50'>
                             <a className='nav-link' href='https://www.linkedin.com/in/johnchoi96'>
                                 <h6>LinkedIn</h6>
