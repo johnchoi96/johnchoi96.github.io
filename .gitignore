@@ -9,3 +9,6 @@ build/
 
 # VSCode files
 .vscode/
+
+# npm coverage details
+coverage/

@@ -1,5 +1,12 @@
-.nav-link {
-    padding-bottom: 10px;
+
+.navbar-height {
+    min-height: 44px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+      padding-top: 44px;
+    }
 }
 
 .dropdown-button {
