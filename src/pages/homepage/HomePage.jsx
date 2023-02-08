@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './HomePage.styles.css'
 
 const SplitText = ({text}) => {
@@ -22,12 +22,22 @@ const SplitText = ({text}) => {
     )
 }
 
-export default function AboutPage() {
+export default function AboutPage({canScroll}) {
+    const fontSize = Math.max(window.innerHeight, window.innerWidth) * 0.13
+
+    useEffect(() => {
+        if (canScroll !== undefined && !canScroll) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'scroll'
+        }
+    }, [canScroll])
+
     return (
         <div className='backgroundGif'>
             <div className='text-white'>
                 <h1 style={{
-                    fontSize: '900%'
+                    fontSize: fontSize
                 }}>
                     <SplitText text='John Choi' />
                 </h1>
@@ -35,7 +45,6 @@ export default function AboutPage() {
                     <SplitText text='Software Engineer at JPMorgan Chase & Co.' />
                 </h6>
             </div>
-
         </div>
     )
 }
