@@ -23,11 +23,15 @@ const SplitText = ({text}) => {
 }
 
 export default function AboutPage() {
+    const fontSize = Math.max(window.innerHeight, window.innerWidth) * 0.13
+
+    document.body.style.overflow = "hidden"
+
     return (
         <div className='backgroundGif'>
             <div className='text-white'>
                 <h1 style={{
-                    fontSize: '900%'
+                    fontSize: fontSize
                 }}>
                     <SplitText text='John Choi' />
                 </h1>
