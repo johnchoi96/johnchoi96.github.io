@@ -5,7 +5,7 @@ import MyInfoBanner from '../../components/aboutpage/MyInfoBanner'
 import ExperienceTimeline from '../../components/aboutpage/ExperienceTimeline'
 import EducationTimeline from '../../components/aboutpage/EducationTimeline'
 
-const About = () => {
+const About = ({canScroll}) => {
 
     useEffect(() => {
         const bubbles = document.querySelectorAll('._2MD0k')
@@ -48,7 +48,14 @@ const About = () => {
                 bubble.scrollTop = scrollTop - topwalk
             })
         }
-    }, [])
+
+        console.log(canScroll)
+        if (canScroll !== undefined && !canScroll) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'scroll'
+        }
+    }, [canScroll])
 
     return (
         <div>

@@ -25,7 +25,7 @@ function App() {
       <Router>
         <Header />
         <Routes>
-          <Route exact path='/' element={<HomePage />} />
+          <Route exact path='/' element={<HomePage canScroll={false} />} />
           <Route exact path='/about' element={<AboutPage />} />
           <Route exact path='/myworkspace' element={<MyWorkspacePage />} />
           <Route exact path='/certificates' element={<CertificatePage />} />
