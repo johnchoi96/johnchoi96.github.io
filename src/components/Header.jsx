@@ -12,7 +12,7 @@ const Header = () => {
         <div>
             <BrowserView>
                 <header className='container-fullwidth'>
-                    <nav className='navbar navbar-expand-md navbar-dark bg-dark'>
+                    <nav className='navbar fixed-top navbar-expand-md navbar-dark bg-dark'>
                         <ul className='navbar-nav text-start px-2'>
                             <li className='nav-item'>
                                 <NavLink className='nav-link fw-bold' to='/'>Home</NavLink>
