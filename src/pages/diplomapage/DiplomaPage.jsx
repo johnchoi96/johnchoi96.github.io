@@ -1,6 +1,6 @@
 import React from 'react'
 
-const DiplomaPage = () => {
+export default function DiplomaPage() {
     const tosu_bs_cse = '/assets/files/tOSU_BSCSE_Diploma_JohnChoi.pdf'
     return (
         <div className='diploma-body' style={{
@@ -11,5 +11,3 @@ const DiplomaPage = () => {
         </div>
     )
 }
-
-export default DiplomaPage

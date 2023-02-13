@@ -1,7 +1,7 @@
 import React from 'react'
 import errorImage from '../../assets/images/error404_meme.jpg'
 
-const Error404 = () => {
+export default function Error404() {
     return (
         <div>
             <h1>This page does not exist!</h1>
@@ -9,5 +9,3 @@ const Error404 = () => {
         </div>
     )
 }
-
-export default Error404

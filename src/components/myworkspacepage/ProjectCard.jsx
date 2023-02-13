@@ -2,7 +2,7 @@ import React from 'react'
 import './ProjectCard.styles.css'
 import downloadBtn from '../../assets/images/download_btn.png'
 
-const ProjectCard = ({title, path, isExternalPath}) => {
+export default function ProjectCard({title, path, isExternalPath}) {
     return (
         <div className='card-body'>
             <h5>{title}</h5>
@@ -13,5 +13,3 @@ const ProjectCard = ({title, path, isExternalPath}) => {
         </div>
     )
 }
-
-export default ProjectCard

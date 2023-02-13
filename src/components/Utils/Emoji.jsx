@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Emoji = ({symbol}) => (
-    <span
-        className='emoji'
-        role='img'
-    >
-        {symbol}
-    </span>
-)
-
-export default Emoji
+export default function Emoji({symbol}) {
+    return (
+        <span
+            className='emoji'
+            role='img'
+        >
+            {symbol}
+        </span>
+    )
+}

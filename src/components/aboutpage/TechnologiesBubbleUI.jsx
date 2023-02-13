@@ -8,7 +8,7 @@ import './bubble.styles.css'
 
 import {getTechnologies} from '../../pages/aboutpage/technologiesData'
 
-const TechnologyBubbleUI = () => {
+export default function TechnologyBubbleUI() {
 
     const options = {
 		size: 150,
@@ -47,5 +47,3 @@ const TechnologyBubbleUI = () => {
 
     )
 }
-
-export default TechnologyBubbleUI

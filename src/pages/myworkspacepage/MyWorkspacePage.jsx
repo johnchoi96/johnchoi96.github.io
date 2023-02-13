@@ -2,7 +2,7 @@ import React from 'react'
 import ProjectCard from '../../components/myworkspacepage/ProjectCard'
 import filenames from '../../assets/my-workspace-list.json'
 
-const MyWorkspacePage = () => {
+export default function MyWorkspacePage() {
 
     const {files, music_works} = filenames
 
@@ -50,5 +50,3 @@ const MyWorkspacePage = () => {
         </div>
     )
 }
-
-export default MyWorkspacePage

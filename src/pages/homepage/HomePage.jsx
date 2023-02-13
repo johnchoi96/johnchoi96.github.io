@@ -22,8 +22,8 @@ const SplitText = ({text}) => {
     )
 }
 
-export default function AboutPage({canScroll}) {
-    const fontSize = Math.max(window.innerHeight, window.innerWidth) * 0.13
+export default function HomePage({canScroll}) {
+    const fontSize = Math.max(window.innerHeight, window.innerWidth) * 0.11 // 11% of the longest side of screen
 
     useEffect(() => {
         if (canScroll !== undefined && !canScroll) {

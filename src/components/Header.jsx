@@ -7,7 +7,7 @@ import {
 
 import './Header.styles.scss'
 
-const Header = () => {
+export default function Header() {
     return (
         <nav className='navbar fixed-top navbar-expand-lg navbar-dark bg-dark'>
             <div className='navbar-height container-fluid'>
@@ -57,5 +57,3 @@ const Header = () => {
         </nav>
     )
 }
-
-export default Header
