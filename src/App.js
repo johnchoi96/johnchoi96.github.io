@@ -19,7 +19,7 @@ import {
 
 import {BrowserView} from 'react-device-detect'
 
-function App() {
+export default function App() {
   return (
     <div className='App'>
       <Router>
@@ -40,5 +40,3 @@ function App() {
 
   )
 }
-
-export default App

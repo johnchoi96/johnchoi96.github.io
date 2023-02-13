@@ -2,7 +2,7 @@ import React from 'react';
 
 import {fontColorForBackground} from '../../pages/Utils/colorUtils';
 
-const TechnologyBubble = ({data}) => {
+export default function TechnologyBubble({data}) {
 
     return (
         <div className='child' style={{
@@ -26,5 +26,3 @@ const TechnologyBubble = ({data}) => {
         </div>
     )
 }
-
-export default TechnologyBubble

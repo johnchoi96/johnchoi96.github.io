@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Footer = () => {
+export default function Footer() {
     return (
         <footer className='container-fullwidth'>
             <nav className="navbar fixed-bottom navbar-expand-md navbar-dark bg-dark justify-content-center">
@@ -19,5 +19,3 @@ const Footer = () => {
         </footer>
     )
 }
-
-export default Footer

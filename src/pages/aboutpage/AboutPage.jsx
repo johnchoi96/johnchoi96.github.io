@@ -5,7 +5,7 @@ import MyInfoBanner from '../../components/aboutpage/MyInfoBanner'
 import ExperienceTimeline from '../../components/aboutpage/ExperienceTimeline'
 import EducationTimeline from '../../components/aboutpage/EducationTimeline'
 
-const About = ({canScroll}) => {
+export default function About({canScroll}) {
 
     useEffect(() => {
         const bubbles = document.querySelectorAll('._2MD0k')
@@ -69,5 +69,3 @@ const About = ({canScroll}) => {
         </div>
     )
 }
-
-export default About
