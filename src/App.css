@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: hsl(216, 90%, 19%);
+  background-color: #09295A;
 }
 
 .App-logo {
@@ -23,10 +23,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
-
-.my-resume {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
