@@ -29,15 +29,17 @@ export default function ExperienceTimeline() {
                             <h3 className="vertical-timeline-element-title">{company.position}</h3>
                             <h4 className='vertical-timeline-element-subtitle'>{company.company}</h4>
                             <h4 className="vertical-timeline-element-subtitle">{company.location}</h4>
+                            <ul>
                             {
                                 company.descriptions.map((desc, i) => {
                                     return (
-                                        <p key={i}>
+                                        <li className='text-start' key={i}>
                                             {desc}
-                                        </p>
+                                        </li>
                                     )
                                 })
                             }
+                            </ul>
                         </VerticalTimelineElement>
                     )
                 })
