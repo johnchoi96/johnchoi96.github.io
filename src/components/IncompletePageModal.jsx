@@ -38,7 +38,7 @@ export default function IncompletePageModal() {
                         <span className='text-white'>Expect things to be broken</span>
                     </Typography>
                     <br />
-                    <Button onClick={handleClose} variant='contained'>OK</Button>
+                    <Button id='button' onClick={handleClose} variant='contained'>OK</Button>
                 </Box>
             </Modal>
         </div>

@@ -49,6 +49,8 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@mui/material": "^5.11.9",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.7",
     "react-bubble-ui": "^1.1.2",
     "sass": "^1.54.3"
   }
