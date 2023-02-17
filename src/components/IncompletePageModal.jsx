@@ -15,12 +15,12 @@ const style = {
     border: '2px solid #000',
     boxShadow: 24,
     p: 4,
-};
+}
 
 export default function IncompletePageModal() {
 
-    const [open, setOpen] = useState(true);
-    const handleClose = () => setOpen(false);
+    const [open, setOpen] = useState(true)
+    const handleClose = () => setOpen(false)
 
     return (
         <div>
