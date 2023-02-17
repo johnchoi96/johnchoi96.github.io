@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ProjectCard from '../../components/myworkspacepage/ProjectCard'
 import filenames from '../../assets/my-workspace-list.json'
 
-export default function MyWorkspacePage() {
+export default function MyWorkspacePage({ canScroll }) {
+
+    useEffect(() => {
+        if (canScroll !== undefined && !canScroll) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'scroll'
+        }
+    }, [canScroll])
 
     const {files, music_works} = filenames
 

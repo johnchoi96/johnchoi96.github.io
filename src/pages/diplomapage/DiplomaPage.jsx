@@ -1,6 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-export default function DiplomaPage() {
+export default function DiplomaPage({ canScroll }) {
+
+    useEffect(() => {
+        if (canScroll !== undefined && !canScroll) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'scroll'
+        }
+    }, [canScroll])
+
     const tosu_bs_cse = '/assets/files/tOSU_BSCSE_Diploma_JohnChoi.pdf'
 
     const ratio = 1.5

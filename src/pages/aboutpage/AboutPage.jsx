@@ -5,7 +5,7 @@ import MyInfoBanner from '../../components/aboutpage/MyInfoBanner'
 import ExperienceTimeline from '../../components/aboutpage/ExperienceTimeline'
 import EducationTimeline from '../../components/aboutpage/EducationTimeline'
 
-export default function About({canScroll}) {
+export default function About({ canScroll }) {
 
     useEffect(() => {
         const bubbles = document.querySelectorAll('._2MD0k')
@@ -49,7 +49,6 @@ export default function About({canScroll}) {
             })
         }
 
-        console.log(canScroll)
         if (canScroll !== undefined && !canScroll) {
             document.body.style.overflow = 'hidden'
         } else {
