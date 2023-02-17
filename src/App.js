@@ -30,7 +30,7 @@ export default function App() {
           <Route exact path='/myworkspace' element={<MyWorkspacePage />} />
           <Route exact path='/certificates' element={<CertificatePage />} />
           <Route exact path='/diplomas' element={<DiplomaPage />} />
-          <Route path='*' element={<Error404 />} />
+          <Route path='*' element={<Error404 canScroll={false} />} />
         </Routes>
         <BrowserView>
           <Footer />

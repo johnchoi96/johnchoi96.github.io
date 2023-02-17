@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import './HomePage.styles.css'
 
-const SplitText = ({text}) => {
+const SplitText = ({ text }) => {
     return (
         <span aria-label={text}>
             {
@@ -22,7 +22,7 @@ const SplitText = ({text}) => {
     )
 }
 
-export default function HomePage({canScroll}) {
+export default function HomePage({ canScroll }) {
     const fontSize = Math.max(window.innerHeight, window.innerWidth) * 0.11 // 11% of the longest side of screen
 
     useEffect(() => {
