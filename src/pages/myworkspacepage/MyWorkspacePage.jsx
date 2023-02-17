@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import ProjectCard from '../../components/myworkspacepage/ProjectCard'
 import filenames from '../../assets/my-workspace-list.json'
+import IncompletePageModal from '../../components/IncompletePageModal'
 
 export default function MyWorkspacePage({ canScroll }) {
 
@@ -16,6 +17,7 @@ export default function MyWorkspacePage({ canScroll }) {
 
     return (
         <div className='container'>
+            <IncompletePageModal />
             <h3 className='text-white'>Software and Files</h3>
             <br />
             <div className='row row-cols-1 row-cols-md-3 g-4'>
