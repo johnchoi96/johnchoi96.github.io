@@ -27,11 +27,11 @@ export default function Header() {
                             <a className='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
                                 GitHub
                             </a>
-                        <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
-                            <li><a className='dropdown-item' href='https://www.github.com/johnchoi96'>Profile</a></li>
-                            <li><a className='dropdown-item' href='https://github.com/johnchoi96/johnchoi96.github.io'>Source</a></li>
-                            {/* <li><hr className='dropdown-divider' /></li> */}
-                        </ul>
+                            <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
+                                <li><a className='dropdown-item' href='https://www.github.com/johnchoi96'>Profile</a></li>
+                                <li><a className='dropdown-item' href='https://github.com/johnchoi96/johnchoi96.github.io'>Source</a></li>
+                                {/* <li><hr className='dropdown-divider' /></li> */}
+                            </ul>
                         </li>
                         {/* <li className='nav-item'>
                             <a className='nav-link disabled' href='#' tabindex='-1' aria-disabled='true'>Disabled</a>
