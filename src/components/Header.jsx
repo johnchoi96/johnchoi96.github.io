@@ -28,8 +28,8 @@ export default function Header() {
                                 GitHub
                             </a>
                             <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
-                                <li><a className='dropdown-item' href='https://www.github.com/johnchoi96'>Profile</a></li>
-                                <li><a className='dropdown-item' href='https://github.com/johnchoi96/johnchoi96.github.io'>Source</a></li>
+                                <li><a className='dropdown-item' target='_blank' rel='noopener noreferrer' href='https://www.github.com/johnchoi96'>Profile</a></li>
+                                <li><a className='dropdown-item' target='_blank' rel='noopener noreferrer' href='https://github.com/johnchoi96/johnchoi96.github.io'>Source</a></li>
                                 {/* <li><hr className='dropdown-divider' /></li> */}
                             </ul>
                         </li>
@@ -37,10 +37,10 @@ export default function Header() {
                             <a className='nav-link disabled' href='#' tabindex='-1' aria-disabled='true'>Disabled</a>
                         </li> */}
                         <li className='nav-item'>
-                            <a className='nav-link' href='https://www.linkedin.com/in/johnchoi96'>LinkedIn</a>
+                            <a className='nav-link' target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/johnchoi96'>LinkedIn</a>
                         </li>
                         <li className='nav-item'>
-                            <a className='nav-link' href='https://orcid.org/0000-0003-4898-323X'>ORCID</a>
+                            <a className='nav-link' target='_blank' rel='noopener noreferrer' href='https://orcid.org/0000-0003-4898-323X'>ORCID</a>
                         </li>
                         <li className='nav-item'>
                             <a className='nav-link' href={process.env.PUBLIC_URL + '/assets/files/Resume.pdf'}>Resume</a>
