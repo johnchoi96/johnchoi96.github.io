@@ -19,8 +19,16 @@ const style = {
 
 export default function IncompletePageModal() {
 
+    const delay = ms => new Promise(
+        resolve => setTimeout(resolve, ms)
+    )
+
     const [open, setOpen] = useState(true)
-    const handleClose = () => setOpen(false)
+
+    const handleClose = async () => {
+        await delay(350)
+        setOpen(false)
+    }
 
     return (
         <div>
@@ -35,7 +43,7 @@ export default function IncompletePageModal() {
                         <span className='text-white fw-bold'>This page is being worked on!</span>
                     </Typography>
                     <Typography id='modal-modal-description' sx={{ mt: 2 }}>
-                        <span className='text-white'>Expect things to be broken</span>
+                        <span className='text-white'>Expect things to be broken or not polished.</span>
                     </Typography>
                     <br />
                     <Button id='button' onClick={handleClose} variant='contained'>OK</Button>
