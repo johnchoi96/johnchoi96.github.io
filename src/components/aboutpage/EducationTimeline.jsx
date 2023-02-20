@@ -8,10 +8,10 @@ import 'react-vertical-timeline-component/style.min.css'
 
 import { fontColorForBackground } from '../../pages/Utils/colorUtils'
 
-import OSUEngineering from '../../assets/images/OSU-Engineering.png'
-
 export default function EducationTimeline() {
     const osuColor = '#ba0c2f'
+
+    const osuEngineering = '/assets/images/logo/ohio-state-coe.svg'
 
     return (
         <VerticalTimeline>
@@ -21,7 +21,7 @@ export default function EducationTimeline() {
                     background: osuColor,
                     color: `${fontColorForBackground(osuColor)}`,
                 }}
-                contentArrowStyle={{ borderRight: `7px solid  ${osuColor}` }}
+                contentArrowStyle={{ borderRight: `7px solid ${osuColor}` }}
                 date='May 2022'
                 iconStyle={{
                     background: osuColor,
@@ -33,7 +33,7 @@ export default function EducationTimeline() {
                             width: '50%',
                             marginTop: '0.5rem',
                         }}
-                        src={OSUEngineering}
+                        src={osuEngineering}
                         alt='OSU logo'
                     />
                 }
