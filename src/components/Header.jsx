@@ -20,14 +20,14 @@ export default function Header() {
                         <li className='nav-item'>
                             <Link className='nav-link' to='/about'>About</Link>
                         </li>
-                        {/* <li className='nav-item'>
-                            <Link className='nav-link' to='myworkspace'>My Workspace</Link>
-                        </li> */}
+                        <li className='nav-item'>
+                            <Link className='nav-link' to='/myworkspace'>My Workspace</Link>
+                        </li>
                         <li className='nav-item dropdown'>
                             <a className='nav-link dropdown-toggle' href='#' id='navbarDropdown' role='button' data-bs-toggle='dropdown' aria-expanded='false'>
                                 GitHub
                             </a>
-                            <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
+                            <ul className='dropdown-menu dropdown-menu-dark' aria-labelledby='navbarDropdown'>
                                 <li><a className='dropdown-item' target='_blank' rel='noopener noreferrer' href='https://www.github.com/johnchoi96'>Profile</a></li>
                                 <li><a className='dropdown-item' target='_blank' rel='noopener noreferrer' href='https://github.com/johnchoi96/johnchoi96.github.io'>Source</a></li>
                                 {/* <li><hr className='dropdown-divider' /></li> */}
