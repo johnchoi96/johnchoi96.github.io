@@ -35,7 +35,7 @@ export default function HomePage({ canScroll }) {
 
     return (
         <div className='backgroundGif'>
-            <div className='text-white'>
+            <div className='text-white centertext'>
                 <h1 style={{
                     fontSize: fontSize
                 }}>
