@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
-import Modal from '@mui/material/Modal'
-import Button from '@mui/material/Button'
+import { Box, Modal, Button, Typography } from '@mui/material'
 
 const style = {
     position: 'absolute',
@@ -18,10 +15,7 @@ const style = {
 }
 
 export default function IncompletePageModal() {
-
-    const delay = ms => new Promise(
-        resolve => setTimeout(resolve, ms)
-    )
+    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
     const [open, setOpen] = useState(true)
 
@@ -38,15 +32,29 @@ export default function IncompletePageModal() {
                 aria-labelledby='modal-modal-title'
                 aria-describedby='modal-modal-description'
             >
-                <Box sx={style}>
-                    <Typography id='modal-modal-title' variant='h6' component='h2'>
-                        <span className='text-white fw-bold'>This page is being worked on!</span>
+                <Box sx={style} justifyContent='flex-end' alignItems='flex-end'>
+                    <Typography
+                        id='modal-modal-title'
+                        variant='h6'
+                        component='h2'
+                    >
+                        <span className='text-white fw-bold'>
+                            This page is being worked on!
+                        </span>
                     </Typography>
                     <Typography id='modal-modal-description' sx={{ mt: 2 }}>
-                        <span className='text-white'>Expect things to be broken or not polished.</span>
+                        <span className='text-white'>
+                            Expect things to be broken or not polished.
+                        </span>
                     </Typography>
                     <br />
-                    <Button id='button' onClick={handleClose} variant='contained'>OK</Button>
+                    <Button
+                        id='button'
+                        onClick={handleClose}
+                        variant='contained'
+                    >
+                        OK
+                    </Button>
                 </Box>
             </Modal>
         </div>
