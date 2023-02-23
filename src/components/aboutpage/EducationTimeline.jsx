@@ -48,9 +48,11 @@ export default function EducationTimeline() {
                 <h6 className='vertical-timeline-element-subtitle'>
                     Columbus, OH
                 </h6>
-                <span>BS Computer Science and Engineering</span>
-                <br />
-                <span>Software Engineering Specialization</span>
+                <p>
+                    BS Computer Science and Engineering
+                    <br />
+                    Software Engineering Specialization
+                </p>
             </VerticalTimelineElement>
         </VerticalTimeline>
     )
