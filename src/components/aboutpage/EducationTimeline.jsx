@@ -39,14 +39,18 @@ export default function EducationTimeline() {
                 }
                 position='right'
             >
-                <h4 className='vertical-timeline-element-title'>
+                <h3 className='vertical-timeline-element-title fw-bold'>
                     The Ohio State University
-                </h4>
+                </h3>
                 <h5 className='vertical-timeline-element-subtitle'>
-                    College of Engineering, Columbus, OH
+                    College of Engineering
                 </h5>
-                <p>BS Computer Science and Engineering</p>
-                <p>Software Engineering Specialization</p>
+                <h6 className='vertical-timeline-element-subtitle'>
+                    Columbus, OH
+                </h6>
+                <span>BS Computer Science and Engineering</span>
+                <br />
+                <span>Software Engineering Specialization</span>
             </VerticalTimelineElement>
         </VerticalTimeline>
     )
