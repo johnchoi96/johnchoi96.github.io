@@ -118,14 +118,14 @@ export default function Header() {
                         <input className='form-control me-2' type='search' placeholder='Search' aria-label='Search' />
                         <button className='btn btn-outline-success' type='submit'>Search</button>
                     </form> */}
-                    <div class='form-check form-switch d-flex'>
+                    <div className='form-check form-switch d-flex'>
                         <input
                             className='form-check-input'
                             type='checkbox'
                             role='switch'
                             id='flexSwitchCheckDefault'
                             checked={isDarkMode}
-                            onClick={() => {
+                            onChange={() => {
                                 setIsDarkMode(!isDarkMode)
                                 // setter
                                 // const newTheme = { savedTheme: isDarkMode }
@@ -135,7 +135,7 @@ export default function Header() {
                         />
                         <label
                             className={`form-check-label ${isDarkMode ? 'text-white' : 'text-dark'}`}
-                            for='flexSwitchCheckDefault'
+                            htmlFor='flexSwitchCheckDefault'
                         >
                             {
                                 isDarkMode ? 'Dark Mode' : 'Light Mode'
