@@ -1,19 +1,29 @@
-import React from 'react'
+import React, { useEffect, useContext, useState } from 'react'
 
 import {
     VerticalTimeline,
     VerticalTimelineElement,
 } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
+import { ThemeContext } from '../../App'
 
 import { companies } from '../../pages/aboutpage/aboutCareerData'
 import { fontColorForBackground } from '../../pages/Utils/colorUtils'
 
 export default function ExperienceTimeline() {
+
+    const { isDarkMode } = useContext(ThemeContext)
+
+    const [lineColor, setLineColor] = useState(null)
+
     const imagePath = '/assets/images/logo/'
 
+    useEffect(() => {
+        isDarkMode ? setLineColor('white') : setLineColor('#000000')
+    }, [isDarkMode])
+
     return (
-        <VerticalTimeline>
+        <VerticalTimeline lineColor={lineColor}>
             {companies.map((company, i) => {
                 return (
                     <VerticalTimelineElement
@@ -27,6 +37,7 @@ export default function ExperienceTimeline() {
                             borderRight: `7px solid ${company.color}`,
                         }}
                         date={`${company.start} - ${company.end}`}
+                        dateClassName={`${isDarkMode ? '' : 'text-dark'}`}
                         iconStyle={{
                             background: `${company.color}`,
                             color: `${fontColorForBackground(company.color)}`,

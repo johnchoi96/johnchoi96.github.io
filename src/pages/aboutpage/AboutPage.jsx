@@ -1,11 +1,15 @@
-import React, {useEffect} from 'react'
+import React, { useEffect, useContext } from 'react'
 import './AboutPage.styles.css'
 import TechnologyBubbleUI from '../../components/aboutpage/TechnologiesBubbleUI'
 import MyInfoBanner from '../../components/aboutpage/MyInfoBanner'
 import ExperienceTimeline from '../../components/aboutpage/ExperienceTimeline'
 import EducationTimeline from '../../components/aboutpage/EducationTimeline'
+import { ThemeContext } from '../../App'
+import { getBackgroundColor } from '../Utils/colorUtils'
 
 export default function About({ canScroll }) {
+    const { isDarkMode } = useContext(ThemeContext)
+    const fontClass = isDarkMode ? 'light-font' : 'dark-font'
 
     useEffect(() => {
         const bubbles = document.querySelectorAll('._2MD0k')
@@ -38,7 +42,7 @@ export default function About({ canScroll }) {
             })
 
             bubble.addEventListener('mousemove', (e) => {
-                if(!isDown) return
+                if (!isDown) return
                 e.preventDefault()
                 const x = e.pageX - bubble.offsetLeft
                 const y = e.pageY - bubble.offsetTop
@@ -57,13 +61,17 @@ export default function About({ canScroll }) {
     }, [canScroll])
 
     return (
-        <div>
+        <div
+            style={{
+                backgroundColor: getBackgroundColor(),
+            }}
+        >
             <MyInfoBanner />
-            <h1>Experiences</h1>
+            <h1 className={fontClass}>Experiences</h1>
             <ExperienceTimeline />
-            <h1>Education</h1>
+            <h1 className={fontClass}>Education</h1>
             <EducationTimeline />
-            <h1>Technologies I've used...</h1>
+            <h1 className={fontClass}>Technologies I've used...</h1>
             <TechnologyBubbleUI />
         </div>
     )
