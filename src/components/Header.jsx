@@ -10,7 +10,7 @@ export default function Header() {
     const { isDarkMode, setIsDarkMode } = useContext(ThemeContext)
 
     return (
-        <nav className={`navbar fixed-top navbar-expand-lg ${isDarkMode ? 'navbar-dark bg-dark' : 'bg-light'}`}>
+        <nav className={`navbar fixed-top navbar-expand-lg bg-${isDarkMode ? 'dark navbar-dark ' : 'light'}`}>
             <div className='navbar-height container-fluid'>
                 <NavLink className='navbar-brand nav-link fw-bold' to='/'>
                     Home
