@@ -1,28 +1,25 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
+import { ThemeContext } from '../../App'
 import './HomePage.styles.css'
 
 const SplitText = ({ text }) => {
     return (
         <span aria-label={text}>
-            {
-                text.split('').map(function(char, index) {
-                    const style = {'animationDelay': (0.5 + index / 10) + 's'}
-                    return (
-                        <span
-                            aria-hidden='true'
-                            key={index}
-                            style={style}
-                        >
-                            {char}
-                        </span>
-                    )
-                })
-            }
+            {text.split('').map(function (char, index) {
+                const style = { animationDelay: 0.5 + index / 10 + 's' }
+                return (
+                    <span aria-hidden='true' key={index} style={style}>
+                        {char}
+                    </span>
+                )
+            })}
         </span>
     )
 }
 
 export default function HomePage({ canScroll }) {
+    const { isDarkMode } = useContext(ThemeContext)
+
     const fontSize = Math.max(window.innerHeight, window.innerWidth) * 0.11 // 11% of the longest side of screen
 
     useEffect(() => {
@@ -31,14 +28,23 @@ export default function HomePage({ canScroll }) {
         } else {
             document.body.style.overflow = 'scroll'
         }
-    }, [canScroll])
+    }, [isDarkMode, canScroll])
 
     return (
-        <div className='backgroundGif'>
-            <div className='text-white centertext'>
-                <h1 style={{
-                    fontSize: fontSize
-                }}>
+        <div
+            className={
+                isDarkMode
+                    ? 'backgroundGif-dark text-white'
+                    : 'backgroundGif-light text-dark'
+            }
+        >
+            <div className='centertext'>
+                <h1
+                    style={{
+                        fontSize: fontSize,
+                        color: isDarkMode ? 'white' : 'black',
+                    }}
+                >
                     <SplitText text='John Choi' />
                 </h1>
                 <h6>

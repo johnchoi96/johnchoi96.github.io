@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, createContext, useMemo } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -17,25 +17,49 @@ import {
   Routes,
 } from 'react-router-dom'
 
-import {BrowserView} from 'react-device-detect'
+import { BrowserView } from 'react-device-detect'
+
+export const ThemeContext = createContext()
 
 export default function App() {
+  // FIXME
+  // getter for local saved theme
+  // const { savedTheme } = JSON.parse(localStorage.getItem('saved-theme'))
+
+  // var savedThemeContext = undefined
+  // if (savedTheme) {
+  //   savedThemeContext = savedTheme
+  // } else {
+  //   savedThemeContext = true
+  // }
+
+  const [isDarkMode, setIsDarkMode] = useState(true)
+
+  const value = useMemo(() => {
+    return {
+      isDarkMode,
+      setIsDarkMode
+    }
+  }, [isDarkMode])
+
   return (
     <div className='App'>
-      <Router>
-        <Header />
-        <Routes>
-          <Route exact path='/' element={<HomePage canScroll={false} />} />
-          <Route exact path='/about' element={<AboutPage />} />
-          <Route exact path='/myworkspace' element={<MyWorkspacePage />} />
-          <Route exact path='/certificates' element={<CertificatePage />} />
-          <Route exact path='/diplomas' element={<DiplomaPage />} />
-          <Route path='*' element={<Error404 canScroll={false} />} />
-        </Routes>
-        <BrowserView>
-          <Footer />
-        </BrowserView>
-      </Router>
+      <ThemeContext.Provider value={value}>
+        <Router>
+          <Header />
+          <Routes>
+            <Route exact path='/' element={<HomePage canScroll={false} />} />
+            <Route exact path='/about' element={<AboutPage />} />
+            <Route exact path='/myworkspace' element={<MyWorkspacePage />} />
+            <Route exact path='/certificates' element={<CertificatePage />} />
+            <Route exact path='/diplomas' element={<DiplomaPage />} />
+            <Route path='*' element={<Error404 canScroll={false} />} />
+          </Routes>
+          <BrowserView>
+            <Footer />
+          </BrowserView>
+        </Router>
+      </ThemeContext.Provider>
     </div>
 
   )

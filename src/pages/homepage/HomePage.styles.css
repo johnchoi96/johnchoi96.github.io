@@ -10,7 +10,18 @@ h1 span, h6 span {
     100% { bottom: 0; opacity: 1; }
 }
 
-.backgroundGif {
+.backgroundGif-light {
+    background: url('../../assets/images/light_background.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.backgroundGif-dark {
     background: url('../../assets/images/dark_background.gif');
     background-size: cover;
     background-repeat: no-repeat;
