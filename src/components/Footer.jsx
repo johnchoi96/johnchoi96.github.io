@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from '../App'
 
 export default function Footer() {
+
+    const { isDarkMode } = useContext(ThemeContext)
+
     return (
         <footer className='container-fullwidth'>
-            <nav className="navbar fixed-bottom navbar-expand-md navbar-dark bg-dark justify-content-center">
+            <nav className={`navbar fixed-bottom navbar-expand-md bg${isDarkMode ? '-dark navbar-dark' : '-light'} justify-content-center`}>
                 <ul className="navbar-nav align-items-center">
                     <li className="nav-item">
                         <span className='nav-link justify-content-center'>John Choi</span>
