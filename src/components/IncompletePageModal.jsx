@@ -1,20 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 
 import { Box, Modal, Button, Typography } from '@mui/material'
-
-const style = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 400,
-    bgcolor: '#09295A',
-    border: '2px solid #000',
-    boxShadow: 24,
-    p: 4,
-}
+import { ThemeContext } from '../App'
 
 export default function IncompletePageModal() {
+
+    const { isDarkMode } = useContext(ThemeContext)
+
+    const textColor = isDarkMode ? 'text-white' : 'text-dark'
+
+    const style = {
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: 400,
+        bgcolor: isDarkMode ? '#09295A' : '#ffffff',
+        border: '2px solid #000000',
+        boxShadow: 24,
+        p: 4,
+    }
+
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
     const [open, setOpen] = useState(true)
@@ -38,12 +44,12 @@ export default function IncompletePageModal() {
                         variant='h6'
                         component='h2'
                     >
-                        <span className='text-white fw-bold'>
+                        <span className={`${textColor} fw-bold`}>
                             This page is being worked on!
                         </span>
                     </Typography>
                     <Typography id='modal-modal-description' sx={{ mt: 2 }}>
-                        <span className='text-white'>
+                        <span className={`${textColor}`}>
                             Expect things to be broken or not polished.
                         </span>
                     </Typography>
