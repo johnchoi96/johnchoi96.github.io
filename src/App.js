@@ -15,7 +15,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import { BrowserView } from 'react-device-detect'
 
-export const ThemeContext = createContext()
+export const ThemeContext = createContext('')
 
 export default function App() {
     // getter for local saved theme
