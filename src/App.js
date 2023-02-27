@@ -11,56 +11,65 @@ import Error404 from './pages/error/Error404'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import { BrowserView } from 'react-device-detect'
 
 export const ThemeContext = createContext()
 
 export default function App() {
-  // FIXME
-  // getter for local saved theme
-  // const { savedTheme } = JSON.parse(localStorage.getItem('saved-theme'))
-
-  // var savedThemeContext = undefined
-  // if (savedTheme) {
-  //   savedThemeContext = savedTheme
-  // } else {
-  //   savedThemeContext = true
-  // }
-
-  const [isDarkMode, setIsDarkMode] = useState(true)
-
-  const value = useMemo(() => {
-    return {
-      isDarkMode,
-      setIsDarkMode
+    // getter for local saved theme
+    var localStorageTheme = JSON.parse(localStorage.getItem('local-theme'))
+    if (localStorageTheme === null) {
+        localStorageTheme = false
     }
-  }, [isDarkMode])
 
-  return (
-    <div className='App'>
-      <ThemeContext.Provider value={value}>
-        <Router>
-          <Header />
-          <Routes>
-            <Route exact path='/' element={<HomePage canScroll={false} />} />
-            <Route exact path='/about' element={<AboutPage />} />
-            <Route exact path='/myworkspace' element={<MyWorkspacePage />} />
-            <Route exact path='/certificates' element={<CertificatePage />} />
-            <Route exact path='/diplomas' element={<DiplomaPage />} />
-            <Route path='*' element={<Error404 canScroll={false} />} />
-          </Routes>
-          <BrowserView>
-            <Footer />
-          </BrowserView>
-        </Router>
-      </ThemeContext.Provider>
-    </div>
+    const [isDarkMode, setIsDarkMode] = useState(!localStorageTheme)
 
-  )
+    const value = useMemo(() => {
+        return {
+            isDarkMode,
+            setIsDarkMode
+        }
+    }, [isDarkMode])
+
+    return (
+        <div className='App'>
+            <ThemeContext.Provider value={value}>
+                <Router>
+                    <Header />
+                    <Routes>
+                        <Route
+                            exact
+                            path='/'
+                            element={<HomePage canScroll={false} />}
+                        />
+                        <Route exact path='/about' element={<AboutPage />} />
+                        <Route
+                            exact
+                            path='/myworkspace'
+                            element={<MyWorkspacePage />}
+                        />
+                        <Route
+                            exact
+                            path='/certificates'
+                            element={<CertificatePage />}
+                        />
+                        <Route
+                            exact
+                            path='/diplomas'
+                            element={<DiplomaPage />}
+                        />
+                        <Route
+                            path='*'
+                            element={<Error404 canScroll={false} />}
+                        />
+                    </Routes>
+                    <BrowserView>
+                        <Footer />
+                    </BrowserView>
+                </Router>
+            </ThemeContext.Provider>
+        </div>
+    )
 }

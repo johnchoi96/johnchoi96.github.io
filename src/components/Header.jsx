@@ -6,11 +6,14 @@ import { ThemeContext } from '../App'
 import './Header.styles.scss'
 
 export default function Header() {
-
     const { isDarkMode, setIsDarkMode } = useContext(ThemeContext)
 
     return (
-        <nav className={`navbar fixed-top navbar-expand-lg bg-${isDarkMode ? 'dark navbar-dark ' : 'light'}`}>
+        <nav
+            className={`navbar fixed-top navbar-expand-lg bg-${
+                isDarkMode ? 'dark navbar-dark ' : 'light'
+            }`}
+        >
             <div className='navbar-height container-fluid'>
                 <NavLink className='navbar-brand nav-link fw-bold' to='/'>
                     Home
@@ -53,7 +56,9 @@ export default function Header() {
                                 GitHub
                             </a>
                             <ul
-                                className={`dropdown-menu dropdown-menu${isDarkMode ? '-dark' : ''}`}
+                                className={`dropdown-menu dropdown-menu${
+                                    isDarkMode ? '-dark' : ''
+                                }`}
                                 aria-labelledby='navbarDropdown'
                             >
                                 <li>
@@ -127,19 +132,19 @@ export default function Header() {
                             checked={isDarkMode}
                             onChange={() => {
                                 setIsDarkMode(!isDarkMode)
-                                // setter
-                                // const newTheme = { savedTheme: isDarkMode }
-                                // FIXME: implement
-                                // localStorage.setItem('saved-theme', JSON.stringify(newTheme));
+                                localStorage.setItem(
+                                    'local-theme',
+                                    JSON.stringify(isDarkMode)
+                                )
                             }}
                         />
                         <label
-                            className={`form-check-label ${isDarkMode ? 'text-white' : 'text-dark'}`}
+                            className={`form-check-label ${
+                                isDarkMode ? 'text-white' : 'text-dark'
+                            }`}
                             htmlFor='flexSwitchCheckDefault'
                         >
-                            {
-                                isDarkMode ? 'Dark Mode' : 'Light Mode'
-                            }
+                            {isDarkMode ? 'Dark Mode' : 'Light Mode'}
                         </label>
                     </div>
                 </div>
