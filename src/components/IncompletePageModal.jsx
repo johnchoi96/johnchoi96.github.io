@@ -2,9 +2,9 @@ import React, { useState, useContext } from 'react'
 
 import { Box, Modal, Button, Typography } from '@mui/material'
 import { ThemeContext } from '../App'
+import { getBackgroundColor } from '../pages/Utils/colorUtils'
 
 export default function IncompletePageModal() {
-
     const { isDarkMode } = useContext(ThemeContext)
 
     const textColor = isDarkMode ? 'text-white' : 'text-dark'
@@ -15,10 +15,10 @@ export default function IncompletePageModal() {
         left: '50%',
         transform: 'translate(-50%, -50%)',
         width: 400,
-        bgcolor: isDarkMode ? '#09295A' : '#ffffff',
+        bgcolor: getBackgroundColor(),
         border: '2px solid #000000',
         boxShadow: 24,
-        p: 4,
+        p: 4
     }
 
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
