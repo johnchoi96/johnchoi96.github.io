@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 
 import {
     VerticalTimeline,
-    VerticalTimelineElement,
+    VerticalTimelineElement
 } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
+import { ThemeContext } from '../../App'
 
 import { fontColorForBackground } from '../../pages/Utils/colorUtils'
 
 export default function EducationTimeline() {
+    const { isDarkMode } = useContext(ThemeContext)
+
     const osuColor = '#ba0c2f'
 
     const osuEngineering = '/assets/images/logo/ohio-state-coe.svg'
@@ -19,19 +22,20 @@ export default function EducationTimeline() {
                 className='vertical-timeline-element--education'
                 contentStyle={{
                     background: osuColor,
-                    color: `${fontColorForBackground(osuColor)}`,
+                    color: `${fontColorForBackground(osuColor)}`
                 }}
                 contentArrowStyle={{ borderRight: `7px solid ${osuColor}` }}
                 date='May 2022'
+                dateClassName={`${isDarkMode ? '' : 'text-dark'}`}
                 iconStyle={{
                     background: osuColor,
-                    color: `${fontColorForBackground(osuColor)}`,
+                    color: `${fontColorForBackground(osuColor)}`
                 }}
                 icon={
                     <img
                         style={{
                             width: '50%',
-                            marginTop: '0.5rem',
+                            marginTop: '0.5rem'
                         }}
                         src={osuEngineering}
                         alt='OSU logo'
