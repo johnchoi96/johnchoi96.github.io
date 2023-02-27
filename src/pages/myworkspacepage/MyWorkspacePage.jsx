@@ -22,9 +22,12 @@ export default function MyWorkspacePage({ canScroll }) {
     const { files, music_works } = filenames
 
     return (
-        <div className='container' style={{
-            backgroundColor: getBackgroundColor()
-        }}>
+        <div
+            className='container'
+            style={{
+                backgroundColor: getBackgroundColor(),
+            }}
+        >
             <IncompletePageModal />
             <h3 className={`${textColor}`}>Software and Files</h3>
             <br />
