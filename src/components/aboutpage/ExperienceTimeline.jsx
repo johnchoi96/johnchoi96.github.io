@@ -11,7 +11,6 @@ import { companies } from '../../pages/aboutpage/aboutCareerData'
 import { fontColorForBackground } from '../../pages/Utils/colorUtils'
 
 export default function ExperienceTimeline() {
-
     const { isDarkMode } = useContext(ThemeContext)
 
     const [lineColor, setLineColor] = useState(null)
