@@ -3,9 +3,14 @@ import React, { useContext } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { ThemeContext } from '../App'
 
+import useAnalyticsEventTracker from '../analytics/useAnalyticsEventTracker'
+
 import './Header.styles.scss'
 
 export default function Header() {
+    const aboutEventTracker = useAnalyticsEventTracker('about')
+    const resumeEventTracker = useAnalyticsEventTracker('resume')
+
     const { isDarkMode, setIsDarkMode } = useContext(ThemeContext)
 
     return (
@@ -35,7 +40,11 @@ export default function Header() {
                 >
                     <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                         <li className='nav-item'>
-                            <Link className='nav-link' to='/about'>
+                            <Link
+                                className='nav-link'
+                                to='/about'
+                                onClick={() => aboutEventTracker('about')}
+                            >
                                 About
                             </Link>
                         </li>
@@ -114,6 +123,7 @@ export default function Header() {
                                     process.env.PUBLIC_URL +
                                     '/assets/files/Resume.pdf'
                                 }
+                                onClick={() => resumeEventTracker('resume')}
                             >
                                 Resume
                             </a>
