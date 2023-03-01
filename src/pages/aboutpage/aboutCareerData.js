@@ -5,7 +5,11 @@ export const companies = [
         location: 'Columbus, OH',
         start: 'July 2022',
         end: 'Present',
-        image: 'chase.svg',
+        image: {
+            path: 'jpmc.svg',
+            width: '100%',
+            marginTop: '0.0rem'
+        },
         color: '#117aca',
         descriptions: [
             'Currently assisting in developing a REST API backend application using Java, Spring Boot, MyBatis, and Oracle DB for the Core Development Engineering team.',
@@ -19,7 +23,11 @@ export const companies = [
         location: 'Columbus, OH',
         start: 'Aug 2021',
         end: 'May 2022',
-        image: 'ohio-state-coe.svg',
+        image: {
+            path: 'ohio-state-coe.svg',
+            width: '80%',
+            marginTop: '0.5rem'
+        },
         color: '#ba0c2f',
         descriptions: [
             'TA/Grader for CSE1223, Intro to Computer Programming in Java.'
@@ -31,7 +39,11 @@ export const companies = [
         location: 'Cupertino, CA (Remote)',
         start: 'May 2021',
         end: 'Aug 2021',
-        image: 'apple.svg',
+        image: {
+            path: 'apple.svg',
+            width: '50%',
+            marginTop: '0.55rem'
+        },
         color: '#000000',
         descriptions: [
             'SWE intern in Internet Technologies Team as a Comm Application Automation intern.',
@@ -44,7 +56,11 @@ export const companies = [
         location: 'College Park, MD (Remote)',
         start: 'Oct 2018',
         end: 'May 2021',
-        image: 'nasa.svg',
+        image: {
+            path: 'nasa.svg',
+            width: '80%',
+            marginTop: '0.5rem'
+        },
         color: '#0b3d91',
         descriptions: [
             'Undergraduate assistant under the supervision of Dr. DK Kang sponsored by NASA THP project titled SWE Retrieval Performance Using Active and Passive Microwave Observations”',
@@ -58,7 +74,11 @@ export const companies = [
         location: 'Cary, NC',
         start: 'May 2020',
         end: 'Aug 2020',
-        image: 'sas.svg',
+        image: {
+            path: 'sas.svg',
+            width: '80%',
+            marginTop: '1.1rem'
+        },
         color: '#004C90',
         descriptions: [
             'Responsible for Data and Analytics Visualization on the iOS platform.',
@@ -71,7 +91,11 @@ export const companies = [
         location: 'Morrisville, NC',
         start: 'May 2019',
         end: 'Jan 2020',
-        image: 'lenovo.svg',
+        image: {
+            path: 'lenovo.svg',
+            width: '80%',
+            marginTop: '1.2rem'
+        },
         color: '#e2231a',
         descriptions: [
             'Responsible for developing software solution that automates a significant number of repetitive tasks performed by the employees.',
@@ -84,7 +108,11 @@ export const companies = [
         location: 'Raleigh, NC',
         start: 'Aug 2017',
         end: 'Nov 2017',
-        image: 'ncsu.svg',
+        image: {
+            path: 'ncsu.svg',
+            width: '50%',
+            marginTop: '0.68rem'
+        },
         color: '#CC0000',
         descriptions: [
             "1 out of 8 snare drummers selected for the NC State's 2017 football season"

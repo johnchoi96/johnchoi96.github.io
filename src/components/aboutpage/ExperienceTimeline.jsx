@@ -44,10 +44,10 @@ export default function ExperienceTimeline() {
                         icon={
                             <img
                                 style={{
-                                    width: '50%',
-                                    marginTop: '0.5rem',
+                                    width: company.image.width,
+                                    marginTop: company.image.marginTop,
                                 }}
-                                src={imagePath + company.image}
+                                src={imagePath + company.image.path}
                                 alt='company logo'
                             />
                         }
