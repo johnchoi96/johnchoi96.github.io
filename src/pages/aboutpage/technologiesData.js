@@ -143,6 +143,14 @@ const technologies = [
     {
         name: 'Ubuntu',
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ubuntu/ubuntu-plain.svg'
+    },
+    {
+        name: 'Apache Kafka',
+        srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original-wordmark.svg'
+    },
+    {
+        name: 'Oracle SQL',
+        srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg'
     }
 ]
 
