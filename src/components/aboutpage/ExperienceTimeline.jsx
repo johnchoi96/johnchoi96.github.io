@@ -2,7 +2,7 @@ import React, { useEffect, useContext, useState } from 'react'
 
 import {
     VerticalTimeline,
-    VerticalTimelineElement,
+    VerticalTimelineElement
 } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
 import { ThemeContext } from '../../App'
@@ -30,22 +30,22 @@ export default function ExperienceTimeline() {
                         className='vertical-timeline-element--work'
                         contentStyle={{
                             background: `${company.color}`,
-                            color: `${fontColorForBackground(company.color)}`,
+                            color: `${fontColorForBackground(company.color)}`
                         }}
                         contentArrowStyle={{
-                            borderRight: `7px solid ${company.color}`,
+                            borderRight: `7px solid ${company.color}`
                         }}
                         date={`${company.start} - ${company.end}`}
                         dateClassName={`${isDarkMode ? '' : 'text-dark'}`}
                         iconStyle={{
                             background: `${company.color}`,
-                            color: `${fontColorForBackground(company.color)}`,
+                            color: `${fontColorForBackground(company.color)}`
                         }}
                         icon={
                             <img
                                 style={{
                                     width: company.image.width,
-                                    marginTop: company.image.marginTop,
+                                    marginTop: company.image.marginTop
                                 }}
                                 src={imagePath + company.image.path}
                                 alt='company logo'
