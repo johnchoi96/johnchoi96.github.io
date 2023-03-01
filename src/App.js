@@ -1,4 +1,4 @@
-import React, { useState, createContext, useMemo } from 'react'
+import React, { useState, createContext, useMemo, useEffect } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -12,10 +12,15 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-
 import { BrowserView } from 'react-device-detect'
+import ReactGA from 'react-ga'
 
+// create context for app-wide theme for dark/light mode
 export const ThemeContext = createContext('')
+
+// set up Google Analytics
+const TRACKING_ID = 'UA-145813302-1'
+ReactGA.initialize(TRACKING_ID, { testMode: process.env.NODE_ENV === 'test' })
 
 export default function App() {
     // getter for local saved theme
@@ -32,6 +37,10 @@ export default function App() {
             setIsDarkMode
         }
     }, [isDarkMode])
+
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search)
+    }, [])
 
     return (
         <div className='App'>
