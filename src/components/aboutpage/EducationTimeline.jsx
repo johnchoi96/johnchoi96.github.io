@@ -34,7 +34,7 @@ export default function EducationTimeline() {
                 icon={
                     <img
                         style={{
-                            width: '50%',
+                            width: '80%',
                             marginTop: '0.5rem'
                         }}
                         src={osuEngineering}
