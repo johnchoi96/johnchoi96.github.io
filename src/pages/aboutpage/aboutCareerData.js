@@ -24,8 +24,8 @@ export const companies = [
         start: 'Aug 2021',
         end: 'May 2022',
         image: {
-            path: 'ohio-state-coe.svg',
-            width: '80%',
+            path: 'ohio-state-coe.png',
+            width: '70%',
             marginTop: '0.5rem'
         },
         color: '#ba0c2f',
