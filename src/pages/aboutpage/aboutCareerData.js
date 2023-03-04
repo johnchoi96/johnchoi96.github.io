@@ -115,7 +115,7 @@ export const companies = [
         },
         color: '#CC0000',
         descriptions: [
-            "1 out of 8 snare drummers selected for the NC State's 2017 football season"
+            "1 of 8 snare drummers selected for the NC State's 2017 football season"
         ]
     }
 ]
