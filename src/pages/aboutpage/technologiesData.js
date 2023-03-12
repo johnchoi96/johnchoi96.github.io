@@ -151,6 +151,10 @@ const technologies = [
     {
         name: 'Oracle SQL',
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg'
+    },
+    {
+        name: 'AWS EC2',
+        srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg'
     }
 ]
 
