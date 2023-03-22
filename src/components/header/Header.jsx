@@ -1,9 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useContext } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import { ThemeContext } from '../App'
+import { ThemeContext } from '../../App'
 
-import useAnalyticsEventTracker from '../analytics/useAnalyticsEventTracker'
+import useAnalyticsEventTracker from '../../analytics/useAnalyticsEventTracker'
 
 import './Header.styles.scss'
 
