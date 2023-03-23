@@ -47,6 +47,10 @@ export default function ContactMeModal({ setModalOpen }) {
     }
 
     function validateFormInput() {
+        // if in development, don't perform any check
+        if (process.env.NODE_ENV === 'development') {
+            return true
+        }
         const validateEmail = (email) => {
             return String(email)
                 .toLowerCase()
