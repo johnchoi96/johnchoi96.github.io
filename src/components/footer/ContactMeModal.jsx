@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react'
 import { Box, Button, Typography, Modal, TextField } from '@mui/material'
 import { getBackgroundColor } from '../../Utils/colorUtils'
 import { ThemeContext } from '../../App'
+import { postRequest } from '../../Utils/httpRequests'
+import { config } from '../../Constants'
 
 export default function ContactMeModal({ setModalOpen }) {
     const { isDarkMode } = useContext(ThemeContext)
@@ -35,6 +37,11 @@ export default function ContactMeModal({ setModalOpen }) {
         if (!validateFormInput()) {
             return
         }
+        postRequest(config.endpoint.email, {
+            'subject': subjectContent,
+            'body': messageContent,
+            'contactInfo': emailContent ? emailContent : null
+        })
         await delay(350)
         setModalOpen(false)
     }
