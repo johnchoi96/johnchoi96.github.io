@@ -14,6 +14,7 @@ import Footer from './components/footer/Footer'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { BrowserView } from 'react-device-detect'
 import ReactGA from 'react-ga'
+import SuccessToast from './components/toast/SuccessToast'
 
 // create context for app-wide theme for dark/light mode
 export const ThemeContext = createContext('')
@@ -41,6 +42,8 @@ export default function App() {
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search)
     }, [])
+
+    const [successToastOpen, setSuccessToastOpen] = useState(false)
 
     return (
         <div className='App'>
@@ -75,8 +78,9 @@ export default function App() {
                         />
                     </Routes>
                     <BrowserView>
-                        <Footer />
+                        <Footer setToastOpen={setSuccessToastOpen} />
                     </BrowserView>
+                    <SuccessToast open={successToastOpen} setOpen={setSuccessToastOpen} />
                 </Router>
             </ThemeContext.Provider>
         </div>

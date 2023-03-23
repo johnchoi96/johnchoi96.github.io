@@ -16,4 +16,7 @@ export async function postRequest(url, data) {
             }
             response.json()
         })
+        .catch(error => {
+            console.error(error)
+        })
 }

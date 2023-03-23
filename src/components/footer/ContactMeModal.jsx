@@ -5,7 +5,7 @@ import { ThemeContext } from '../../App'
 import { postRequest } from '../../Utils/httpRequests'
 import { config } from '../../Constants'
 
-export default function ContactMeModal({ setModalOpen }) {
+export default function ContactMeModal({ setModalOpen, setToastOpen }) {
     const { isDarkMode } = useContext(ThemeContext)
 
     const [subjectHasError, setSubjectHasError] = useState(false)
@@ -44,6 +44,7 @@ export default function ContactMeModal({ setModalOpen }) {
         })
         await delay(350)
         setModalOpen(false)
+        setToastOpen(true)
     }
 
     function validateFormInput() {
