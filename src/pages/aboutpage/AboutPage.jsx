@@ -5,7 +5,7 @@ import MyInfoBanner from '../../components/aboutpage/MyInfoBanner'
 import ExperienceTimeline from '../../components/aboutpage/ExperienceTimeline'
 import EducationTimeline from '../../components/aboutpage/EducationTimeline'
 import { ThemeContext } from '../../App'
-import { getBackgroundColor } from '../Utils/colorUtils'
+import { getBackgroundColor } from '../../Utils/colorUtils'
 
 export default function About({ canScroll }) {
     const { isDarkMode } = useContext(ThemeContext)

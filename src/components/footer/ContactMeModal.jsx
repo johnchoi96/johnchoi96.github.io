@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
 import { Box, Button, Typography, Modal, TextField } from '@mui/material'
-import { getBackgroundColor } from '../../pages/Utils/colorUtils'
+import { getBackgroundColor } from '../../Utils/colorUtils'
 import { ThemeContext } from '../../App'
 
 export default function ContactMeModal({ setModalOpen }) {
