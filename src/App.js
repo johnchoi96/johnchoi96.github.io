@@ -8,12 +8,13 @@ import MyWorkspacePage from './pages/myworkspacepage/MyWorkspacePage'
 import CertificatePage from './pages/certificatepage/CertificatePage'
 import DiplomaPage from './pages/diplomapage/DiplomaPage'
 import Error404 from './pages/error/Error404'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from './components/header/Header'
+import Footer from './components/footer/Footer'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { BrowserView } from 'react-device-detect'
 import ReactGA from 'react-ga'
+import ContactMeResultToast from './components/toast/ContactMeResultToast'
 
 // create context for app-wide theme for dark/light mode
 export const ThemeContext = createContext('')
@@ -42,11 +43,17 @@ export default function App() {
         ReactGA.pageview(window.location.pathname + window.location.search)
     }, [])
 
+    // post request result toast state
+    const [toastState, setToastState] = useState({
+        isOpen: false,
+        didSucceed: false
+    })
+
     return (
         <div className='App'>
             <ThemeContext.Provider value={value}>
                 <Router>
-                    <Header />
+                    <Header setToastState={setToastState} />
                     <Routes>
                         <Route
                             exact
@@ -75,8 +82,12 @@ export default function App() {
                         />
                     </Routes>
                     <BrowserView>
-                        <Footer />
+                        <Footer setToastState={setToastState} />
                     </BrowserView>
+                    <ContactMeResultToast
+                        state={toastState}
+                        setState={setToastState}
+                    />
                 </Router>
             </ThemeContext.Provider>
         </div>

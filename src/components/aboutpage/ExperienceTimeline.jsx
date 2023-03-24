@@ -8,7 +8,7 @@ import 'react-vertical-timeline-component/style.min.css'
 import { ThemeContext } from '../../App'
 
 import { companies } from '../../pages/aboutpage/aboutCareerData'
-import { fontColorForBackground } from '../../pages/Utils/colorUtils'
+import { fontColorForBackground } from '../../Utils/colorUtils'
 
 export default function ExperienceTimeline() {
     const { isDarkMode } = useContext(ThemeContext)

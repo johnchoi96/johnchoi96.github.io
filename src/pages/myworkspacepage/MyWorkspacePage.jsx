@@ -3,7 +3,7 @@ import ProjectCard from '../../components/myworkspacepage/ProjectCard'
 import filenames from '../../assets/my-workspace-list.json'
 import IncompletePageModal from '../../components/IncompletePageModal'
 import { ThemeContext } from '../../App'
-import { getBackgroundColor } from '../Utils/colorUtils'
+import { getBackgroundColor } from '../../Utils/colorUtils'
 
 // FIXME: optimize
 export default function MyWorkspacePage({ canScroll }) {
@@ -25,7 +25,7 @@ export default function MyWorkspacePage({ canScroll }) {
         <div
             className='container'
             style={{
-                backgroundColor: getBackgroundColor(),
+                backgroundColor: getBackgroundColor()
             }}
         >
             <IncompletePageModal />

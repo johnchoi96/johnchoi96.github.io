@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import IncompletePageModal from '../../components/IncompletePageModal'
-import { getBackgroundColor } from '../Utils/colorUtils'
+import { getBackgroundColor } from '../../Utils/colorUtils'
 
 export default function CertificatePage({ canScroll }) {
 

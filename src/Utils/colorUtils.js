@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { ThemeContext } from '../../App'
+import { ThemeContext } from '../App'
 
 export function fontColorForBackground(color) {
     color = color.charAt(0) === '#' ? color.substring(1, 7) : color
