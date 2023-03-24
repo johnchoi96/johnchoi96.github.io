@@ -145,7 +145,7 @@ export default function Header({ setToastState }) {
                                 <li className='nav-item'>
                                     <span
                                         className='nav-link justify-content-center'
-                                        onClick={(e) => setModalOpen(true)}
+                                        onClick={() => setModalOpen(true)}
                                     >
                                         Contact Me
                                     </span>
