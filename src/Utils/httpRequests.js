@@ -9,14 +9,5 @@ export async function postRequest(url, data) {
         body: JSON.stringify(data)
     }
 
-    await fetch(url, requestOptions)
-        .then((response) => {
-            if (!response.ok) {
-                console.error(response.status, response.statusText)
-            }
-            response.json()
-        })
-        .catch(error => {
-            console.error(error)
-        })
+    return await fetch(url, requestOptions)
 }

@@ -5,7 +5,7 @@ import { ThemeContext } from '../../App'
 import { postRequest } from '../../Utils/httpRequests'
 import { config } from '../../Constants'
 
-export default function ContactMeModal({ setModalOpen, setToastOpen }) {
+export default function ContactMeModal({ setModalOpen, setToastState }) {
     const { isDarkMode } = useContext(ThemeContext)
 
     const [subjectHasError, setSubjectHasError] = useState(false)
@@ -33,25 +33,32 @@ export default function ContactMeModal({ setModalOpen, setToastOpen }) {
 
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 
-    const handleClose = async () => {
+    const handleSubmit = async () => {
         if (!validateFormInput()) {
             return
         }
+        const successState = { isOpen: true, didSucceed: true }
+        const failedState = { isOpen: true, didSucceed: false }
+
         postRequest(config.endpoint.email, {
             'subject': subjectContent,
             'body': messageContent,
             'contactInfo': emailContent ? emailContent : null
+        }).then(async response => {
+            if (response.ok) {
+                setToastState(successState)
+                // wait for 0.35 seconds after clicking submit button
+                await delay(350)
+                setModalOpen(false)
+            } else {
+                setToastState(failedState)
+            }
+        }).catch(error => {
+            setToastState(failedState)
         })
-        await delay(350)
-        setModalOpen(false)
-        setToastOpen(true)
     }
 
     function validateFormInput() {
-        // if in development, don't perform any check
-        if (process.env.NODE_ENV === 'development') {
-            return true
-        }
         const validateEmail = (email) => {
             return String(email)
                 .toLowerCase()
@@ -150,7 +157,7 @@ export default function ContactMeModal({ setModalOpen, setToastOpen }) {
                     <br />
                     <Button
                         id='button'
-                        onClick={handleClose}
+                        onClick={handleSubmit}
                         variant='contained'
                     >
                         Submit

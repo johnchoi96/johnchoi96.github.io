@@ -14,7 +14,7 @@ import Footer from './components/footer/Footer'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { BrowserView } from 'react-device-detect'
 import ReactGA from 'react-ga'
-import SuccessToast from './components/toast/SuccessToast'
+import ContactMeResultToast from './components/toast/ContactMeResultToast'
 
 // create context for app-wide theme for dark/light mode
 export const ThemeContext = createContext('')
@@ -43,7 +43,11 @@ export default function App() {
         ReactGA.pageview(window.location.pathname + window.location.search)
     }, [])
 
-    const [successToastOpen, setSuccessToastOpen] = useState(false)
+    // post request result toast state
+    const [toastState, setToastState] = useState({
+        isOpen: false,
+        didSucceed: false
+    })
 
     return (
         <div className='App'>
@@ -78,9 +82,9 @@ export default function App() {
                         />
                     </Routes>
                     <BrowserView>
-                        <Footer setToastOpen={setSuccessToastOpen} />
+                        <Footer setToastState={setToastState} />
                     </BrowserView>
-                    <SuccessToast open={successToastOpen} setOpen={setSuccessToastOpen} />
+                    <ContactMeResultToast state={toastState} setState={setToastState} />
                 </Router>
             </ThemeContext.Provider>
         </div>

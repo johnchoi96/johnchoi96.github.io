@@ -2,14 +2,14 @@ import React, { useState, useContext } from 'react'
 import { ThemeContext } from '../../App'
 import ContactMeModal from './ContactMeModal'
 
-export default function Footer({ setToastOpen }) {
+export default function Footer({ setToastState }) {
     const { isDarkMode } = useContext(ThemeContext)
     const [modalOpen, setModalOpen] = useState(false)
 
     return (
         <div>
             {
-                modalOpen ? <ContactMeModal setModalOpen={setModalOpen} setToastOpen={setToastOpen} /> : <></>
+                modalOpen ? <ContactMeModal setModalOpen={setModalOpen} setToastState={setToastState} /> : <></>
             }
             <footer className='container-fullwidth'>
                 <nav
