@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react'
-import { ThemeContext } from '../../App'
-import ContactMeModal from './ContactMeModal'
+import { ThemeContext } from '../../../App'
+import ContactMeModal from '../ContactMeModal'
 
 export default function Footer({ setToastState }) {
     const { isDarkMode } = useContext(ThemeContext)

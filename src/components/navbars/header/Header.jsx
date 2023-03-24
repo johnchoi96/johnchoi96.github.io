@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useContext } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import { ThemeContext } from '../../App'
+import { ThemeContext } from '../../../App'
 
-import ContactMeModal from '../footer/ContactMeModal'
+import ContactMeModal from '../ContactMeModal'
 
-import useAnalyticsEventTracker from '../../analytics/useAnalyticsEventTracker'
+import useAnalyticsEventTracker from '../../../analytics/useAnalyticsEventTracker'
 
 import './Header.styles.scss'
 import { isMobile } from 'react-device-detect'
