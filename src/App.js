@@ -53,7 +53,7 @@ export default function App() {
         <div className='App'>
             <ThemeContext.Provider value={value}>
                 <Router>
-                    <Header />
+                    <Header setToastState={setToastState} />
                     <Routes>
                         <Route
                             exact
@@ -84,7 +84,10 @@ export default function App() {
                     <BrowserView>
                         <Footer setToastState={setToastState} />
                     </BrowserView>
-                    <ContactMeResultToast state={toastState} setState={setToastState} />
+                    <ContactMeResultToast
+                        state={toastState}
+                        setState={setToastState}
+                    />
                 </Router>
             </ThemeContext.Provider>
         </div>

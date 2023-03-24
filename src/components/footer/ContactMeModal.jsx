@@ -41,21 +41,23 @@ export default function ContactMeModal({ setModalOpen, setToastState }) {
         const failedState = { isOpen: true, didSucceed: false }
 
         postRequest(config.endpoint.email, {
-            'subject': subjectContent,
-            'body': messageContent,
-            'contactInfo': emailContent ? emailContent : null
-        }).then(async response => {
-            if (response.ok) {
-                setToastState(successState)
-                // wait for 0.35 seconds after clicking submit button
-                await delay(350)
-                setModalOpen(false)
-            } else {
-                setToastState(failedState)
-            }
-        }).catch(error => {
-            setToastState(failedState)
+            subject: subjectContent,
+            body: messageContent,
+            contactInfo: emailContent ? emailContent : null
         })
+            .then(async (response) => {
+                if (response.ok) {
+                    setToastState(successState)
+                    // wait for 0.35 seconds after clicking submit button
+                    await delay(350)
+                    setModalOpen(false)
+                } else {
+                    setToastState(failedState)
+                }
+            })
+            .catch((error) => {
+                setToastState(failedState)
+            })
     }
 
     function validateFormInput() {

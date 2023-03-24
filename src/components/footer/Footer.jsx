@@ -8,9 +8,14 @@ export default function Footer({ setToastState }) {
 
     return (
         <div>
-            {
-                modalOpen ? <ContactMeModal setModalOpen={setModalOpen} setToastState={setToastState} /> : <></>
-            }
+            {modalOpen ? (
+                <ContactMeModal
+                    setModalOpen={setModalOpen}
+                    setToastState={setToastState}
+                />
+            ) : (
+                <></>
+            )}
             <footer className='container-fullwidth'>
                 <nav
                     className={`navbar fixed-bottom navbar-expand-md bg-${
@@ -31,9 +36,9 @@ export default function Footer({ setToastState }) {
                         <li className='nav-item'>
                             <span
                                 className='nav-link justify-content-center'
-                                onClick={e => setModalOpen(true)}
+                                onClick={(e) => setModalOpen(true)}
                             >
-                                contact me
+                                Contact Me
                             </span>
                         </li>
                     </ul>
