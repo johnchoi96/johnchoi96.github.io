@@ -4,7 +4,7 @@ import { Alert, Snackbar } from '@mui/material'
 export default function ContactMeResultToast({ state, setState }) {
     const content = {
         severity: state.didSucceed ? 'success' : 'error',
-        message: state.didSucceed ? 'Your message has been sent!' : 'There was an error sending your message. Please try again later.'
+        message: state.didSucceed ? 'Your message has been sent!' : 'There was a problem sending your message. Please try again later.'
     }
 
     return (
