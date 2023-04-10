@@ -11,3 +11,15 @@ export async function postRequest(url, data) {
 
     return await fetch(url, requestOptions)
 }
+
+export async function getRequest(url) {
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+    }
+
+    return await fetch(url, requestOptions)
+}
