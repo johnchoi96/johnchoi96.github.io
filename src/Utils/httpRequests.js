@@ -12,7 +12,7 @@ export async function postRequest(url, data) {
     return await fetch(url, requestOptions)
 }
 
-export async function getRequest(url) {
+export async function getRequest(url, params) {
     const requestOptions = {
         method: 'GET',
         headers: {
@@ -20,6 +20,9 @@ export async function getRequest(url) {
         },
         mode: 'cors'
     }
-
-    return await fetch(url, requestOptions)
+    var finalUrl = `${url}?subject=${params.subject}&body=${params.body}`
+    if (params.email && params.email.length !== 0) {
+        finalUrl += `&email=${params.email}`
+    }
+    return await fetch(finalUrl, requestOptions)
 }

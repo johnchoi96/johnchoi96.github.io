@@ -3,6 +3,6 @@ const url = process.env.NODE_ENV === 'development' ? 'http://localhost:8080' : '
 
 export const config = {
     endpoint: {
-        email: `${url}/api/test/ping`,
+        email: `${url}/api/email/contactme`,
     }
 }

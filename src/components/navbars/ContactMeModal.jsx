@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { Box, Button, Typography, Modal, TextField } from '@mui/material'
 import { getBackgroundColor } from '../../Utils/colorUtils'
 import { ThemeContext } from '../../App'
-import { postRequest, getRequest } from '../../Utils/httpRequests'
+import { getRequest } from '../../Utils/httpRequests'
 import { config } from '../../Constants'
 
 export default function ContactMeModal({ setModalOpen, setToastState }) {
@@ -40,7 +40,11 @@ export default function ContactMeModal({ setModalOpen, setToastState }) {
         const successState = { isOpen: true, didSucceed: true }
         const failedState = { isOpen: true, didSucceed: false }
 
-        getRequest(config.endpoint.email)
+        getRequest(config.endpoint.email, {
+            subject: subjectContent,
+            body: messageContent,
+            email: emailContent
+        })
             .then(async (response) => {
                 if (response.ok) {
                     setToastState(successState)
