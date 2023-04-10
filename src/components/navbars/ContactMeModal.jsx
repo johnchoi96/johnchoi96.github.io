@@ -40,7 +40,11 @@ export default function ContactMeModal({ setModalOpen, setToastState }) {
         const successState = { isOpen: true, didSucceed: true }
         const failedState = { isOpen: true, didSucceed: false }
 
-        getRequest(config.endpoint.email)
+        getRequest(config.endpoint.email, {
+            subject: subjectContent,
+            body: messageContent,
+            email: emailContent
+        })
             .then(async (response) => {
                 if (response.ok) {
                     setToastState(successState)
