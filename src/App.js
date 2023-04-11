@@ -15,6 +15,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { BrowserView } from 'react-device-detect'
 import ReactGA from 'react-ga'
 import ContactMeResultToast from './components/toast/ContactMeResultToast'
+import MusicworksPage from './pages/myworkspacepage/MusicworksPage'
 
 // create context for app-wide theme for dark/light mode
 export const ThemeContext = createContext('')
@@ -62,9 +63,13 @@ export default function App() {
                         />
                         <Route exact path='/about' element={<AboutPage />} />
                         <Route
-                            exact
                             path='/myworkspace'
                             element={<MyWorkspacePage />}
+                        />
+                        <Route
+                            exact
+                            path='/myworkspace/musicworks'
+                            element={<MusicworksPage />}
                         />
                         <Route
                             exact
