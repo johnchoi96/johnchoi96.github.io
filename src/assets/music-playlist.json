@@ -1,0 +1,12 @@
+{
+    "musics": [
+        {
+            "title": "NCSU Moana",
+            "src": "/assets/audios/drumline/Moana.mp3"
+        },
+        {
+            "title": "NCSU Rock Show",
+            "src": "/assets/audios/drumline/RockShow.mp3"
+        }
+    ]
+}
