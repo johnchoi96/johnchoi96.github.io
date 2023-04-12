@@ -20,7 +20,7 @@ function MusicPlayer({ src }) {
 function MusicCard({ title, src }) {
     return (
         <div className='music-card'>
-            <h4 className={`text-${getFontColorText()}`}>{title}</h4>
+            <h4 className='text-dark'>{title}</h4>
             <MusicPlayer src={src} />
         </div>
     )
