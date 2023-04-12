@@ -10,7 +10,7 @@ configure({ adapter: new Adapter() })
 describe('Test suite for MyWorkspace Page', () => {
     test('My Workspace loads', async () => {
         render(<MyWorkspacePage />, {wrapper: MemoryRouter})
-        const headingText = screen.getByRole('heading', {name: 'MyWorkspace'})
+        const headingText = screen.getByRole('heading', {name: 'My Workspace'})
         expect(headingText).toBeInTheDocument()
     })
 
