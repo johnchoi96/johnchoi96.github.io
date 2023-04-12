@@ -5,20 +5,40 @@
             "src": "/assets/audios/drumline/Moana.mp3"
         },
         {
+            "title": "NCSU Show 2017 - Daft Punk Medley",
+            "src": "/assets/audios/drumline/Daft_Punk_Medley.mp3"
+        },
+        {
             "title": "NCSU Show 2017 - Rock Show",
             "src": "/assets/audios/drumline/RockShow.mp3"
         },
         {
-            "title": "NCSU Show 2017 - Daft Punk Medley",
-            "src": "/assets/audios/drumline/Daft_Punk_Medley.mp3"
+            "title": "BHS Show 2014",
+            "src": "/assets/audios/drumline/BHS_2014.mp3"
         },
         {
             "title": "BHS Show 2013",
             "src": "/assets/audios/drumline/BHS_2013.mp3"
         },
         {
-            "title": "BHS Show 2014",
-            "src": "/assets/audios/drumline/BHS_2014.mp3"
+            "title": "Three Degrees - Why Does She",
+            "src": "/assets/audios/threedegrees/TD_Why_Does_She.mp3"
+        },
+        {
+            "title": "Three Degrees - Lights",
+            "src": "/assets/audios/threedegrees/TD_Lights.mp3"
+        },
+        {
+            "title": "Three Degrees - Streets",
+            "src": "/assets/audios/threedegrees/TD_Streets.mp3"
+        },
+        {
+            "title": "Three Degrees - In My Path",
+            "src": "/assets/audios/threedegrees/TD_In_My_Path.mp3"
+        },
+        {
+            "title": "NC All-District 2015 Chimes of Liberty March",
+            "src": "/assets/audios/concert_band/Chimes_of_Liberty.mp3"
         }
     ]
 }

@@ -39,25 +39,38 @@ export default function MusicworksPage({ canScroll }) {
 
     return (
         <div
-            className='container'
             style={{
                 paddingTop: '44px',
+                paddingBottom: '50px',
                 backgroundColor: getBackgroundColor(),
                 minHeight: window.innerHeight - 44
             }}
         >
-            <div className='row row-cols-1 row-cols-md-3 g-4'>
-                {musics.map((music, i) => {
-                    return (
-                        <div className='col-lg-4 mb-3' key={i}>
-                            <MusicCard
-                                className='card'
-                                title={music.title}
-                                src={music.src}
-                            />
-                        </div>
-                    )
-                })}
+            <h1 className={`text-${getFontColorText()}`}>Music Works</h1>
+            <h6 className={`text-${getFontColorText()}`}>
+                <i>
+                    Contains audio files for some of the musical works I've done
+                    in the past as a drummer (in chronological order)
+                </i>
+            </h6>
+            <p>
+                <a className='btn btn-danger' target='_blank' rel='noreferrer' href='https://www.youtube.com/playlist?list=PLzSF0uzve8SNz6nASFx1tez8l7wjrpHkI'>YouTube Playlist</a>
+                <a className='btn btn-info ms-2' target='_blank' rel='noreferrer' href='https://threedegreesband.bandcamp.com/album/delta'>Three Degrees BandCamp</a>
+            </p>
+            <div className='container'>
+                <div className='row row-cols-1 row-cols-md-3 g-4'>
+                    {musics.map((music, i) => {
+                        return (
+                            <div className='col-lg-4 mb-3' key={i}>
+                                <MusicCard
+                                    className='card'
+                                    title={music.title}
+                                    src={music.src}
+                                />
+                            </div>
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )
