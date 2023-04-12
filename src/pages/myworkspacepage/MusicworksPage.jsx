@@ -26,7 +26,7 @@ function MusicCard({ title, src }) {
     )
 }
 
-export default function MusicworksPage({ canScroll }) {
+export default function MusicWorksPage({ canScroll }) {
     const { musics } = playlist
 
     useEffect(() => {

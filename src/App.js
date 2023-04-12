@@ -6,6 +6,8 @@ import HomePage from './pages/homepage/HomePage'
 import AboutPage from './pages/aboutpage/AboutPage'
 import MyWorkspacePage from './pages/myworkspacepage/MyWorkspacePage'
 import CertificatePage from './pages/certificatepage/CertificatePage'
+import MusicWorksPage from './pages/myworkspacepage/MusicworksPage'
+import SoftwareWorksPage from './pages/myworkspacepage/SoftwareWorksPage'
 import DiplomaPage from './pages/diplomapage/DiplomaPage'
 import Error404 from './pages/error/Error404'
 import Header from './components/navbars/header/Header'
@@ -15,7 +17,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { BrowserView } from 'react-device-detect'
 import ReactGA from 'react-ga'
 import ContactMeResultToast from './components/toast/ContactMeResultToast'
-import MusicworksPage from './pages/myworkspacepage/MusicworksPage'
 
 // create context for app-wide theme for dark/light mode
 export const ThemeContext = createContext('')
@@ -68,8 +69,13 @@ export default function App() {
                         />
                         <Route
                             exact
-                            path='/myworkspace/musicworks'
-                            element={<MusicworksPage />}
+                            path='/myworkspace/music'
+                            element={<MusicWorksPage />}
+                        />
+                        <Route
+                            exact
+                            path='/myworkspace/software'
+                            element={<SoftwareWorksPage />}
                         />
                         <Route
                             exact
