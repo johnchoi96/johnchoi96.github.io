@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { getBackgroundColor } from '../../Utils/colorUtils'
 
 import AudioPlayer from 'react-h5-audio-player'
@@ -26,8 +26,16 @@ function MusicCard({ title, src }) {
     )
 }
 
-export default function MusicworksPage() {
+export default function MusicworksPage({ canScroll }) {
     const { musics } = playlist
+
+    useEffect(() => {
+        if (canScroll !== undefined && !canScroll) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'scroll'
+        }
+    }, [canScroll])
 
     return (
         <div

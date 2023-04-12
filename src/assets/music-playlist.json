@@ -1,12 +1,24 @@
 {
     "musics": [
         {
-            "title": "NCSU Moana",
+            "title": "NCSU Show 2017 - Moana",
             "src": "/assets/audios/drumline/Moana.mp3"
         },
         {
-            "title": "NCSU Rock Show",
+            "title": "NCSU Show 2017 - Rock Show",
             "src": "/assets/audios/drumline/RockShow.mp3"
+        },
+        {
+            "title": "NCSU Show 2017 - Daft Punk Medley",
+            "src": "/assets/audios/drumline/Daft_Punk_Medley.mp3"
+        },
+        {
+            "title": "BHS Show 2013",
+            "src": "/assets/audios/drumline/BHS_2013.mp3"
+        },
+        {
+            "title": "BHS Show 2014",
+            "src": "/assets/audios/drumline/BHS_2014.mp3"
         }
     ]
 }
