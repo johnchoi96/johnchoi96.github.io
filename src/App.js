@@ -6,6 +6,8 @@ import HomePage from './pages/homepage/HomePage'
 import AboutPage from './pages/aboutpage/AboutPage'
 import MyWorkspacePage from './pages/myworkspacepage/MyWorkspacePage'
 import CertificatePage from './pages/certificatepage/CertificatePage'
+import MusicWorksPage from './pages/myworkspacepage/MusicworksPage'
+import SoftwareWorksPage from './pages/myworkspacepage/SoftwareWorksPage'
 import DiplomaPage from './pages/diplomapage/DiplomaPage'
 import Error404 from './pages/error/Error404'
 import Header from './components/navbars/header/Header'
@@ -62,9 +64,18 @@ export default function App() {
                         />
                         <Route exact path='/about' element={<AboutPage />} />
                         <Route
-                            exact
                             path='/myworkspace'
                             element={<MyWorkspacePage />}
+                        />
+                        <Route
+                            exact
+                            path='/myworkspace/music'
+                            element={<MusicWorksPage />}
+                        />
+                        <Route
+                            exact
+                            path='/myworkspace/software'
+                            element={<SoftwareWorksPage />}
                         />
                         <Route
                             exact

@@ -1,15 +1,33 @@
-import React, { useEffect, useContext } from 'react'
-import ProjectCard from '../../components/myworkspacepage/ProjectCard'
-import filenames from '../../assets/my-workspace-list.json'
-import IncompletePageModal from '../../components/IncompletePageModal'
-import { ThemeContext } from '../../App'
-import { getBackgroundColor } from '../../Utils/colorUtils'
+import React, { useEffect } from 'react'
+import {
+    getBackgroundColor,
+    getFontColorText
+} from '../../Utils/colorUtils'
+import { Link } from 'react-router-dom'
 
-// FIXME: optimize
+import './MyWorkspacePage.styles.css'
+
+function MyWorkspaceCard({ title, image, link }) {
+    return (
+        <div
+            className='workspace-card p-1 h-100'
+            style={{ maxHeight: '30rem' }}
+            role='button'
+        >
+            <img
+                className='w-50 mt-2 align-self-center'
+                src={image}
+                alt='logo'
+            />
+            <h3 className='text-dark'>{title}</h3>
+        </div>
+    )
+}
+
 export default function MyWorkspacePage({ canScroll }) {
-    const { isDarkMode } = useContext(ThemeContext)
-
-    const textColor = isDarkMode ? 'text-white' : 'text-dark'
+    const codeblockPath =
+        process.env.PUBLIC_URL + '/assets/images/codeblock.png'
+    const musicLogoPath = process.env.PUBLIC_URL + '/assets/images/music.png'
 
     useEffect(() => {
         if (canScroll !== undefined && !canScroll) {
@@ -19,49 +37,41 @@ export default function MyWorkspacePage({ canScroll }) {
         }
     }, [canScroll])
 
-    const { files, music_works } = filenames
-
     return (
         <div
-            className='container'
             style={{
-                backgroundColor: getBackgroundColor()
+                paddingTop: '44px',
+                paddingBottom: '50px',
+                backgroundColor: getBackgroundColor(),
+                minHeight: window.innerHeight - 44
             }}
         >
-            <IncompletePageModal />
-            <h3 className={`${textColor}`}>Software and Files</h3>
-            <br />
-            <div className='row row-cols-1 row-cols-md-3 g-4'>
-                {files.map((file, i) => {
-                    return (
-                        <div className='col-lg-4 mb-3' key={i}>
-                            <ProjectCard
-                                className='card'
-                                title={file.name}
-                                path={file.path}
-                                isExternalPath={file.isExternalPath}
-                            />
-                        </div>
-                    )
-                })}
-            </div>
+            <div
+                className='container'
+                style={{
+                    backgroundColor: getBackgroundColor()
+                }}
+            >
+                <h1 className={`text-${getFontColorText()}`}>MyWorkspace</h1>
 
-            <br />
-            <h3 className={`${textColor}`}>Music Work</h3>
-            <br />
-            <div className='row row-cols-1 row-cols-md-3 g-4'>
-                {music_works.map((music_work, i) => {
-                    return (
-                        <div className='col-lg-4 mb-3' key={i}>
-                            <ProjectCard
-                                className='card'
-                                title={music_work.name}
-                                path={music_work.path}
-                                isExternalPath={music_work.isExternalPath}
+                <div className='container mt-5'>
+                    <div className='row row-cols-1 row-cols-md-2 g-4'>
+                        <Link to='/myworkspace/software'>
+                            <MyWorkspaceCard
+                                title='Software'
+                                image={codeblockPath}
+                                link='/myworkspace/software'
                             />
-                        </div>
-                    )
-                })}
+                        </Link>
+                        <Link to='/myworkspace/music'>
+                            <MyWorkspaceCard
+                                title='Music'
+                                image={musicLogoPath}
+                                link='/myworkspace/music'
+                            />
+                        </Link>
+                    </div>
+                </div>
             </div>
         </div>
     )

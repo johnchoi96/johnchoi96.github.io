@@ -16,3 +16,15 @@ export function getBackgroundColor() {
     const { isDarkMode } = useContext(ThemeContext)
     return isDarkMode ? '#09295A' : '#DEE4E7'
 }
+
+export function getFontColorText() {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { isDarkMode } = useContext(ThemeContext)
+    return isDarkMode ? 'white' : 'black'
+}
+
+export function getFontColor() {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+    const { isDarkMode } = useContext(ThemeContext)
+    return isDarkMode ? '#FFFFFF' : '#000000'
+}
