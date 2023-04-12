@@ -12,6 +12,7 @@ function MyWorkspaceCard({ title, image, link }) {
         <div
             className='workspace-card p-1 h-100'
             style={{ maxHeight: '30rem' }}
+            role='button'
         >
             <img
                 className='w-50 mt-2 align-self-center'

@@ -7,8 +7,16 @@ import { MemoryRouter } from 'react-router-dom'
 
 configure({ adapter: new Adapter() })
 
-test('My Workspace loads', async () => {
-    render(<MyWorkspacePage />, {wrapper: MemoryRouter})
-    const headingText = screen.getByRole('heading', {name: 'MyWorkspace'})
-    expect(headingText).toBeInTheDocument()
+describe('Test suite for MyWorkspace Page', () => {
+    test('My Workspace loads', async () => {
+        render(<MyWorkspacePage />, {wrapper: MemoryRouter})
+        const headingText = screen.getByRole('heading', {name: 'MyWorkspace'})
+        expect(headingText).toBeInTheDocument()
+    })
+
+    test('Two Workspace Cards Displayed', () => {
+        render(<MyWorkspacePage />, {wrapper: MemoryRouter})
+        const cards = screen.getAllByRole('button')
+        expect(cards.length).toBe(2)
+    })
 })
