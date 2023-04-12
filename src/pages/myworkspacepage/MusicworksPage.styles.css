@@ -1,9 +1,10 @@
 .music-card {
-    transition: music-card-shadow .3s;
-    border-radius: 10px;
-    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Card look */
+    transition: 0.3s;
+    background-color: white;
+    border-radius: 4px; /* Round corners */
 }
 
 .music-card:hover {
-    music-card-shadow: 0 0 11px rgba(33, 33, 33, .2);
+    box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
 }
