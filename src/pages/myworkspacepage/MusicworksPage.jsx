@@ -7,6 +7,8 @@ import 'react-h5-audio-player/lib/styles.css'
 import { getFontColorText } from '../../Utils/colorUtils'
 import playlist from '../../assets/music-playlist.json'
 
+import './MusicworksPage.styles.css'
+
 function MusicPlayer({ src }) {
     return (
         <div>
@@ -17,7 +19,7 @@ function MusicPlayer({ src }) {
 
 function MusicCard({ title, src }) {
     return (
-        <div>
+        <div className='music-card'>
             <h4 className={`text-${getFontColorText()}`}>{title}</h4>
             <MusicPlayer src={src} />
         </div>

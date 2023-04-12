@@ -1,0 +1,9 @@
+.music-card {
+    transition: music-card-shadow .3s;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.music-card:hover {
+    music-card-shadow: 0 0 11px rgba(33, 33, 33, .2);
+}
