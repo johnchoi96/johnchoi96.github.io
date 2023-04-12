@@ -52,7 +52,7 @@ export default function MyWorkspacePage({ canScroll }) {
                     backgroundColor: getBackgroundColor()
                 }}
             >
-                <h1 className={`text-${getFontColorText()}`}>MyWorkspace</h1>
+                <h1 className={`text-${getFontColorText()}`}>My Workspace</h1>
 
                 <div className='container mt-5'>
                     <div className='row row-cols-1 row-cols-md-2 g-4'>
