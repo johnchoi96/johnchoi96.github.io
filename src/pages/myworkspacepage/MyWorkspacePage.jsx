@@ -1,8 +1,5 @@
 import React, { useEffect } from 'react'
-import {
-    getBackgroundColor,
-    getFontColorText
-} from '../../Utils/colorUtils'
+import { getBackgroundColor, getFontColorText } from '../../Utils/colorUtils'
 import { Link } from 'react-router-dom'
 
 import './MyWorkspacePage.styles.css'
@@ -28,7 +25,6 @@ function MyWorkspaceCard({ title, image }) {
 }
 
 export default function MyWorkspacePage({ canScroll }) {
-
     useEffect(() => {
         if (canScroll !== undefined && !canScroll) {
             document.body.style.overflow = 'hidden'
@@ -63,10 +59,7 @@ export default function MyWorkspacePage({ canScroll }) {
                             />
                         </Link>
                         <Link to='/myworkspace/music'>
-                            <MyWorkspaceCard
-                                title='Music'
-                                image={musicSvg}
-                            />
+                            <MyWorkspaceCard title='Music' image={musicSvg} />
                         </Link>
                     </div>
                 </div>

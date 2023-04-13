@@ -11,7 +11,7 @@ h1 span, h6 span {
 }
 
 .backgroundGif-light {
-    background: url('../../assets/images/light_background.gif');
+    background: url('../../assets/images/backgrounds/light_background.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -22,7 +22,7 @@ h1 span, h6 span {
 }
 
 .backgroundGif-dark {
-    background: url('../../assets/images/dark_background.gif');
+    background: url('../../assets/images/backgrounds/dark_background.gif');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
