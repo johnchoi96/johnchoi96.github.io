@@ -7,6 +7,9 @@ import { Link } from 'react-router-dom'
 
 import './MyWorkspacePage.styles.css'
 
+import codeblockSvg from '../../assets/images/codeblock.svg'
+import musicSvg from '../../assets/images/music.svg'
+
 function MyWorkspaceCard({ title, image }) {
     return (
         <div
@@ -25,9 +28,6 @@ function MyWorkspaceCard({ title, image }) {
 }
 
 export default function MyWorkspacePage({ canScroll }) {
-    const codeblockPath =
-        process.env.PUBLIC_URL + '/assets/images/codeblock.svg'
-    const musicLogoPath = process.env.PUBLIC_URL + '/assets/images/music.svg'
 
     useEffect(() => {
         if (canScroll !== undefined && !canScroll) {
@@ -59,13 +59,13 @@ export default function MyWorkspacePage({ canScroll }) {
                         <Link to='/myworkspace/software'>
                             <MyWorkspaceCard
                                 title='Software'
-                                image={codeblockPath}
+                                image={codeblockSvg}
                             />
                         </Link>
                         <Link to='/myworkspace/music'>
                             <MyWorkspaceCard
                                 title='Music'
-                                image={musicLogoPath}
+                                image={musicSvg}
                             />
                         </Link>
                     </div>
