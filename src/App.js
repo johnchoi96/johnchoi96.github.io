@@ -17,6 +17,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { BrowserView } from 'react-device-detect'
 import ReactGA from 'react-ga4'
 import ContactMeResultToast from './components/toast/ContactMeResultToast'
+import { sendPageview } from './analytics/useAnalyticsEventTracker'
 
 // create context for app-wide theme for dark/light mode
 export const ThemeContext = createContext('')
@@ -42,11 +43,7 @@ export default function App() {
     }, [isDarkMode])
 
     useEffect(() => {
-        ReactGA.send({
-            hitType: 'pageview',
-            page: '/',
-            title: 'Landing Page'
-        })
+        sendPageview('/', 'Landing Page')
     }, [])
 
     // post request result toast state
