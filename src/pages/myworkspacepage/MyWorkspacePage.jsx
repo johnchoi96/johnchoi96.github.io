@@ -6,6 +6,7 @@ import './MyWorkspacePage.styles.css'
 
 import codeblockSvg from '../../assets/images/codeblock.svg'
 import musicSvg from '../../assets/images/music.svg'
+import { sendPageview } from '../../analytics/useAnalyticsEventTracker'
 
 function MyWorkspaceCard({ title, image }) {
     return (
@@ -52,13 +53,26 @@ export default function MyWorkspacePage({ canScroll }) {
 
                 <div className='container mt-5'>
                     <div className='row row-cols-1 row-cols-md-2 g-4'>
-                        <Link to='/myworkspace/software'>
+                        <Link
+                            to='/myworkspace/software'
+                            onClick={() =>
+                                sendPageview(
+                                    '/myworkspace/software',
+                                    'Software Page'
+                                )
+                            }
+                        >
                             <MyWorkspaceCard
                                 title='Software'
                                 image={codeblockSvg}
                             />
                         </Link>
-                        <Link to='/myworkspace/music'>
+                        <Link
+                            to='/myworkspace/music'
+                            onClick={() =>
+                                sendPageview('/myworkspace/music', 'Music Page')
+                            }
+                        >
                             <MyWorkspaceCard title='Music' image={musicSvg} />
                         </Link>
                     </div>

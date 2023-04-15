@@ -15,15 +15,15 @@ import Footer from './components/navbars/footer/Footer'
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { BrowserView } from 'react-device-detect'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 import ContactMeResultToast from './components/toast/ContactMeResultToast'
 
 // create context for app-wide theme for dark/light mode
 export const ThemeContext = createContext('')
 
 // set up Google Analytics
-const TRACKING_ID = 'UA-145813302-1'
-ReactGA.initialize(TRACKING_ID, { testMode: process.env.NODE_ENV === 'test' })
+const MEASUREMENT_ID = 'G-HHXGCPB88V'
+ReactGA.initialize(MEASUREMENT_ID, { testMode: process.env.NODE_ENV === 'test' })
 
 export default function App() {
     // getter for local saved theme
@@ -42,7 +42,11 @@ export default function App() {
     }, [isDarkMode])
 
     useEffect(() => {
-        ReactGA.pageview(window.location.pathname + window.location.search)
+        ReactGA.send({
+            hitType: 'pageview',
+            page: '/',
+            title: 'Landing Page'
+        })
     }, [])
 
     // post request result toast state
