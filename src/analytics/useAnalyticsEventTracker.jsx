@@ -1,10 +1,9 @@
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga4'
 
-const useAnalyticsEventTracker = (category) => {
-    const eventTracker = (action = 'test action', label = 'test label') => {
-        ReactGA.event({ category, action, label })
-    }
-    return eventTracker
+export function sendPageview(page, title, hitType = 'pageview') {
+    ReactGA.send({
+        hitType: hitType,
+        page: page,
+        title: title
+    })
 }
-
-export default useAnalyticsEventTracker

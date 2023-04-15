@@ -5,14 +5,12 @@ import { ThemeContext } from '../../../App'
 
 import ContactMeModal from '../ContactMeModal'
 
-import useAnalyticsEventTracker from '../../../analytics/useAnalyticsEventTracker'
+import { sendPageview } from '../../../analytics/useAnalyticsEventTracker'
 
 import './Header.styles.scss'
 import { isMobile } from 'react-device-detect'
 
 export default function Header({ setToastState }) {
-    const aboutEventTracker = useAnalyticsEventTracker('about')
-    const resumeEventTracker = useAnalyticsEventTracker('resume')
     const [modalOpen, setModalOpen] = useState(false)
 
     const { isDarkMode, setIsDarkMode } = useContext(ThemeContext)
@@ -56,13 +54,24 @@ export default function Header({ setToastState }) {
                                 <Link
                                     className='nav-link'
                                     to='/about'
-                                    onClick={() => aboutEventTracker('about')}
+                                    onClick={() =>
+                                        sendPageview('/about', 'About')
+                                    }
                                 >
                                     About
                                 </Link>
                             </li>
                             <li className='nav-item'>
-                                <Link className='nav-link' to='/myworkspace'>
+                                <Link
+                                    className='nav-link'
+                                    to='/myworkspace'
+                                    onClick={() =>
+                                        sendPageview(
+                                            '/myworkspace',
+                                            'MyWorkspace'
+                                        )
+                                    }
+                                >
                                     My Workspace
                                 </Link>
                             </li>
@@ -115,6 +124,7 @@ export default function Header({ setToastState }) {
                                     target='_blank'
                                     rel='noopener noreferrer'
                                     href='https://www.linkedin.com/in/johnchoi96'
+                                    onClick={() => sendPageview('/linkedin', 'LinkedIn')}
                                 >
                                     LinkedIn
                                 </a>
@@ -125,6 +135,7 @@ export default function Header({ setToastState }) {
                                     target='_blank'
                                     rel='noopener noreferrer'
                                     href='https://orcid.org/0000-0003-4898-323X'
+                                    onClick={() => sendPageview('/ORCID', 'ORCID')}
                                 >
                                     ORCID
                                 </a>
@@ -136,7 +147,9 @@ export default function Header({ setToastState }) {
                                         process.env.PUBLIC_URL +
                                         '/assets/files/Resume.pdf'
                                     }
-                                    onClick={() => resumeEventTracker('resume')}
+                                    onClick={() =>
+                                        sendPageview('/resume', 'Resume', 'file_download')
+                                    }
                                 >
                                     Resume
                                 </a>
