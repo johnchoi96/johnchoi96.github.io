@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+console.log('appId', process.env.REACT_APP_NAME)
+console.log('appVersion', process.env.REACT_APP_VERSION)
 root.render(
   <React.StrictMode>
     <App />

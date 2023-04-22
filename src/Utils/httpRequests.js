@@ -20,7 +20,8 @@ export async function getRequest(url, params) {
         },
         mode: 'cors'
     }
-    var finalUrl = `${url}?subject=${params.subject}&body=${params.body}`
+    const appId = process.env.REACT_APP_NAME
+    var finalUrl = `${url}?appId=${appId}&subject=${params.subject}&body=${params.body}`
     if (params.email && params.email.length !== 0) {
         finalUrl += `&email=${params.email}`
     }
