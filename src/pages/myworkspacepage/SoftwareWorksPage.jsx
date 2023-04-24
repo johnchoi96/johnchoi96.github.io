@@ -6,18 +6,14 @@ import { ThemeContext } from '../../App'
 import { getBackgroundColor } from '../../Utils/colorUtils'
 
 // FIXME: optimize
-export default function SoftwareWorksPage({ canScroll }) {
+export default function SoftwareWorksPage() {
     const { isDarkMode } = useContext(ThemeContext)
 
     const textColor = isDarkMode ? 'text-white' : 'text-dark'
 
     useEffect(() => {
-        if (canScroll !== undefined && !canScroll) {
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'scroll'
-        }
-    }, [canScroll])
+        document.body.style.overflow = 'scroll'
+    }, [])
 
     const { files, music_works } = filenames
 

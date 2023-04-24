@@ -26,16 +26,12 @@ function MusicCard({ title, src }) {
     )
 }
 
-export default function MusicWorksPage({ canScroll }) {
+export default function MusicWorksPage() {
     const { musics } = playlist
 
     useEffect(() => {
-        if (canScroll !== undefined && !canScroll) {
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'scroll'
-        }
-    }, [canScroll])
+        document.body.style.overflow = 'scroll'
+    }, [])
 
     return (
         <div

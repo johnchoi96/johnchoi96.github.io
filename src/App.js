@@ -24,7 +24,9 @@ export const ThemeContext = createContext('')
 
 // set up Google Analytics
 const MEASUREMENT_ID = 'G-HHXGCPB88V'
-ReactGA.initialize(MEASUREMENT_ID, { testMode: process.env.NODE_ENV === 'test' })
+ReactGA.initialize(MEASUREMENT_ID, {
+    testMode: process.env.NODE_ENV === 'test'
+})
 
 export default function App() {
     // getter for local saved theme
@@ -58,11 +60,7 @@ export default function App() {
                 <Router>
                     <Header setToastState={setToastState} />
                     <Routes>
-                        <Route
-                            exact
-                            path='/'
-                            element={<HomePage canScroll={false} />}
-                        />
+                        <Route exact path='/' element={<HomePage />} />
                         <Route exact path='/about' element={<AboutPage />} />
                         <Route
                             path='/myworkspace'
@@ -88,10 +86,7 @@ export default function App() {
                             path='/diplomas'
                             element={<DiplomaPage />}
                         />
-                        <Route
-                            path='*'
-                            element={<Error404 canScroll={false} />}
-                        />
+                        <Route path='*' element={<Error404 />} />
                     </Routes>
                     <BrowserView>
                         <Footer setToastState={setToastState} />
