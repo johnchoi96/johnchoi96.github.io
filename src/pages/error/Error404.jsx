@@ -1,15 +1,11 @@
 import React, { useEffect } from 'react'
 import errorImage from '../../assets/images/backgrounds/error404_meme.jpg'
 
-export default function Error404({ canScroll }) {
+export default function Error404() {
 
     useEffect(() => {
-        if (canScroll !== undefined && !canScroll) {
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'scroll'
-        }
-    }, [canScroll])
+        document.body.style.overflow = 'hidden'
+    }, [])
 
     return (
         <div style={{

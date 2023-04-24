@@ -7,7 +7,7 @@ import EducationTimeline from '../../components/aboutpage/EducationTimeline'
 import { ThemeContext } from '../../App'
 import { getBackgroundColor } from '../../Utils/colorUtils'
 
-export default function About({ canScroll }) {
+export default function About() {
     const { isDarkMode } = useContext(ThemeContext)
     const fontClass = isDarkMode ? 'light-font' : 'dark-font'
 
@@ -53,12 +53,9 @@ export default function About({ canScroll }) {
             })
         }
 
-        if (canScroll !== undefined && !canScroll) {
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'scroll'
-        }
-    }, [canScroll])
+        // enable scroll
+        document.body.style.overflow = 'scroll'
+    }, [])
 
     return (
         <div

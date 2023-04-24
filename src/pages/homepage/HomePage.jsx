@@ -17,18 +17,14 @@ const SplitText = ({ text }) => {
     )
 }
 
-export default function HomePage({ canScroll }) {
+export default function HomePage() {
     const { isDarkMode } = useContext(ThemeContext)
 
     const fontSize = Math.max(window.innerHeight, window.innerWidth) * 0.11 // 11% of the longest side of screen
 
     useEffect(() => {
-        if (canScroll !== undefined && !canScroll) {
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'scroll'
-        }
-    }, [isDarkMode, canScroll])
+        document.body.style.overflow = 'hidden'
+    }, [isDarkMode])
 
     return (
         <div

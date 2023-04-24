@@ -2,15 +2,11 @@ import React, { useEffect } from 'react'
 import IncompletePageModal from '../../components/IncompletePageModal'
 import { getBackgroundColor } from '../../Utils/colorUtils'
 
-export default function CertificatePage({ canScroll }) {
+export default function CertificatePage() {
 
     useEffect(() => {
-        if (canScroll !== undefined && !canScroll) {
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'scroll'
-        }
-    }, [canScroll])
+        document.body.style.overflow = 'scroll'
+    }, [])
 
     const ncsu_certification = '/assets/files/Software_Security_Certification_of_Completion_John_Choi_Spring_2017.pdf'
 
