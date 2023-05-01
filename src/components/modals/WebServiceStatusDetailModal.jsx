@@ -61,7 +61,10 @@ export default function WebServiceStatusDetailModal({ setModalOpen }) {
             .then((response) =>
                 response.ok ? setServiceStatus('✅') : setServiceStatus('❌')
             )
-            .catch((error) => console.log(error))
+            .catch((error) => {
+                console.log(error)
+                setServiceStatus('❌')
+            })
     }, [])
 
     return (
