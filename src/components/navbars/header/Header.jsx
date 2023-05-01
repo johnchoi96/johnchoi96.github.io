@@ -221,7 +221,6 @@ export default function Header({ setToastState }) {
                                     <span className='dropdown-item'>
                                         Status: {serviceStatus}
                                     </span>
-                                    {/* TODO: implement */}
                                 </li>
 
                                 <li>
