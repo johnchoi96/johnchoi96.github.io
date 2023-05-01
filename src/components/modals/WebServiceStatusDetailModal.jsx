@@ -7,6 +7,7 @@ import {
     getRequestForPing,
     getRequestForUptime
 } from '../../Utils/httpRequests'
+import { config } from '../../Constants'
 
 export default function WebServiceStatusDetailModal({ setModalOpen }) {
     const { isDarkMode } = useContext(ThemeContext)
@@ -100,6 +101,25 @@ export default function WebServiceStatusDetailModal({ setModalOpen }) {
                             {`Up for ${uptime.days} days, ${uptime.hours} hours, ${uptime.minutes} minutes, and ${uptime.seconds} seconds.`}
                         </span>
                     </Typography>
+                    {serviceStatus === '❌' ? (
+                        <Typography id='modal-modal-description' sx={{ mt: 2 }}>
+                            <p className={`${textColor}`}>
+                                Downed status could be because the web service
+                                has a self-signed cert and you will need to
+                                visit the API at least once to approve access.
+                            </p>
+                            <a
+                                className={`${textColor}`}
+                                href={`${config.endpoint.uptime}`}
+                                target='_blank'
+                                rel='noreferrer'
+                            >
+                                Click here to visit the web service.
+                            </a>
+                        </Typography>
+                    ) : (
+                        <></>
+                    )}
                     <br />
                     <Button
                         id='button'
