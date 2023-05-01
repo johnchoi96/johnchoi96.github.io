@@ -3,7 +3,10 @@ import React, { useState, useContext, useEffect } from 'react'
 import { Box, Modal, Button, Typography } from '@mui/material'
 import { ThemeContext } from '../../App'
 import { getBackgroundColor } from '../../Utils/colorUtils'
-import { getRequestForPing, getRequestForUptime } from '../../Utils/httpRequests'
+import {
+    getRequestForPing,
+    getRequestForUptime
+} from '../../Utils/httpRequests'
 
 export default function WebServiceStatusDetailModal({ setModalOpen }) {
     const { isDarkMode } = useContext(ThemeContext)
@@ -40,25 +43,25 @@ export default function WebServiceStatusDetailModal({ setModalOpen }) {
 
     useEffect(() => {
         getRequestForUptime()
-        .then((response) => response.json())
-        .then((data) => {
-            setUptime({
-                days: data.uptime.days,
-                hours: data.uptime.hours,
-                minutes: data.uptime.minutes,
-                seconds: data.uptime.seconds,
-                startTime: data.start_time.substring(0, 19)
+            .then((response) => response.json())
+            .then((data) => {
+                setUptime({
+                    days: data.uptime.days,
+                    hours: data.uptime.hours,
+                    minutes: data.uptime.minutes,
+                    seconds: data.uptime.seconds,
+                    startTime: data.start_time.substring(0, 19)
+                })
             })
-        })
-        .catch(error => console.log(error))
+            .catch((error) => console.log(error))
     }, [])
 
     useEffect(() => {
         getRequestForPing()
-        .then((response) =>
-            response.ok ? setServiceStatus('✅') : setServiceStatus('❌')
-        )
-        .catch(error => console.log(error))
+            .then((response) =>
+                response.ok ? setServiceStatus('✅') : setServiceStatus('❌')
+            )
+            .catch((error) => console.log(error))
     }, [])
 
     return (
@@ -76,12 +79,12 @@ export default function WebServiceStatusDetailModal({ setModalOpen }) {
                         component='h2'
                     >
                         <span className={`${textColor} fw-bold`}>
-                            Web Service Uptime
+                            Web Service Status
                         </span>
                     </Typography>
                     <Typography id='modal-modal-description' sx={{ mt: 2 }}>
                         <span className={`${textColor}`}>
-                            Service Status: {serviceStatus}
+                            Status: {serviceStatus}
                         </span>
                     </Typography>
                     <Typography id='modal-modal-description' sx={{ mt: 2 }}>

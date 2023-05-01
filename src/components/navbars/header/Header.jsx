@@ -21,10 +21,10 @@ export default function Header({ setToastState }) {
 
     useEffect(() => {
         getRequestForPing()
-        .then((response) =>
-            response.ok ? setServiceStatus('✅') : setServiceStatus('❌')
-        )
-        .catch(error => console.log(error))
+            .then((response) =>
+                response.ok ? setServiceStatus('✅') : setServiceStatus('❌')
+            )
+            .catch((error) => console.log(error))
     }, [])
 
     return (
