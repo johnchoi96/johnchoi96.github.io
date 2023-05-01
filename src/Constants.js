@@ -6,5 +6,7 @@ const url = process.env.NODE_ENV === 'development' ?
 export const config = {
     endpoint: {
         email: `${url}/api/email/contactme`,
+        ping: `${url}/api/test/ping`,
+        uptime: `${url}/api/test/uptime`
     }
 }

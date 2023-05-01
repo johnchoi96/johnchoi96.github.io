@@ -2,8 +2,7 @@ import React, { useState, useContext } from 'react'
 import { Box, Button, Typography, Modal, TextField } from '@mui/material'
 import { getBackgroundColor } from '../../Utils/colorUtils'
 import { ThemeContext } from '../../App'
-import { getRequest } from '../../Utils/httpRequests'
-import { config } from '../../Constants'
+import { getRequestForContactMe } from '../../Utils/httpRequests'
 
 export default function ContactMeModal({ setModalOpen, setToastState }) {
     const { isDarkMode } = useContext(ThemeContext)
@@ -40,7 +39,7 @@ export default function ContactMeModal({ setModalOpen, setToastState }) {
         const successState = { isOpen: true, didSucceed: true }
         const failedState = { isOpen: true, didSucceed: false }
 
-        getRequest(config.endpoint.email, {
+        getRequestForContactMe({
             subject: subjectContent,
             body: messageContent,
             email: emailContent
