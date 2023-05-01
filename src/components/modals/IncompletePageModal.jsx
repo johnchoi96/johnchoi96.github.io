@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react'
 
 import { Box, Modal, Button, Typography } from '@mui/material'
-import { ThemeContext } from '../App'
-import { getBackgroundColor } from '../Utils/colorUtils'
+import { ThemeContext } from '../../App'
+import { getBackgroundColor } from '../../Utils/colorUtils'
 
 export default function IncompletePageModal() {
     const { isDarkMode } = useContext(ThemeContext)

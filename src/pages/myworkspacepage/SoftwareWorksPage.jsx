@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from 'react'
 import ProjectCard from '../../components/myworkspacepage/ProjectCard'
 import filenames from '../../assets/my-workspace-list.json'
-import IncompletePageModal from '../../components/IncompletePageModal'
+import IncompletePageModal from '../../components/modals/IncompletePageModal'
 import { ThemeContext } from '../../App'
 import { getBackgroundColor } from '../../Utils/colorUtils'
 

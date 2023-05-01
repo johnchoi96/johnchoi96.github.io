@@ -1,19 +1,29 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useContext } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import { ThemeContext } from '../../../App'
 
-import ContactMeModal from '../ContactMeModal'
+import ContactMeModal from '../../modals/ContactMeModal'
 
 import { sendPageview } from '../../../analytics/useAnalyticsEventTracker'
 
 import './Header.styles.scss'
 import { isMobile } from 'react-device-detect'
+import { getRequestForPing } from '../../../Utils/httpRequests'
+import WebServiceStatusDetailModal from '../../modals/WebServiceStatusDetailModal'
 
 export default function Header({ setToastState }) {
     const [modalOpen, setModalOpen] = useState(false)
+    const [statusModalOpen, setStatusModalOpen] = useState(false)
+    const [serviceStatus, setServiceStatus] = useState('❌')
 
     const { isDarkMode, setIsDarkMode } = useContext(ThemeContext)
+
+    useEffect(() => {
+        getRequestForPing().then((response) =>
+            response.ok ? setServiceStatus('✅') : setServiceStatus('❌')
+        )
+    }, [])
 
     return (
         <div>
@@ -21,6 +31,14 @@ export default function Header({ setToastState }) {
                 <ContactMeModal
                     setModalOpen={setModalOpen}
                     setToastState={setToastState}
+                />
+            ) : (
+                <></>
+            )}
+            {statusModalOpen ? (
+                <WebServiceStatusDetailModal
+                    serviceStatus={serviceStatus}
+                    setModalOpen={setStatusModalOpen}
                 />
             ) : (
                 <></>
@@ -124,7 +142,9 @@ export default function Header({ setToastState }) {
                                     target='_blank'
                                     rel='noopener noreferrer'
                                     href='https://www.linkedin.com/in/johnchoi96'
-                                    onClick={() => sendPageview('/linkedin', 'LinkedIn')}
+                                    onClick={() =>
+                                        sendPageview('/linkedin', 'LinkedIn')
+                                    }
                                 >
                                     LinkedIn
                                 </a>
@@ -135,7 +155,9 @@ export default function Header({ setToastState }) {
                                     target='_blank'
                                     rel='noopener noreferrer'
                                     href='https://orcid.org/0000-0003-4898-323X'
-                                    onClick={() => sendPageview('/ORCID', 'ORCID')}
+                                    onClick={() =>
+                                        sendPageview('/ORCID', 'ORCID')
+                                    }
                                 >
                                     ORCID
                                 </a>
@@ -148,7 +170,11 @@ export default function Header({ setToastState }) {
                                         '/assets/files/Resume.pdf'
                                     }
                                     onClick={() =>
-                                        sendPageview('/resume', 'Resume', 'file_download')
+                                        sendPageview(
+                                            '/resume',
+                                            'Resume',
+                                            'file_download'
+                                        )
                                     }
                                 >
                                     Resume
@@ -172,8 +198,48 @@ export default function Header({ setToastState }) {
                         <button className='btn btn-outline-success' type='submit'>Search</button>
                     </form> */}
 
+                        <li className='nav-item dropdown'>
+                            <a
+                                className={`nav-link ms-2 dropdown-toggle text-${
+                                    isDarkMode ? 'light' : 'dark'
+                                }`}
+                                href='#'
+                                id='navbarDropdown'
+                                role='button'
+                                data-bs-toggle='dropdown'
+                                aria-expanded='false'
+                            >
+                                Service Status
+                            </a>
+                            <ul
+                                className={`dropdown-menu dropdown-menu-${
+                                    isDarkMode ? 'dark' : ''
+                                }`}
+                                aria-labelledby='navbarDropdown'
+                            >
+                                <li>
+                                    <span className='dropdown-item'>
+                                        Status: {serviceStatus}
+                                    </span>
+                                    {/* TODO: implement */}
+                                </li>
+
+                                <li>
+                                    <hr className='dropdown-divider' />
+                                </li>
+                                <li>
+                                    <button
+                                        className='dropdown-item'
+                                        type='button'
+                                        onClick={() => setStatusModalOpen(true)}
+                                    >
+                                        Status Details
+                                    </button>
+                                </li>
+                            </ul>
+                        </li>
                         {/* Light/Dark mode switch */}
-                        <div className='form-check form-switch d-flex'>
+                        <div className='form-check ms-2 form-switch d-flex'>
                             <input
                                 className='form-check-input'
                                 type='checkbox'
