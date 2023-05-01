@@ -7,7 +7,7 @@ import {
     getRequestForPing,
     getRequestForUptime
 } from '../../Utils/httpRequests'
-import { config } from '../../Constants'
+import { url } from '../../Constants'
 
 export default function WebServiceStatusDetailModal({ setModalOpen }) {
     const { isDarkMode } = useContext(ThemeContext)
@@ -110,7 +110,7 @@ export default function WebServiceStatusDetailModal({ setModalOpen }) {
                             </p>
                             <a
                                 className={`${textColor}`}
-                                href={`${config.endpoint.uptime}`}
+                                href={`${url}`}
                                 target='_blank'
                                 rel='noreferrer'
                             >
