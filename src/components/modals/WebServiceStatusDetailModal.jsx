@@ -3,9 +3,9 @@ import React, { useState, useContext, useEffect } from 'react'
 import { Box, Modal, Button, Typography } from '@mui/material'
 import { ThemeContext } from '../../App'
 import { getBackgroundColor } from '../../Utils/colorUtils'
-import { getRequestForUptime } from '../../Utils/httpRequests'
+import { getRequestForPing, getRequestForUptime } from '../../Utils/httpRequests'
 
-export default function WebServiceStatusDetailModal({ serviceStatus, setModalOpen }) {
+export default function WebServiceStatusDetailModal({ setModalOpen }) {
     const { isDarkMode } = useContext(ThemeContext)
 
     const [uptime, setUptime] = useState({
@@ -15,6 +15,7 @@ export default function WebServiceStatusDetailModal({ serviceStatus, setModalOpe
         seconds: 0,
         startTime: 'n/a'
     })
+    const [serviceStatus, setServiceStatus] = useState('❌')
 
     const textColor = isDarkMode ? 'text-white' : 'text-dark'
 
@@ -49,6 +50,15 @@ export default function WebServiceStatusDetailModal({ serviceStatus, setModalOpe
                 startTime: data.start_time.substring(0, 19)
             })
         })
+        .catch(error => console.log(error))
+    }, [])
+
+    useEffect(() => {
+        getRequestForPing()
+        .then((response) =>
+            response.ok ? setServiceStatus('✅') : setServiceStatus('❌')
+        )
+        .catch(error => console.log(error))
     }, [])
 
     return (

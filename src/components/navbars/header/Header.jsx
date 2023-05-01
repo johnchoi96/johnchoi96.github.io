@@ -20,9 +20,11 @@ export default function Header({ setToastState }) {
     const { isDarkMode, setIsDarkMode } = useContext(ThemeContext)
 
     useEffect(() => {
-        getRequestForPing().then((response) =>
+        getRequestForPing()
+        .then((response) =>
             response.ok ? setServiceStatus('✅') : setServiceStatus('❌')
         )
+        .catch(error => console.log(error))
     }, [])
 
     return (
@@ -37,7 +39,6 @@ export default function Header({ setToastState }) {
             )}
             {statusModalOpen ? (
                 <WebServiceStatusDetailModal
-                    serviceStatus={serviceStatus}
                     setModalOpen={setStatusModalOpen}
                 />
             ) : (
