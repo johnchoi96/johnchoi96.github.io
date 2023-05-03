@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 import { getBackgroundColor, getFontColorText } from '../../Utils/colorUtils'
 import { Link } from 'react-router-dom'
 
@@ -7,12 +7,14 @@ import './MyWorkspacePage.styles.css'
 import codeblockSvg from '../../assets/images/codeblock.svg'
 import musicSvg from '../../assets/images/music.svg'
 import { sendPageview } from '../../analytics/useAnalyticsEventTracker'
+import { ThemeContext } from '../../App'
 
 function MyWorkspaceCard({ title, image }) {
+    const { isDarkMode } = useContext(ThemeContext)
     return (
         <div
             className='workspace-card p-1 h-100'
-            style={{ maxHeight: '30rem' }}
+            style={{ maxHeight: '30rem', backgroundColor: isDarkMode ? '#343741' : 'white' }}
             role='button'
         >
             <img
@@ -20,19 +22,15 @@ function MyWorkspaceCard({ title, image }) {
                 src={image}
                 alt='logo'
             />
-            <h3 className='text-dark'>{title}</h3>
+            <h3 className={`text-${getFontColorText()}`}>{title}</h3>
         </div>
     )
 }
 
-export default function MyWorkspacePage({ canScroll }) {
+export default function MyWorkspacePage() {
     useEffect(() => {
-        if (canScroll !== undefined && !canScroll) {
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = 'scroll'
-        }
-    }, [canScroll])
+        document.body.style.overflow = 'hidden'
+    }, [])
 
     return (
         <div
@@ -54,6 +52,7 @@ export default function MyWorkspacePage({ canScroll }) {
                 <div className='container mt-5'>
                     <div className='row row-cols-1 row-cols-md-2 g-4'>
                         <Link
+                            style={{textDecoration: 'none'}}
                             to='/myworkspace/software'
                             onClick={() =>
                                 sendPageview(
@@ -68,6 +67,7 @@ export default function MyWorkspacePage({ canScroll }) {
                             />
                         </Link>
                         <Link
+                            style={{textDecoration: 'none'}}
                             to='/myworkspace/music'
                             onClick={() =>
                                 sendPageview('/myworkspace/music', 'Music Page')
