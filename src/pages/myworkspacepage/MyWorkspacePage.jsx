@@ -14,7 +14,10 @@ function MyWorkspaceCard({ title, image }) {
     return (
         <div
             className='workspace-card p-1 h-100'
-            style={{ maxHeight: '30rem', backgroundColor: isDarkMode ? '#343741' : 'white' }}
+            style={{
+                maxHeight: '30rem',
+                backgroundColor: isDarkMode ? '#343741' : 'white'
+            }}
             role='button'
         >
             <img
@@ -30,6 +33,10 @@ function MyWorkspaceCard({ title, image }) {
 export default function MyWorkspacePage() {
     useEffect(() => {
         document.body.style.overflow = 'hidden'
+    }, [])
+
+    useEffect(() => {
+        sendPageview('/myworkspace', 'MyWorkspace')
     }, [])
 
     return (
@@ -52,14 +59,8 @@ export default function MyWorkspacePage() {
                 <div className='container mt-5'>
                     <div className='row row-cols-1 row-cols-md-2 g-4'>
                         <Link
-                            style={{textDecoration: 'none'}}
+                            style={{ textDecoration: 'none' }}
                             to='/myworkspace/software'
-                            onClick={() =>
-                                sendPageview(
-                                    '/myworkspace/software',
-                                    'Software Page'
-                                )
-                            }
                         >
                             <MyWorkspaceCard
                                 title='Software'
@@ -67,11 +68,8 @@ export default function MyWorkspacePage() {
                             />
                         </Link>
                         <Link
-                            style={{textDecoration: 'none'}}
+                            style={{ textDecoration: 'none' }}
                             to='/myworkspace/music'
-                            onClick={() =>
-                                sendPageview('/myworkspace/music', 'Music Page')
-                            }
                         >
                             <MyWorkspaceCard title='Music' image={musicSvg} />
                         </Link>

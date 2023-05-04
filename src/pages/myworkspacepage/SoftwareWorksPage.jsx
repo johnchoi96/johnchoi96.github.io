@@ -4,6 +4,7 @@ import filenames from '../../assets/my-workspace-list.json'
 import IncompletePageModal from '../../components/modals/IncompletePageModal'
 import { ThemeContext } from '../../App'
 import { getBackgroundColor } from '../../Utils/colorUtils'
+import { sendPageview } from '../../analytics/useAnalyticsEventTracker'
 
 // FIXME: optimize
 export default function SoftwareWorksPage() {
@@ -13,6 +14,10 @@ export default function SoftwareWorksPage() {
 
     useEffect(() => {
         document.body.style.overflow = 'scroll'
+    }, [])
+
+    useEffect(() => {
+        sendPageview('/myworkspace/software', 'Software Page')
     }, [])
 
     const { files, music_works } = filenames

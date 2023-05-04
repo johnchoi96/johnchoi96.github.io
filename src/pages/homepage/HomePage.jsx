@@ -38,7 +38,7 @@ export default function HomePage() {
                 <h1
                     style={{
                         fontSize: fontSize,
-                        color: isDarkMode ? 'white' : 'black',
+                        color: isDarkMode ? 'white' : 'black'
                     }}
                 >
                     <SplitText text='John Choi' />

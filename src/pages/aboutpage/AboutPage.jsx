@@ -6,6 +6,7 @@ import ExperienceTimeline from '../../components/aboutpage/ExperienceTimeline'
 import EducationTimeline from '../../components/aboutpage/EducationTimeline'
 import { ThemeContext } from '../../App'
 import { getBackgroundColor } from '../../Utils/colorUtils'
+import { sendPageview } from '../../analytics/useAnalyticsEventTracker'
 
 export default function About() {
     const { isDarkMode } = useContext(ThemeContext)
@@ -52,15 +53,21 @@ export default function About() {
                 bubble.scrollTop = scrollTop - topwalk
             })
         }
+    }, [])
 
+    useEffect(() => {
         // enable scroll
         document.body.style.overflow = 'scroll'
+    }, [])
+
+    useEffect(() => {
+        sendPageview('/about', 'About')
     }, [])
 
     return (
         <div
             style={{
-                backgroundColor: getBackgroundColor(),
+                backgroundColor: getBackgroundColor()
             }}
         >
             <MyInfoBanner />
