@@ -17,11 +17,8 @@ export default function SoftwareWorksPage() {
     }, [])
 
     useEffect(() => {
-        sendPageview(
-            '/myworkspace/software',
-            'Software Page'
-        )
-    })
+        sendPageview('/myworkspace/software', 'Software Page')
+    }, [])
 
     const { files, music_works } = filenames
 

@@ -36,7 +36,7 @@ export default function MusicWorksPage() {
 
     useEffect(() => {
         sendPageview('/myworkspace/music', 'Music Page')
-    })
+    }, [])
 
     return (
         <div
@@ -55,8 +55,22 @@ export default function MusicWorksPage() {
                 </i>
             </h6>
             <p>
-                <a className='btn btn-danger' target='_blank' rel='noreferrer' href='https://www.youtube.com/playlist?list=PLzSF0uzve8SNz6nASFx1tez8l7wjrpHkI'>YouTube Playlist</a>
-                <a className='btn btn-info ms-2' target='_blank' rel='noreferrer' href='https://threedegreesband.bandcamp.com/album/delta'>Three Degrees BandCamp</a>
+                <a
+                    className='btn btn-danger'
+                    target='_blank'
+                    rel='noreferrer'
+                    href='https://www.youtube.com/playlist?list=PLzSF0uzve8SNz6nASFx1tez8l7wjrpHkI'
+                >
+                    YouTube Playlist
+                </a>
+                <a
+                    className='btn btn-info ms-2'
+                    target='_blank'
+                    rel='noreferrer'
+                    href='https://threedegreesband.bandcamp.com/album/delta'
+                >
+                    Three Degrees BandCamp
+                </a>
             </p>
             <div className='container'>
                 <div className='row row-cols-1 row-cols-md-3 g-4'>

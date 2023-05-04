@@ -1,9 +1,14 @@
 import React, { useEffect } from 'react'
+import { sendPageview } from '../../analytics/useAnalyticsEventTracker'
 
 export default function DiplomaPage() {
 
     useEffect(() => {
         document.body.style.overflow = 'scroll'
+    }, [])
+
+    useEffect(() => {
+        sendPageview('/diplomas', 'Diplomas Page')
     }, [])
 
     const tosu_bs_cse = '/assets/files/tOSU_BSCSE_Diploma_JohnChoi.pdf'
