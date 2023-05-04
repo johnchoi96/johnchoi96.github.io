@@ -8,6 +8,7 @@ import { getFontColorText } from '../../Utils/colorUtils'
 import playlist from '../../assets/music-playlist.json'
 
 import './MusicworksPage.styles.css'
+import { sendPageview } from '../../analytics/useAnalyticsEventTracker'
 
 function MusicPlayer({ src }) {
     return (
@@ -32,6 +33,10 @@ export default function MusicWorksPage() {
     useEffect(() => {
         document.body.style.overflow = 'scroll'
     }, [])
+
+    useEffect(() => {
+        sendPageview('/myworkspace/music', 'Music Page')
+    })
 
     return (
         <div

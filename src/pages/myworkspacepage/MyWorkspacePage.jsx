@@ -61,12 +61,6 @@ export default function MyWorkspacePage() {
                         <Link
                             style={{textDecoration: 'none'}}
                             to='/myworkspace/software'
-                            onClick={() =>
-                                sendPageview(
-                                    '/myworkspace/software',
-                                    'Software Page'
-                                )
-                            }
                         >
                             <MyWorkspaceCard
                                 title='Software'
@@ -76,9 +70,6 @@ export default function MyWorkspacePage() {
                         <Link
                             style={{textDecoration: 'none'}}
                             to='/myworkspace/music'
-                            onClick={() =>
-                                sendPageview('/myworkspace/music', 'Music Page')
-                            }
                         >
                             <MyWorkspaceCard title='Music' image={musicSvg} />
                         </Link>
