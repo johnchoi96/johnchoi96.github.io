@@ -73,27 +73,12 @@ export default function Header({ setToastState }) {
                     >
                         <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                             <li className='nav-item'>
-                                <Link
-                                    className='nav-link'
-                                    to='/about'
-                                    onClick={() =>
-                                        sendPageview('/about', 'About')
-                                    }
-                                >
+                                <Link className='nav-link' to='/about'>
                                     About
                                 </Link>
                             </li>
                             <li className='nav-item'>
-                                <Link
-                                    className='nav-link'
-                                    to='/myworkspace'
-                                    onClick={() =>
-                                        sendPageview(
-                                            '/myworkspace',
-                                            'MyWorkspace'
-                                        )
-                                    }
-                                >
+                                <Link className='nav-link' to='/myworkspace'>
                                     My Workspace
                                 </Link>
                             </li>
@@ -120,6 +105,12 @@ export default function Header({ setToastState }) {
                                             target='_blank'
                                             rel='noopener noreferrer'
                                             href='https://www.github.com/johnchoi96'
+                                            onClick={() => {
+                                                sendPageview(
+                                                    '/github-profile',
+                                                    'GitHub Profile'
+                                                )
+                                            }}
                                         >
                                             Profile
                                         </a>
@@ -130,6 +121,12 @@ export default function Header({ setToastState }) {
                                             target='_blank'
                                             rel='noopener noreferrer'
                                             href='https://github.com/johnchoi96/johnchoi96.github.io'
+                                            onClick={() => {
+                                                sendPageview(
+                                                    '/github-source',
+                                                    'GitHub Source'
+                                                )
+                                            }}
                                         >
                                             Source
                                         </a>

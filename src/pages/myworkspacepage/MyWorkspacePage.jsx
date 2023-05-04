@@ -32,6 +32,13 @@ export default function MyWorkspacePage() {
         document.body.style.overflow = 'hidden'
     }, [])
 
+    useEffect(() => {
+        sendPageview(
+            '/myworkspace',
+            'MyWorkspace'
+        )
+    })
+
     return (
         <div
             style={{
