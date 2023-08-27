@@ -1,10 +1,11 @@
 import React, { useEffect, useContext } from 'react'
 import { ThemeContext } from '../../App'
 import './HomePage.styles.css'
+import '../../App.css'
 
 const SplitText = ({ text }) => {
     return (
-        <span aria-label={text}>
+        <span className='disable-text-selection' aria-label={text}>
             {text.split('').map(function (char, index) {
                 const style = { animationDelay: 0.5 + index / 10 + 's' }
                 return (
