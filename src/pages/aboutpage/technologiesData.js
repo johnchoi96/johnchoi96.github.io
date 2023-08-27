@@ -5,7 +5,7 @@ const technologies = [
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'
     },
     {
-        name: 'React',
+        name: 'React.js',
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
     },
     {
@@ -45,7 +45,7 @@ const technologies = [
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg'
     },
     {
-        name: 'Java Spring',
+        name: 'Spring Boot',
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg'
     },
     {
@@ -153,7 +153,7 @@ const technologies = [
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg'
     },
     {
-        name: 'AWS EC2',
+        name: 'AWS',
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg'
     }
 ]
