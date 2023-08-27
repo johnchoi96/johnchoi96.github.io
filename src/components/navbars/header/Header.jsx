@@ -239,24 +239,7 @@ export default function Header({ setToastState }) {
                             </ul>
                         </li>
                         {/* Light/Dark mode switch */}
-                        <div className='form-check ms-2 form-switch d-flex'>
-                            <input
-                                className='form-check-input'
-                                type='checkbox'
-                                role='switch'
-                                id='flexSwitchCheckDefault'
-                                checked={isDarkMode}
-                                onChange={() => {
-                                    setIsDarkMode(!isDarkMode)
-                                    localStorage.setItem(
-                                        'local-theme',
-                                        JSON.stringify(isDarkMode)
-                                    )
-                                }}
-                                style={{
-                                    marginRight: '0.5rem'
-                                }}
-                            />
+                        <div className='form-check form-switch d-flex'>
                             <label
                                 className={`form-check-label ${
                                     isDarkMode ? 'text-white' : 'text-dark'
@@ -287,6 +270,23 @@ export default function Header({ setToastState }) {
                                     </svg>
                                 )}
                             </label>
+                            <input
+                                className='form-check-input ms-1'
+                                type='checkbox'
+                                role='switch'
+                                id='flexSwitchCheckDefault'
+                                checked={isDarkMode}
+                                onChange={() => {
+                                    setIsDarkMode(!isDarkMode)
+                                    localStorage.setItem(
+                                        'local-theme',
+                                        JSON.stringify(isDarkMode)
+                                    )
+                                }}
+                                style={{
+                                    marginRight: '0.5rem'
+                                }}
+                            />
                         </div>
                     </div>
                 </div>
