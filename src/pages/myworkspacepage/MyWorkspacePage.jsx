@@ -3,6 +3,7 @@ import { getBackgroundColor, getFontColorText } from '../../Utils/colorUtils'
 import { Link } from 'react-router-dom'
 
 import './MyWorkspacePage.styles.css'
+import '../../App.css'
 
 import codeblockSvg from '../../assets/images/codeblock.svg'
 import musicSvg from '../../assets/images/music.svg'
@@ -21,11 +22,11 @@ function MyWorkspaceCard({ title, image }) {
             role='button'
         >
             <img
-                className='w-50 mt-2 align-self-center'
+                className='disable-text-selection w-50 mt-2 align-self-center'
                 src={image}
                 alt='logo'
             />
-            <h3 className={`text-${getFontColorText()}`}>{title}</h3>
+            <h3 className={`disable-text-selection text-${getFontColorText()}`}>{title}</h3>
         </div>
     )
 }
