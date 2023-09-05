@@ -12,9 +12,9 @@ export const companies = [
         },
         color: '#117aca',
         descriptions: [
-            'Currently assisting in developing a REST API backend application using Java, Spring Boot, MyBatis, and Oracle DB for the Core Development Engineering team.',
-            'Currently assisting in developing a full stack application by utilizing React.JS, Bootstrap, and Spring Boot.',
-            'Collaborates with other developers in an Agile team environment.'
+            'Assisted in developing a REST API backend application using Java, Spring Boot, MyBatis, and Oracle DB for the Core Development Engineering team. Utilized Apache Kafka to implement event based microservice architecture and process database transactions.',
+            'Assisted in developing a full stack application by utilizing React.js, Bootstrap, and Spring Boot.',
+            "Developed a test generation tool that copies all or a part of the customer's production data from their DB to be used as testing data. The customer would submit a generation request by submitting a REST request with a body to the endpoint hosted by AWS API Gateway, which gets stored in the AWS DynamoDB after triggering an AWS Lambda function to process the request."
         ]
     },
     {
