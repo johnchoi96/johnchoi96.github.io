@@ -71,10 +71,15 @@ export default function About() {
             }}
         >
             <MyInfoBanner />
-            <h1 className={fontClass}>Experiences</h1>
-            <ExperienceTimeline />
-            <h1 className={fontClass}>Education</h1>
-            <EducationTimeline />
+            <section id='experiences'>
+                <h1 className={fontClass}>Experiences</h1>
+                <ExperienceTimeline />
+            </section>
+            <section id='education'>
+                <h1 className={fontClass}>Education</h1>
+                <EducationTimeline />
+            </section>
+
             <h1 className={fontClass}>Technologies I've used...</h1>
             <TechnologyBubbleUI />
         </div>
