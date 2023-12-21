@@ -8,6 +8,8 @@ import 'react-vertical-timeline-component/style.min.css'
 import { ThemeContext } from '../../App'
 
 import { fontColorForBackground } from '../../Utils/colorUtils'
+import { Tooltip } from '@mui/material'
+import { gatechDescription, osuDescription } from './education_description'
 
 function GeorgiaTech({ isDarkMode }) {
     const techGold = '#b3a369'
@@ -40,14 +42,19 @@ function GeorgiaTech({ isDarkMode }) {
             }
             position='right'
         >
-            <h3 className='vertical-timeline-element-title fw-bold'>
-                Georgia Institute of Technology
-            </h3>
-            <h5 className='vertical-timeline-element-subtitle'>
-                College of Computing
-            </h5>
-            <h6 className='vertical-timeline-element-subtitle'>Atlanta, GA</h6>
-            <p>Master of Science - MS, Computer Science</p>
+            <Tooltip title={gatechDescription}>
+                <div>
+                    <h3 className='vertical-timeline-element-title fw-bold'>
+                        Georgia Institute of Technology
+                    </h3>
+                    <h5 className='vertical-timeline-element-subtitle'>
+                        College of Computing
+                    </h5>
+                    <h6 className='vertical-timeline-element-subtitle'>Atlanta, GA</h6>
+                    <p>Master of Science - MS, Computer Science</p>
+                </div>
+            </Tooltip>
+
         </VerticalTimelineElement>
     )
 }
@@ -83,18 +90,22 @@ function TheOhioStateUniversity({ isDarkMode }) {
             }
             position='right'
         >
-            <h3 className='vertical-timeline-element-title fw-bold'>
-                The Ohio State University
-            </h3>
-            <h5 className='vertical-timeline-element-subtitle'>
-                College of Engineering
-            </h5>
-            <h6 className='vertical-timeline-element-subtitle'>Columbus, OH</h6>
-            <p>
-                Bachelor of Science - BS, Computer Science and Engineering
-                <br />
-                Software Engineering Specialization
-            </p>
+            <Tooltip title={osuDescription}>
+                <div>
+                    <h3 className='vertical-timeline-element-title fw-bold'>
+                        The Ohio State University
+                    </h3>
+                    <h5 className='vertical-timeline-element-subtitle'>
+                        College of Engineering
+                    </h5>
+                    <h6 className='vertical-timeline-element-subtitle'>Columbus, OH</h6>
+                    <p>
+                        Bachelor of Science - BS, Computer Science and Engineering
+                        <br />
+                        Software Engineering Specialization
+                    </p>
+                </div>
+            </Tooltip>
         </VerticalTimelineElement>
     )
 }
