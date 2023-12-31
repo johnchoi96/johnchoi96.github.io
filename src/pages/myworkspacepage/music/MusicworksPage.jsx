@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
-import { getBackgroundColor } from '../../Utils/colorUtils'
+import { getBackgroundColor } from '../../../Utils/colorUtils'
 
 import AudioPlayer from 'react-h5-audio-player'
 import 'react-h5-audio-player/lib/styles.css'
 
-import { getFontColorText } from '../../Utils/colorUtils'
-import playlist from '../../assets/music-playlist.json'
+import { getFontColorText } from '../../../Utils/colorUtils'
+import playlist from '../../../assets/music-playlist.json'
 
 import './MusicworksPage.styles.css'
-import { sendPageview } from '../../analytics/useAnalyticsEventTracker'
+import { sendPageview } from '../../../analytics/useAnalyticsEventTracker'
 
 function MusicPlayer({ src }) {
     return (
