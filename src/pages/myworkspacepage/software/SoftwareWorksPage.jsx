@@ -1,69 +1,145 @@
 import React, { useEffect, useContext } from 'react'
-import ProjectCard from '../../../components/myworkspacepage/ProjectCard'
-import filenames from '../../../assets/my-workspace-list.json'
-import IncompletePageModal from '../../../components/modals/IncompletePageModal'
-import { ThemeContext } from '../../../App'
 import { getBackgroundColor } from '../../../Utils/colorUtils'
 import { sendPageview } from '../../../analytics/useAnalyticsEventTracker'
+import { getFontColorText } from '../../../Utils/colorUtils'
+import { isMobile } from 'react-device-detect'
+import { ThemeContext } from '../../../App'
 
-// FIXME: optimize
-export default function SoftwareWorksPage() {
+import default_software_img from '../../../assets/images/codeblock.svg'
+
+function ProjectCard({ projectName, projectDesc, techStacks }) {
+
     const { isDarkMode } = useContext(ThemeContext)
 
-    const textColor = isDarkMode ? 'text-white' : 'text-dark'
+    const containerHeight = isMobile ? '60vh' : '30vh'
 
-    useEffect(() => {
-        document.body.style.overflow = 'scroll'
-    }, [])
-
-    useEffect(() => {
-        sendPageview('/myworkspace/software', 'Software Page')
-    }, [])
-
-    const { files, music_works } = filenames
+    const introFontSize = Math.max(window.innerWidth, window.innerHeight) * 0.02 // font is 2 percent of the longest side of screen
 
     return (
         <div
             className='container'
             style={{
-                backgroundColor: getBackgroundColor()
+                height: containerHeight,
+                width: 'auto',
+                marginTop: '1rem',
+                backgroundColor: 'green'
             }}
         >
-            <IncompletePageModal />
-            <h3 className={`${textColor}`}>Software and Files</h3>
-            <br />
-            <div className='row row-cols-1 row-cols-md-3 g-4'>
-                {files.map((file, i) => {
-                    return (
-                        <div className='col-lg-4 mb-3' key={i}>
-                            <ProjectCard
-                                className='card'
-                                title={file.name}
-                                path={file.path}
-                                isExternalPath={file.isExternalPath}
-                            />
-                        </div>
-                    )
-                })}
+            <div className='row'>
+                <div
+                    className='col-lg-3 mb-5'
+                    style={{
+                        maxHeight: '35vh'
+                    }}
+                >
+                    <img
+                        src={default_software_img}
+                        alt='Default software pic'
+                        height='100%'
+                    />
+                </div>
+                <div className='col-lg-9' style={{backgroundColor: 'red'}}>
+                    <div
+                        className={`col align-self-center text-${
+                            isDarkMode ? 'white' : 'dark'
+                        } text-start`}
+                        style={{
+                            position: 'relative',
+                            left: '50%',
+                            top: '40%',
+                            transform: 'translate(-50%, -50%)'
+                        }}
+                    >
+                        <span
+                            style={{
+                                fontSize: introFontSize,
+                                fontWeight: 'bold'
+                            }}
+                        >
+                            {projectName}
+                        </span>
+                        <br />
+                        <span
+                            style={{
+                                fontSize: introFontSize
+                            }}
+                        >
+                            {projectDesc}
+                        </span>
+                        <br />
+                        <span
+                            style={{
+                                fontSize: introFontSize
+                            }}
+                        >
+                            {techStacks}
+                        </span>
+                        <br />
+                        <span
+                            style={{
+                                fontSize: introFontSize
+                            }}
+                        >
+                            {techStacks}
+                        </span>
+                    </div>
+                </div>
             </div>
+        </div>
+    )
+}
 
-            <br />
-            <h3 className={`${textColor}`}>Music Work</h3>
-            <br />
-            <div className='row row-cols-1 row-cols-md-3 g-4'>
-                {music_works.map((music_work, i) => {
-                    return (
-                        <div className='col-lg-4 mb-3' key={i}>
-                            <ProjectCard
-                                className='card'
-                                title={music_work.name}
-                                path={music_work.path}
-                                isExternalPath={music_work.isExternalPath}
-                            />
-                        </div>
-                    )
-                })}
-            </div>
+export default function SoftwareWorksPage() {
+    useEffect(() => {
+        document.body.style.overflow = 'scroll'
+    }, [])
+
+    useEffect(() => {
+        sendPageview('/myworkspace/music', 'Music Page')
+    }, [])
+
+    return (
+        <div
+            style={{
+                paddingTop: '44px',
+                paddingBottom: '50px',
+                backgroundColor: getBackgroundColor(),
+                minHeight: window.innerHeight - 44
+            }}
+        >
+            <h1 className={`text-${getFontColorText()}`}>Software Works</h1>
+            <h6 className={`text-${getFontColorText()}`}>
+                <i>
+                    Contains some of the side projects I've worked on
+                </i>
+            </h6>
+            {/* <div className='container'>
+                <div className='row row-cols-1 row-cols-md-3 g-4'>
+                    <div className='col-lg-4 mb-3'>
+
+                    </div>
+                </div>
+            </div> */}
+            <ProjectCard
+                projectName='Web Service'
+                projectDesc='Personal web service'
+                techStacks={['Java', 'NoSQL', 'AWS']}
+            />
+            <ProjectCard
+                projectName='Web Service'
+                projectDesc='Personal web service'
+                techStacks={['Java', 'NoSQL', 'AWS']}
+            />
+            <ProjectCard
+                projectName='Web Service'
+                projectDesc='Personal web service'
+                techStacks={['Java', 'NoSQL', 'AWS']}
+            />
+            <ProjectCard
+                projectName='Web Service'
+                projectDesc='Personal web service'
+                techStacks={['Java', 'NoSQL', 'AWS']}
+            />
         </div>
     )
 }
