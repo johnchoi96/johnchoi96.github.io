@@ -1,9 +1,10 @@
+// order matters: most recent position at top
 export const companies = [
     {
         company: 'JPMorgan Chase & Co.',
         position: 'Software Engineer',
         location: 'Columbus, OH',
-        start: 'July 2022',
+        start: 'Dec 2023',
         end: 'Present',
         image: {
             path: 'jpmc.svg',
@@ -12,6 +13,23 @@ export const companies = [
         },
         color: '#117aca',
         descriptions: [
+            'Corporate Sector, Corporate Technology'
+        ]
+    },
+    {
+        company: 'JPMorgan Chase & Co.',
+        position: 'Software Engineer',
+        location: 'Columbus, OH',
+        start: 'July 2022',
+        end: 'Dec 2023',
+        image: {
+            path: 'jpmc.svg',
+            width: '100%',
+            marginTop: '0.0rem'
+        },
+        color: '#117aca',
+        descriptions: [
+            'Architecture & Engineering, Core Dev Engineering (2022) Data Verification Engineering (2023)',
             'Assisted in developing a REST API backend application using Java, Spring Boot, MyBatis, and Oracle DB for the Core Development Engineering team. Utilized Apache Kafka to implement event based microservice architecture and process database transactions.',
             'Assisted in developing a full stack application by utilizing React.js, Bootstrap, and Spring Boot.',
             "Developed a test generation tool that copies all or a part of the customer's production data from their DB to be used as testing data. The customer would submit a generation request by submitting a REST request with a body to the endpoint hosted by AWS API Gateway, which gets stored in the AWS DynamoDB after triggering an AWS Lambda function to process the request."
