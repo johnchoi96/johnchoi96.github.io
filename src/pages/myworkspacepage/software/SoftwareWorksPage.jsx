@@ -97,7 +97,7 @@ export default function SoftwareWorksPage() {
             <h1 className={`text-${getFontColorText()}`}>Software Works</h1>
             <h6 className={`text-${getFontColorText()}`}>
                 <i>
-                    Contains some of the side projects I've worked on
+                    In my free time, I like to work on side projects. This page contains some of the side projects I've worked on
                 </i>
             </h6>
             {
