@@ -1,12 +1,14 @@
 export const softwares = [
     {
-        name: 'Web Service',
-        description: 'Personal web server',
+        name: 'Web Server',
+        description: 'Personal web server in SpringBoot, deployed on AWS EC2 instance',
         techStacks: [
             'Java',
             'SpringBoot',
             'AWS',
-            'REST'
+            'REST',
+            'Firebase',
+            'GitHub Actions'
         ],
         links: {
             github: 'https://github.com/johnchoi96/web-service',
@@ -14,11 +16,13 @@ export const softwares = [
         }
     },
     {
-        name: 'Personal Web App',
+        name: 'Web App',
         description: 'Personal Web App in React.js',
         techStacks: [
             'JavaScript',
-            'React.js'
+            'React.js',
+            'MUI',
+            'GitHub Actions'
         ],
         links: {
             github: 'https://github.com/johnchoi96/johnchoi96.github.io',
@@ -46,7 +50,7 @@ export const softwares = [
         description: 'Discord bot for OSU Korean Discord Server',
         techStacks: [
             'Python',
-            'AWS EC2',
+            'AWS Lambda',
             'GitHub Actions'
         ],
         links: {
@@ -56,7 +60,7 @@ export const softwares = [
     },
     {
         name: 'GeoPic - iOS',
-        description: 'The Ohio State University SP21 CSE 5236 (Mobile App Development) Team Project',
+        description: 'Photo-sharing social media app where users are able to share photos they take in an area, with those who are later in the same area.',
         techStacks: [
             'Swift',
             'UIKit',
