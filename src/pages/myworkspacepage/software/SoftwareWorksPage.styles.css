@@ -4,3 +4,10 @@
     border-radius: 15px;
     -moz-border-radius: 15px;
 }
+
+.project-card-img {
+    height: 20vh;
+    border: 2px solid #000000;
+    border-radius: 100%;
+    display: inline-block;
+}

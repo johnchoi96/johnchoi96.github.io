@@ -34,12 +34,9 @@ function ProjectCard({ projectName, projectDesc, techStacks, links, imgSrc }) {
                     }}
                 >
                     <img
+                        className='project-card-img'
                         src={imgSrc ? imagePath + imgSrc : default_software_img}
                         alt='Default software pic'
-                        height='200vh'
-                        style={{
-                            clipPath: 'circle()'
-                        }}
                     />
                 </div>
                 <div className='col-lg-9'>
