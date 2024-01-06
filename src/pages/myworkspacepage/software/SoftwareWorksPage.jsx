@@ -1,20 +1,20 @@
-import React, { useEffect, useContext } from 'react'
+import React, { useEffect } from 'react'
 import { getBackgroundColor } from '../../../Utils/colorUtils'
 import { sendPageview } from '../../../analytics/useAnalyticsEventTracker'
 import { getFontColorText } from '../../../Utils/colorUtils'
 import { isMobile } from 'react-device-detect'
-import { ThemeContext } from '../../../App'
 import default_software_img from '../../../assets/images/codeblock.svg'
 import { TechStackCapsules, LinkCapsules } from './Capsules'
 import { softwares } from './software_metadata'
+import './SoftwareWorksPage.styles.css'
 
-function ProjectCard({ projectName, projectDesc, techStacks, links }) {
-
-    const { isDarkMode } = useContext(ThemeContext)
+function ProjectCard({ projectName, projectDesc, techStacks, links, imgSrc }) {
 
     const containerHeight = isMobile ? '60vh' : '30vh'
 
-    const fontSize = Math.max(window.innerWidth, window.innerHeight) * 0.02 // font is 2 percent of the longest side of screen
+    const fontSize = 15
+
+    const imagePath = '/assets/softwares/images/'
 
     return (
         <div
@@ -23,7 +23,7 @@ function ProjectCard({ projectName, projectDesc, techStacks, links }) {
                 height: containerHeight,
                 width: 'auto',
                 marginTop: '1rem',
-                backgroundColor: 'green'
+                // backgroundColor: 'green'
             }}
         >
             <div className='row'>
@@ -34,21 +34,23 @@ function ProjectCard({ projectName, projectDesc, techStacks, links }) {
                     }}
                 >
                     <img
-                        src={default_software_img}
+                        src={imgSrc ? imagePath + imgSrc : default_software_img}
                         alt='Default software pic'
-                        height='100%'
+                        height='200vh'
+                        style={{
+                            clipPath: 'circle()'
+                        }}
                     />
                 </div>
-                <div className='col-lg-9' style={{backgroundColor: 'red'}}>
+                <div className='col-lg-9'>
                     <div
-                        className={`col align-self-center text-${
-                            isDarkMode ? 'white' : 'dark'
-                        } text-start`}
+                        className={`col align-self-center text-dark text-start project-card-content`}
                         style={{
                             position: 'relative',
                             left: '50%',
                             top: '40%',
-                            transform: 'translate(-50%, -50%)'
+                            transform: 'translate(-50%, -50%)',
+                            backgroundColor: '#DEE4E7'
                         }}
                     >
                         <span
@@ -105,11 +107,13 @@ export default function SoftwareWorksPage() {
                 softwares.map((software, i) => {
                     return (
                         <ProjectCard
+                            className='pb-5'
                             key={i}
                             projectName={software.name}
                             projectDesc={software.description}
                             techStacks={software.techStacks}
                             links={software.links}
+                            imgSrc={software.imgSrc}
                         />
                     )
                 })

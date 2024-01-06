@@ -23,7 +23,8 @@ export const softwares = [
         links: {
             github: 'https://github.com/johnchoi96/johnchoi96.github.io',
             link: 'https://johnchoi96.github.io/'
-        }
+        },
+        imgSrc: 'webapp.png'
     },
     {
         name: 'JCAlerts - iOS',
@@ -37,7 +38,8 @@ export const softwares = [
         links: {
             github: 'https://github.com/johnchoi96/JCAlerts-iOS',
             link: 'https://apps.apple.com/app/jcalerts/id6473765765'
-        }
+        },
+        imgSrc: 'jcalerts-ios.png'
     },
     {
         name: 'OSUKorean Discord Bot',
@@ -49,7 +51,8 @@ export const softwares = [
         ],
         links: {
             github: 'https://github.com/osucoding/osukoreanbot-discord'
-        }
+        },
+        imgSrc: 'osukoreandiscordbot.png'
     },
     {
         name: 'GeoPic - iOS',
@@ -61,6 +64,7 @@ export const softwares = [
         ],
         links: {
             github: 'https://github.com/CSE5236-GeoPic/GeoPic-iOS'
-        }
+        },
+        imgSrc: 'geopic-ios.png'
     }
 ]
