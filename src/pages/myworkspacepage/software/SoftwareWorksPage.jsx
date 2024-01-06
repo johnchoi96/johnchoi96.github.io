@@ -4,16 +4,17 @@ import { sendPageview } from '../../../analytics/useAnalyticsEventTracker'
 import { getFontColorText } from '../../../Utils/colorUtils'
 import { isMobile } from 'react-device-detect'
 import { ThemeContext } from '../../../App'
-
 import default_software_img from '../../../assets/images/codeblock.svg'
+import { TechStackCapsules, LinkCapsules } from './Capsules'
+import { softwares } from './software_metadata'
 
-function ProjectCard({ projectName, projectDesc, techStacks }) {
+function ProjectCard({ projectName, projectDesc, techStacks, links }) {
 
     const { isDarkMode } = useContext(ThemeContext)
 
     const containerHeight = isMobile ? '60vh' : '30vh'
 
-    const introFontSize = Math.max(window.innerWidth, window.innerHeight) * 0.02 // font is 2 percent of the longest side of screen
+    const fontSize = Math.max(window.innerWidth, window.innerHeight) * 0.02 // font is 2 percent of the longest side of screen
 
     return (
         <div
@@ -52,7 +53,7 @@ function ProjectCard({ projectName, projectDesc, techStacks }) {
                     >
                         <span
                             style={{
-                                fontSize: introFontSize,
+                                fontSize: fontSize,
                                 fontWeight: 'bold'
                             }}
                         >
@@ -61,27 +62,14 @@ function ProjectCard({ projectName, projectDesc, techStacks }) {
                         <br />
                         <span
                             style={{
-                                fontSize: introFontSize
+                                fontSize: fontSize
                             }}
                         >
                             {projectDesc}
                         </span>
                         <br />
-                        <span
-                            style={{
-                                fontSize: introFontSize
-                            }}
-                        >
-                            {techStacks}
-                        </span>
-                        <br />
-                        <span
-                            style={{
-                                fontSize: introFontSize
-                            }}
-                        >
-                            {techStacks}
-                        </span>
+                        <TechStackCapsules techStacks={techStacks} />
+                        <LinkCapsules links={links} />
                     </div>
                 </div>
             </div>
@@ -113,33 +101,19 @@ export default function SoftwareWorksPage() {
                     Contains some of the side projects I've worked on
                 </i>
             </h6>
-            {/* <div className='container'>
-                <div className='row row-cols-1 row-cols-md-3 g-4'>
-                    <div className='col-lg-4 mb-3'>
-
-                    </div>
-                </div>
-            </div> */}
-            <ProjectCard
-                projectName='Web Service'
-                projectDesc='Personal web service'
-                techStacks={['Java', 'NoSQL', 'AWS']}
-            />
-            <ProjectCard
-                projectName='Web Service'
-                projectDesc='Personal web service'
-                techStacks={['Java', 'NoSQL', 'AWS']}
-            />
-            <ProjectCard
-                projectName='Web Service'
-                projectDesc='Personal web service'
-                techStacks={['Java', 'NoSQL', 'AWS']}
-            />
-            <ProjectCard
-                projectName='Web Service'
-                projectDesc='Personal web service'
-                techStacks={['Java', 'NoSQL', 'AWS']}
-            />
+            {
+                softwares.map((software, i) => {
+                    return (
+                        <ProjectCard
+                            key={i}
+                            projectName={software.name}
+                            projectDesc={software.description}
+                            techStacks={software.techStacks}
+                            links={software.links}
+                        />
+                    )
+                })
+            }
         </div>
     )
 }
