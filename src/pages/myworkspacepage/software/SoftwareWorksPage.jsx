@@ -22,8 +22,7 @@ function ProjectCard({ projectName, projectDesc, techStacks, links, imgSrc }) {
             style={{
                 height: containerHeight,
                 width: 'auto',
-                marginTop: '1rem',
-                // backgroundColor: 'green'
+                marginTop: '1rem'
             }}
         >
             <div className='row'>
