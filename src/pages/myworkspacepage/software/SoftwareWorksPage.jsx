@@ -10,7 +10,7 @@ import './SoftwareWorksPage.styles.css'
 
 function ProjectCard({ projectName, projectDesc, techStacks, links, imgSrc }) {
 
-    const containerHeight = isMobile ? '60vh' : '30vh'
+    const containerHeight = isMobile ? '60vh' : '20vh'
 
     const fontSize = 15
 
