@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { getBackgroundColor } from '../../../Utils/colorUtils'
+import { getBackgroundColor, lightColor } from '../../../Utils/colorUtils'
 import { sendPageview } from '../../../analytics/useAnalyticsEventTracker'
 import { getFontColorText } from '../../../Utils/colorUtils'
 import { isMobile } from 'react-device-detect'
@@ -46,7 +46,7 @@ function ProjectCard({ projectName, projectDesc, techStacks, links, imgSrc }) {
                             left: '50%',
                             top: '40%',
                             transform: 'translate(-50%, -50%)',
-                            backgroundColor: '#DEE4E7'
+                            backgroundColor: lightColor
                         }}
                     >
                         <span
