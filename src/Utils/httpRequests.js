@@ -53,11 +53,6 @@ export async function getRequestForUptime() {
 
 export async function postRequestForHaveWeMetOnVal(data) {
     if (data === undefined) return
-    // data = { // TODO: remove for prod
-    //     'username': 'thisGuyCodes',
-    //     'tag': '0991',
-    //     'target_username': 'Rhyestang'
-    // }
     const requestOptions = {
         method: 'POST',
         headers: {
