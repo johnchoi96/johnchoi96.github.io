@@ -7,6 +7,9 @@ export const config = {
     endpoint: {
         email: `${url}/api/email/contactme`,
         ping: `${url}/api/test/ping`,
-        uptime: `${url}/api/test/uptime`
+        uptime: `${url}/api/test/uptime`,
+        valorant: {
+            have_we_met_on_val: 'https://hjj3730tu2.execute-api.us-east-2.amazonaws.com/prod/lookup'
+        }
     }
 }

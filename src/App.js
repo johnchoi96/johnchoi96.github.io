@@ -18,6 +18,7 @@ import { BrowserView } from 'react-device-detect'
 import ReactGA from 'react-ga4'
 import ContactMeResultToast from './components/toast/ContactMeResultToast'
 import { sendPageview } from './analytics/useAnalyticsEventTracker'
+import HaveWeMetOnVal from './pages/gamepage/valorant/HaveWeMetOnVal'
 
 // create context for app-wide theme for dark/light mode
 export const ThemeContext = createContext('')
@@ -85,6 +86,11 @@ export default function App() {
                             exact
                             path='/diplomas'
                             element={<DiplomaPage />}
+                        />
+                        <Route
+                            exact
+                            path='/games/valorant/have-we-met-on-val'
+                            element={<HaveWeMetOnVal />}
                         />
                         <Route path='*' element={<Error404 />} />
                     </Routes>
