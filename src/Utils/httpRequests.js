@@ -50,3 +50,21 @@ export async function getRequestForUptime() {
     }
     return await fetch(config.endpoint.uptime, requestOptions)
 }
+
+export async function postRequestForHaveWeMetOnVal(data) {
+    if (data === undefined) return
+    // data = { // TODO: remove for prod
+    //     'username': 'thisGuyCodes',
+    //     'tag': '0991',
+    //     'target_username': 'Rhyestang'
+    // }
+    const requestOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    };
+
+    return await fetch(config.endpoint.valorant.have_we_met_on_val, requestOptions);
+}
