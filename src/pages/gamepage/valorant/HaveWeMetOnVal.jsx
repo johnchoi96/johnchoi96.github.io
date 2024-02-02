@@ -79,6 +79,11 @@ export default function HaveWeMetOnVal() {
                     Submit
                 </button>
             </form>
+            <footer style={{
+                color: getFontColorText()
+            }}>
+                <i>Work in progress; Last updated: Feb 1, 2024</i>
+            </footer>
         </div>
     )
 }

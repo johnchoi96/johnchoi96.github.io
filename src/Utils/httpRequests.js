@@ -61,5 +61,5 @@ export async function postRequestForHaveWeMetOnVal(data) {
         body: JSON.stringify(data)
     };
 
-    return await fetch(config.endpoint.valorant.have_we_met_on_val, requestOptions);
+    return await fetch(config.endpoint.valorant.have_we_met_on_val, requestOptions)
 }

@@ -64,6 +64,10 @@ export default function HaveWeMetOnValResponseModal({ inputData, setModalOpen })
 
     const [matches, setMatches] = useState([])
     const [loadingFinished, setLoadingFinished] = useState(false)
+    const [errorFound, setErrorFound] = useState(false)
+    const [serverMessage, setServerMessage] = useState('')
+
+    const [expanded, setExpanded] = useState()
 
     const style = {
         position: 'absolute',
@@ -78,13 +82,34 @@ export default function HaveWeMetOnValResponseModal({ inputData, setModalOpen })
     }
 
     useEffect(() => {
+        setMatches([])
+        setLoadingFinished(false)
+        setErrorFound(false)
+        setServerMessage('')
         postRequestForHaveWeMetOnVal(inputData)
-            .then((response) => response.json())
+            .then((response) => {
+                if (response.status >= 200 && response.status <= 204) {
+                    return response.json()
+                } else {
+                    throw Error(response.json())
+                }
+            })
             .then((data) => {
-                setMatches(data.matches)
+                console.log(data)
+                if (data.error !== undefined) {
+                    setErrorFound(true)
+                    setServerMessage(data.error.message)
+                } else {
+                    setErrorFound(false)
+                    setMatches(data.matches)
+                }
+            })
+            .catch((error) => {
+                setServerMessage('Something went wrong with the server. Please try again.')
+            })
+            .finally(() => {
                 setLoadingFinished(true)
             })
-            .catch((error) => console.log(error))
     }, [inputData])
 
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
@@ -92,6 +117,42 @@ export default function HaveWeMetOnValResponseModal({ inputData, setModalOpen })
     const handleClose = async () => {
         await delay(350)
         setModalOpen(false)
+    }
+
+    const handleChangeAccordion = (panelId) => (event, newExpanded) => {
+        setExpanded(newExpanded ? panelId : false)
+    }
+
+    function renderAccordion() {
+        const accordions = (
+            matches.length > 0 ? matches.map((match, i) => (
+                <Accordion expanded={expanded === i} onChange={handleChangeAccordion(i)}>
+                    <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls='panel1-content'
+                        id='panel1-header'
+                    >
+                        Match {i + 1}
+                    </AccordionSummary>
+                    <AccordionDetails
+                        sx={{
+                            maxHeight: '200px',
+                            overflowY: 'scroll'
+                        }}
+                    >
+                        <p>
+                            <MatchMetadata metadata={match.match.metadata} />
+                            <br />
+                            <PlayerMetadata playerData={match.player} />
+                        </p>
+                    </AccordionDetails>
+                </Accordion>
+            )) : <p>No match found</p>
+        )
+        const errorMessage = (
+            <p>{serverMessage}</p>
+        )
+        return errorFound ? errorMessage : accordions
     }
 
     return (
@@ -116,24 +177,7 @@ export default function HaveWeMetOnValResponseModal({ inputData, setModalOpen })
                         <span className={`${textColor}`}>
                             {
                                 loadingFinished ? (
-                                    matches.length > 0 ? matches.map((match, i) => (
-                                        <Accordion>
-                                            <AccordionSummary
-                                                expandIcon={<ExpandMoreIcon />}
-                                                aria-controls="panel1-content"
-                                                id="panel1-header"
-                                            >
-                                                Match {i + 1}
-                                            </AccordionSummary>
-                                            <AccordionDetails>
-                                                <p>
-                                                    <MatchMetadata metadata={match.match.metadata} />
-                                                    <br />
-                                                    <PlayerMetadata playerData={match.player} />
-                                                </p>
-                                            </AccordionDetails>
-                                        </Accordion>
-                                    )) : <p>No match found</p>
+                                    renderAccordion()
                                 ) : (
                                     <p>Loading...</p>
                                 )
