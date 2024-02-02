@@ -4,5 +4,5 @@ export function convertEpochSecondsToEST(seconds) {
     let dateObject = new Date(milliseconds)
     let options = { timeZone: 'America/New_York' }
     let humanReadableDateEST = dateObject.toLocaleString('en-US', options)
-    return humanReadableDateEST
+    return `${humanReadableDateEST} EST`
 }
