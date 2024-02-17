@@ -10,8 +10,8 @@ const allowJs = {
         // Use the exposed transform from vite, instead of directly
         // transforming with esbuild
         return transformWithEsbuild(code, id, {
-        loader: 'jsx',
-        jsx: 'automatic',
+            loader: 'jsx',
+            jsx: 'automatic',
         })
     },
 }
@@ -25,5 +25,13 @@ export default defineConfig({
         open: true,
         // this sets a default port to 3000
         port: 3000,
+    },
+    optimizeDeps: {
+        force: true,
+        esbuildOptions: {
+            loader: {
+                '.js': 'jsx',
+            },
+        },
     },
 })
