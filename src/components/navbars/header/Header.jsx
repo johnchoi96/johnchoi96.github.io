@@ -167,7 +167,7 @@ export default function Header({ setToastState }) {
                                 <a
                                     className='nav-link'
                                     href={
-                                        process.env.PUBLIC_URL +
+
                                         '/assets/files/Resume.pdf'
                                     }
                                     onClick={() =>
