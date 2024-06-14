@@ -5,7 +5,7 @@
   "homepage": "https://johnchoi96.github.io",
   "dependencies": {
     "-": "0.0.1",
-    "@mui/icons-material": "^5.15.3",
+    "@mui/icons-material": "^5.15.18",
     "@mui/material": "^5.15.3",
     "bootstrap": "^5.2.0",
     "bootstrap-icons": "^1.10.3",
