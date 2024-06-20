@@ -1,7 +1,7 @@
 // order matters: most recent position at top
 export const companies = [
     {
-        company: 'JPMorgan Chase & Co.',
+        company: 'JPMorganChase',
         position: 'Software Engineer',
         location: 'Columbus, OH',
         start: 'Dec 2023',
@@ -17,7 +17,7 @@ export const companies = [
         ]
     },
     {
-        company: 'JPMorgan Chase & Co.',
+        company: 'JPMorganChase',
         position: 'Software Engineer',
         location: 'Columbus, OH',
         start: 'July 2022',
