@@ -64,8 +64,7 @@ export default function MyInfoBanner() {
                                 smooth
                                 to='#experiences'
                             >
-                                Full Stack Software Engineer at JPMorgan Chase &
-                                Co.
+                                Full Stack Software Engineer at JPMorganChase
                             </HashLink>
                             <br />
                             <Tooltip title={gatechDescription}>
