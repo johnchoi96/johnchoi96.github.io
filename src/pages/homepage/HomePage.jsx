@@ -21,7 +21,7 @@ const SplitText = ({ text }) => {
 export default function HomePage() {
     const { isDarkMode } = useContext(ThemeContext)
 
-    const fontSize = Math.max(window.innerHeight, window.innerWidth) * 0.11 // 11% of the longest side of screen
+    const fontSize = Math.max(window.innerHeight, window.innerWidth) * 0.06 // 6% of the longest side of screen
 
     useEffect(() => {
         document.body.style.overflow = 'hidden'
@@ -45,7 +45,7 @@ export default function HomePage() {
                     <SplitText text='John Choi' />
                 </h1>
                 <h6>
-                    <SplitText text='Software Engineer at JPMorgan Chase & Co.' />
+                    <SplitText text='Software Engineer at JPMorganChase' />
                 </h6>
             </div>
         </div>
