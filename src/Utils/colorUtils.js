@@ -14,7 +14,7 @@ export function fontColorForBackground(color) {
 export function getBackgroundColor() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const { isDarkMode } = useContext(ThemeContext)
-    return isDarkMode ? '#09295A' : '#DEE4E7'
+    return isDarkMode ? darkColor : lightColor
 }
 
 export function getFontColorText() {
@@ -28,3 +28,7 @@ export function getFontColor() {
     const { isDarkMode } = useContext(ThemeContext)
     return isDarkMode ? '#FFFFFF' : '#000000'
 }
+
+export const lightColor = '#DEE4E7'
+
+export const darkColor = '#003057'

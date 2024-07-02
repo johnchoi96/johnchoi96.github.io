@@ -6,8 +6,8 @@ import HomePage from './pages/homepage/HomePage'
 import AboutPage from './pages/aboutpage/AboutPage'
 import MyWorkspacePage from './pages/myworkspacepage/MyWorkspacePage'
 import CertificatePage from './pages/certificatepage/CertificatePage'
-import MusicWorksPage from './pages/myworkspacepage/MusicworksPage'
-import SoftwareWorksPage from './pages/myworkspacepage/SoftwareWorksPage'
+import MusicWorksPage from './pages/myworkspacepage/music/MusicworksPage'
+import SoftwareWorksPage from './pages/myworkspacepage/software/SoftwareWorksPage'
 import DiplomaPage from './pages/diplomapage/DiplomaPage'
 import Error404 from './pages/error/Error404'
 import Header from './components/navbars/header/Header'
@@ -18,6 +18,7 @@ import { BrowserView } from 'react-device-detect'
 import ReactGA from 'react-ga4'
 import ContactMeResultToast from './components/toast/ContactMeResultToast'
 import { sendPageview } from './analytics/useAnalyticsEventTracker'
+import HaveWeMetOnVal from './pages/gamepage/valorant/HaveWeMetOnVal'
 
 // create context for app-wide theme for dark/light mode
 export const ThemeContext = createContext('')
@@ -85,6 +86,11 @@ export default function App() {
                             exact
                             path='/diplomas'
                             element={<DiplomaPage />}
+                        />
+                        <Route
+                            exact
+                            path='/games/valorant/have-we-met-on-val'
+                            element={<HaveWeMetOnVal />}
                         />
                         <Route path='*' element={<Error404 />} />
                     </Routes>
