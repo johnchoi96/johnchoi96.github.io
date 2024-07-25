@@ -1,7 +1,7 @@
 
 export const url = process.env.NODE_ENV === 'development' ?
     'http://localhost:8080' :
-    'https://ec2-3-130-128-69.us-east-2.compute.amazonaws.com:8080'
+    'https://web-service.johnchoi96.com'
 
 export const config = {
     endpoint: {

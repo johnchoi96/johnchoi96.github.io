@@ -1,6 +1,6 @@
 import { config } from "../Constants"
 
-export async function postRequest(url, data) {
+export async function postRequestForContactMe(data) {
     const requestOptions = {
         method: 'POST',
         headers: {
@@ -9,23 +9,8 @@ export async function postRequest(url, data) {
         mode: 'cors',
         body: JSON.stringify(data)
     }
-
-    return await fetch(url, requestOptions)
-}
-
-export async function getRequestForContactMe(params) {
-    const requestOptions = {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        mode: 'cors'
-    }
     const appId = process.env.REACT_APP_NAME
-    var finalUrl = `${config.endpoint.email}?appId=${appId}&subject=${params.subject}&body=${params.body}`
-    if (params.email && params.email.length !== 0) {
-        finalUrl += `&email=${params.email}`
-    }
+    var finalUrl = `${config.endpoint.email}?appId=${appId}`
     return await fetch(finalUrl, requestOptions)
 }
 
