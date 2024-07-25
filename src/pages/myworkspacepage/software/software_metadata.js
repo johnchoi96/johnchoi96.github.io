@@ -12,7 +12,7 @@ export const softwares = [
         ],
         links: {
             github: 'https://github.com/johnchoi96/web-service',
-            link: 'https://ec2-3-130-128-69.us-east-2.compute.amazonaws.com:8080/api-docs'
+            link: 'https://web-service.johnchoi96.com/api-docs'
         }
     },
     {
