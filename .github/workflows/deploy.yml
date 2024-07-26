@@ -44,8 +44,11 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Set legacy peer deps to true
+        run: npm config set legacy-peer-deps true
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build app
         run: npm run build
