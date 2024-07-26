@@ -26,7 +26,7 @@ export const softwares = [
         ],
         links: {
             github: 'https://github.com/johnchoi96/johnchoi96.github.io',
-            link: 'https://johnchoi96.github.io/'
+            link: 'https://johnchoi96.com/'
         },
         imgSrc: 'webapp.png'
     },
