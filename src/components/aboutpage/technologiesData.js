@@ -5,7 +5,7 @@ const technologies = [
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg'
     },
     {
-        name: 'React.js',
+        name: 'React',
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'
     },
     {
@@ -101,10 +101,6 @@ const technologies = [
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg'
     },
     {
-        name: 'MATLAB',
-        srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg'
-    },
-    {
         name: 'MaterialUI',
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg'
     },
@@ -155,6 +151,18 @@ const technologies = [
     {
         name: 'AWS',
         srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg'
+    },
+    {
+        name: 'Hibernate',
+        srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hibernate/hibernate-original.svg'
+    },
+    {
+        name: 'PostgreSQL',
+        srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg'
+    },
+    {
+        name: 'Liquibase',
+        srcUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/liquibase/liquibase-original.svg'
     }
 ]
 
