@@ -1,0 +1,39 @@
+.my-info-banner {
+    position: relative; /* Ensure z-index works */
+    z-index: 1000; /* Keeps it above other content */
+    margin-bottom: 3rem; /* Space for content below */
+    box-sizing: border-box; /* Include padding and border in the element's width and height */
+    padding: 1rem; /* Optional padding for better spacing */
+}
+
+.my-info-banner .row {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    align-items: center;
+}
+
+.my-info-banner .col-lg-4,
+.my-info-banner .col-lg-8 {
+    flex: 100; /* Allow columns to scale */
+}
+
+@media (max-width: 768px) {
+    .my-info-banner .row {
+        flex-direction: column; /* Stack columns vertically on small screens */
+    }
+
+    .my-info-banner .col-lg-3,
+    .my-info-banner .col-lg-9 {
+        width: 100%; /* Full width for columns on small screens */
+    }
+
+    .my-info-banner {
+        margin-bottom: 1rem; /* Reduce margin for smaller screens */
+    }
+}
+
+.my-info-banner-img {
+    width: 25vw;
+    height: auto;
+    padding-top: 1rem;
+}
