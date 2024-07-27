@@ -160,16 +160,36 @@ const technologies = [
 
 function getRandomColor() {
     const colors = [
-        '#4fafc7',
-        '#2a4d85',
-        '#e99862',
-        '#f4d3a8',
-        '#90cdb7'
+        'primary',
+        'secondary',
+        'error',
+        'info',
+        'success',
+        'warning'
     ]
     return colors[Math.floor(Math.random() * colors.length)]
 }
 
-export function getTechnologies() {
+function splitListByNum(list, num) {
+    const numElementsPerList = Math.floor(list.length / num)
+    let result = []
+    for (let i = 0; i < num; i++) {
+        let currentList = []
+        const startingIndex = i * numElementsPerList
+        for (let j = startingIndex; j < Math.min(startingIndex + numElementsPerList, list.length); j++) {
+            currentList.push(list[j])
+        }
+        result.push(currentList)
+    }
+    // get the leftovers
+    const leftOverNum = list.length % num
+    for (let i = list.length - leftOverNum, j = 0; i < list.length; i++, j++) {
+        result[j].push(list[i])
+    }
+    return result
+}
+
+export function getTechnologies(splitBy = 1) {
     for (let i = technologies.length - 1; i >= 0; i--) {
         const j = Math.floor(Math.random() * (i + 1))
         const temp = technologies[i]
@@ -178,5 +198,5 @@ export function getTechnologies() {
         technologies[j] = temp
         technologies[j].color = getRandomColor()
     }
-    return technologies
+    return splitListByNum(technologies, splitBy)
 }

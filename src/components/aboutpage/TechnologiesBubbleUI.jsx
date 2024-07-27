@@ -6,7 +6,7 @@ import TechnologyBubble from './TechnologyBubble'
 import 'react-bubble-ui/dist/index.css';
 import './bubble.styles.css'
 
-import {getTechnologies} from '../../pages/aboutpage/technologiesData'
+import { getTechnologies } from './technologiesData'
 
 export default function TechnologyBubbleUI() {
 
