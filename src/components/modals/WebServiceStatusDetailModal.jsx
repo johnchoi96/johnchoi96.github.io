@@ -104,9 +104,7 @@ export default function WebServiceStatusDetailModal({ setModalOpen }) {
                     {serviceStatus === '❌' ? (
                         <Typography id='modal-modal-description' sx={{ mt: 2 }}>
                             <p className={`${textColor}`}>
-                                Downed status could be because the web service
-                                has a self-signed cert and you will need to
-                                visit the API at least once to approve access.
+                                The web app had trouble connecting to the web server.
                             </p>
                             <a
                                 className={`${textColor}`}

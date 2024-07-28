@@ -30,6 +30,36 @@ export default function Header({ setToastState }) {
             })
     }, [])
 
+    // For mobile only: close navbar when link tapped
+    useEffect(() => {
+        const navbarLinks = document.querySelectorAll('.navbar-nav .nav-link')
+
+        const handleCollapse = () => {
+            const navbarCollapse = document.getElementById('navbarSupportedContent')
+            if (navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new window.bootstrap.Collapse(navbarCollapse)
+                bsCollapse.hide()
+            }
+        }
+
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', handleCollapse)
+        })
+
+        return () => {
+            navbarLinks.forEach(link => {
+                link.removeEventListener('click', handleCollapse)
+            })
+        }
+    }, [])
+
+    const handleNavLinkClick = () => {
+        const navbarCollapse = document.getElementById('navbarSupportedContent');
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show');
+        }
+    }
+
     return (
         <div>
             {modalOpen ? (
@@ -53,7 +83,7 @@ export default function Header({ setToastState }) {
                 }`}
             >
                 <div className='navbar-height container-fluid'>
-                    <NavLink className='navbar-brand nav-link fw-bold' to='/'>
+                    <NavLink className='navbar-brand nav-link fw-bold' to='/' onClick={handleNavLinkClick}>
                         Home
                     </NavLink>
                     <button
