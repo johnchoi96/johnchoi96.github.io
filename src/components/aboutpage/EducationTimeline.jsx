@@ -24,7 +24,7 @@ function GeorgiaTech({ isDarkMode }) {
                 color: `${fontColorForBackground(techGold)}`
             }}
             contentArrowStyle={{ borderRight: `7px solid ${techGold}` }}
-            date='Starts 2024'
+            date='Aug 2024 - Present'
             dateClassName={`${isDarkMode ? 'text-light' : 'text-dark'}`}
             iconStyle={{
                 background: techGold,
