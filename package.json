@@ -6,7 +6,7 @@
   "dependencies": {
     "-": "0.0.1",
     "@mui/icons-material": "^5.16.4",
-    "@mui/material": "^5.16.4",
+    "@mui/material": "^5.16.6",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "gh-pages": "^5.0.0",
