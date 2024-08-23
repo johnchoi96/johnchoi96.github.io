@@ -1,7 +1,7 @@
 export const softwares = [
     {
         name: 'Web Server',
-        description: 'Personal web server in SpringBoot, deployed on AWS EC2 instance',
+        description: 'Personal web server in SpringBoot, deployed on AWS',
         techStacks: [
             'Java',
             'SpringBoot',
@@ -17,7 +17,7 @@ export const softwares = [
     },
     {
         name: 'Web App',
-        description: 'Personal Web App in React.js',
+        description: 'Personal Web App in React',
         techStacks: [
             'JavaScript',
             'React.js',
