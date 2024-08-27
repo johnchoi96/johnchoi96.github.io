@@ -51,7 +51,11 @@ function GeorgiaTech({ isDarkMode }) {
                         College of Computing
                     </h5>
                     <h6 className='vertical-timeline-element-subtitle'>Atlanta, GA</h6>
-                    <p>Master of Science - MS, Computer Science</p>
+                    <p>
+                        Master of Science - MS, Computer Science
+                        <br />
+                        Computing Systems Specialization
+                    </p>
                 </div>
             </Tooltip>
 
