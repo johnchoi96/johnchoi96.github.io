@@ -30,13 +30,8 @@ ReactGA.initialize(MEASUREMENT_ID, {
 })
 
 export default function App() {
-    // getter for local saved theme
-    var localStorageTheme = JSON.parse(localStorage.getItem('local-theme'))
-    if (localStorageTheme === null) {
-        localStorageTheme = false
-    }
 
-    const [isDarkMode, setIsDarkMode] = useState(!localStorageTheme)
+    const [isDarkMode, setIsDarkMode] = useState(false)
 
     const value = useMemo(() => {
         return {
@@ -47,6 +42,22 @@ export default function App() {
 
     useEffect(() => {
         sendPageview('/', 'Landing Page')
+    }, [])
+
+    /**
+     * Enable dark mode based on the system setting
+     */
+    useEffect(() => {
+        const mq = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        )
+
+        if (mq.matches) {
+            setIsDarkMode(true)
+        }
+
+        // This callback will fire if the perferred color scheme changes without a reload
+        mq.addEventListener("change", (evt) => setIsDarkMode(evt.matches))
     }, [])
 
     // post request result toast state
