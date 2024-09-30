@@ -49,6 +49,22 @@ export default function App() {
         sendPageview('/', 'Landing Page')
     }, [])
 
+    /**
+     * Enable dark mode based on the system setting
+     */
+    useEffect(() => {
+        const mq = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        )
+
+        if (mq.matches) {
+            setIsDarkMode(true)
+        }
+
+        // This callback will fire if the perferred color scheme changes without a reload
+        mq.addEventListener("change", (evt) => setIsDarkMode(evt.matches))
+    }, [])
+
     // post request result toast state
     const [toastState, setToastState] = useState({
         isOpen: false,
