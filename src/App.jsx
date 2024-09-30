@@ -30,13 +30,8 @@ ReactGA.initialize(MEASUREMENT_ID, {
 })
 
 export default function App() {
-    // getter for local saved theme
-    var localStorageTheme = JSON.parse(localStorage.getItem('local-theme'))
-    if (localStorageTheme === null) {
-        localStorageTheme = false
-    }
 
-    const [isDarkMode, setIsDarkMode] = useState(!localStorageTheme)
+    const [isDarkMode, setIsDarkMode] = useState(false)
 
     const value = useMemo(() => {
         return {
