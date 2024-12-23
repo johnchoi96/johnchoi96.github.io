@@ -5,7 +5,7 @@
   "homepage": "https://johnchoi96.com/",
   "dependencies": {
     "-": "0.0.1",
-    "@mui/icons-material": "^5.16.7",
+    "@mui/icons-material": "^5.16.8",
     "@mui/material": "^5.16.7",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
