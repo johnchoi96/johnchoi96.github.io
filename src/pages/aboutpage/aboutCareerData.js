@@ -2,9 +2,9 @@
 export const companies = [
     {
         company: 'JPMorganChase',
-        position: 'Software Engineer',
+        position: 'Software Engineer II',
         location: 'Columbus, OH',
-        start: 'Dec 2023',
+        start: 'Jan 2025',
         end: 'Present',
         image: {
             path: 'jpmc.svg',
@@ -13,15 +13,18 @@ export const companies = [
         },
         color: '#117aca',
         descriptions: [
-            'Corporate Sector, Corporate Technology'
+            "Developed an enterprise-level full-stack application for tracking Legal Entities and JPMC's legal permissibility to place trades, utilizing Spring Boot, Hibernate, React, Oracle DB, and microservices architecture",
+            'Gained hands-on experience across all stages of the software development lifecycle, including planning, building, testing, and deployment',
+            'Collaborated effectively with developers, product managers, and end-users to deliver high-quality application'
+
         ]
     },
     {
         company: 'JPMorganChase',
-        position: 'Software Engineer',
+        position: 'Software Engineer I',
         location: 'Columbus, OH',
         start: 'July 2022',
-        end: 'Dec 2023',
+        end: 'Jan 2025',
         image: {
             path: 'jpmc.svg',
             width: '100%',

@@ -45,7 +45,7 @@ export default function HomePage() {
                     <SplitText text='John Choi' />
                 </h1>
                 <h6>
-                    <SplitText text='Software Engineer at JPMorganChase' />
+                    <SplitText text='Software Engineer II at JPMorganChase' />
                 </h6>
             </div>
         </div>
