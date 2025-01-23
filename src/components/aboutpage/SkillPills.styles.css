@@ -1,0 +1,33 @@
+/* Thanks ChatGPT - animation is hard af */
+
+.scroll-container {
+    overflow: hidden; /* Hide scrollbars */
+    white-space: nowrap; /* Prevent wrapping */
+    position: relative;
+    width: 100%;
+    background-color: transparent !important;
+}
+
+.scroll-content {
+    display: inline-flex; /* Align items horizontally */
+    white-space: nowrap; /* Prevent wrapping */
+    animation: scroll linear infinite;
+}
+
+@keyframes scroll-left {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-right {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}

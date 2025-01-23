@@ -24,7 +24,7 @@ function GeorgiaTech({ isDarkMode }) {
                 color: `${fontColorForBackground(techGold)}`
             }}
             contentArrowStyle={{ borderRight: `7px solid ${techGold}` }}
-            date='Starts 2024'
+            date='Aug 2024 - Present'
             dateClassName={`${isDarkMode ? 'text-light' : 'text-dark'}`}
             iconStyle={{
                 background: techGold,
@@ -51,7 +51,11 @@ function GeorgiaTech({ isDarkMode }) {
                         College of Computing
                     </h5>
                     <h6 className='vertical-timeline-element-subtitle'>Atlanta, GA</h6>
-                    <p>Master of Science - MS, Computer Science</p>
+                    <p>
+                        Master of Science - MS, Computer Science
+                        <br />
+                        Computing Systems Specialization
+                    </p>
                 </div>
             </Tooltip>
 

@@ -9,4 +9,5 @@ Personal Webpage
 https://www.c-sharpcorner.com/article/how-to-deploy-react-application-on-github-pages/
 
 ## Environment
-https://johnchoi96.github.io/
+* https://johnchoi96.com/
+* https://johnchoi96.github.io/

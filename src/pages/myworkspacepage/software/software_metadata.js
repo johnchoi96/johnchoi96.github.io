@@ -1,7 +1,7 @@
 export const softwares = [
     {
         name: 'Web Server',
-        description: 'Personal web server in SpringBoot, deployed on AWS EC2 instance',
+        description: 'Personal web server in SpringBoot, deployed on AWS',
         techStacks: [
             'Java',
             'SpringBoot',
@@ -12,12 +12,12 @@ export const softwares = [
         ],
         links: {
             github: 'https://github.com/johnchoi96/web-service',
-            link: 'https://ec2-3-130-128-69.us-east-2.compute.amazonaws.com:8080/api-docs'
+            link: 'https://web-service.johnchoi96.com/api-docs'
         }
     },
     {
         name: 'Web App',
-        description: 'Personal Web App in React.js',
+        description: 'Personal Web App in React',
         techStacks: [
             'JavaScript',
             'React.js',
@@ -26,7 +26,7 @@ export const softwares = [
         ],
         links: {
             github: 'https://github.com/johnchoi96/johnchoi96.github.io',
-            link: 'https://johnchoi96.github.io/'
+            link: 'https://johnchoi96.com/'
         },
         imgSrc: 'webapp.png'
     },
