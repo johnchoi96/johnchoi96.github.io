@@ -19,13 +19,15 @@ const ValentineAcceptedView = ({ elliePayload }) => {
 const AskView = ({ elliePayload, handleOfferAccepted }) => {
     const [yesButtonSize, setYesButtonSize] = useState({
         width: 150,
-        height: 50
+        height: 50,
+        fontSize: 14
     })
 
     const handleNoClick = () => {
         setYesButtonSize({
             width: yesButtonSize.width * 1.1,
-            height: yesButtonSize.height * 1.1
+            height: yesButtonSize.height * 1.1,
+            fontSize: yesButtonSize.fontSize * 1.1
         })
     }
 
@@ -35,12 +37,17 @@ const AskView = ({ elliePayload, handleOfferAccepted }) => {
             <div style={{display: 'flex', padding: '1rem', justifyContent: 'center'}}>
                 <div style={{padding: '1rem'}}>
                     <Button
-                        sx={{ width: `${yesButtonSize.width}px`, height: `${yesButtonSize.height}px`}}
+                        sx={{
+                            width: `${yesButtonSize.width}px`,
+                            height: `${yesButtonSize.height}px`
+                        }}
                         variant='contained'
                         color='success'
                         onClick={handleOfferAccepted}
                     >
-                        {elliePayload.yesMessage}
+                        <label style={{fontSize: `${yesButtonSize.fontSize}px`}}>
+                            {elliePayload.yesMessage}
+                        </label>
                     </Button>
                 </div>
                 <div style={{padding: '1rem'}}>
@@ -83,20 +90,28 @@ const LoginPage = ({ elliePayload, passwordState, handleLogin }) => {
     const [greetingMsg, setGreetingMsg] = useState('Hello!')
 
     return (
-        <div>
+        <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            height: '80vh'
+        }}>
             <h1
                 onMouseEnter={() => setGreetingMsg(elliePayload.helloKorean)}
                 onMouseLeave={() => setGreetingMsg('Hello!')}
             >
                 {greetingMsg}
             </h1>
-            <input
-                type='password'
-                value={passwordState.password}
-                onChange={(e) => passwordState.setPassword(e.target.value)}
-                placeholder='Enter password'
-            />
-            <button onClick={() => handleLogin(passwordState.password)}>Login</button>
+            <div style={{ display: 'flex' }}>
+                <input
+                    type='password'
+                    value={passwordState.password}
+                    onChange={(e) => passwordState.setPassword(e.target.value)}
+                    placeholder='Enter password'
+                />
+                <button onClick={() => handleLogin(passwordState.password)}>Login</button>
+            </div>
         </div>
     )
 }
