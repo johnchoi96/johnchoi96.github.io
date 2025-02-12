@@ -6,15 +6,24 @@ import Tooltip from './Tooltip'
 
 import gif1 from '../../assets/images/ellie/cute-dog.gif'
 import gif2 from '../../assets/images/ellie/couple-ilu.gif'
+import MessageModal from './MessageModal'
 
 const ValentineAcceptedView = ({ elliePayload }) => {
     const [showTooltip, setShowTooltip] = useState(false)
+    const [showModal, setShowModal] = useState(false)
 
     return (
         <>
+            <MessageModal elliePayload={elliePayload} modalState={{showModal, setShowModal}} />
             <h1>{elliePayload.offerAcceptedTitle}</h1>
             <p>{elliePayload.offerAcceptedBody}</p>
-            <img style={{ justifyContent: 'center' }} src={gif2} alt='cute gif 2' width='40%' />
+            <img
+                onClick={() => setShowModal(true)}
+                style={{ justifyContent: 'center', cursor: 'pointer' }}
+                src={gif2}
+                alt='cute gif 2'
+                width='40%'
+            />
             <Tooltip text={elliePayload.offerAcceptedTooltip} showTooltipState={{ showTooltip, setShowTooltip }} />
         </>
     )
@@ -140,7 +149,12 @@ export default function ElliePage() {
         greetingMsg: '',
         yesMessage: '',
         noMessage: '',
-        helloKorean: ''
+        helloKorean: '',
+        offerAcceptedTitle: '',
+        offerAcceptedBody: '',
+        authenticationTooltip: '',
+        modelMessage: 'Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit',
+        modalTitle: 'Modal Title',
     })
 
     useEffect(() => {
@@ -166,7 +180,9 @@ export default function ElliePage() {
                     offerAcceptedTitle: data['offerAcceptedTitle'],
                     offerAcceptedBody: data['offerAcceptedBody'],
                     offerAcceptedTooltip: data['offerAcceptedTooltip'],
-                    authenticationTooltip: data['authenticationTooltip']
+                    authenticationTooltip: data['authenticationTooltip'],
+                    modalMessage: data['modalMessage'],
+                    modalTitle: data['modalTitle']
                 }
                 setElliePayload(newPayload)
             })
