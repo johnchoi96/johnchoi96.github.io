@@ -3,15 +3,15 @@ import { getElliePasswordCheck, getElliePayload } from '../../Utils/httpRequests
 import { Button } from '@mui/material'
 import _ from 'lodash'
 
-import gif1 from '../../assets/images/ellie/giphy.gif'
-import gif2 from '../../assets/images/ellie/giphy-2.gif'
+import gif1 from '../../assets/images/ellie/cute-dog.gif'
+import gif2 from '../../assets/images/ellie/couple-ilu.gif'
 
 const ValentineAcceptedView = ({ elliePayload }) => {
     return (
         <>
             <h1>{elliePayload.offerAcceptedTitle}</h1>
             <p>{elliePayload.offerAcceptedBody}</p>
-            <img src={gif2} alt='cute gif 2' />
+            <img style={{justifyContent: 'center' }} src={gif2} alt='cute gif 2' width='40%' />
         </>
     )
 }
@@ -54,7 +54,7 @@ const AskView = ({ elliePayload, handleOfferAccepted }) => {
                     </Button>
                 </div>
             </div>
-            <img src={gif1} alt='Cute logo' />
+            <img src={gif1} alt='Cute logo' width='30%'/>
         </div>
     )
 }
@@ -170,11 +170,10 @@ export default function ElliePage() {
     };
 
     const content = () => {
-        // if (!shouldBeVisible) {
-        //     return <NotAvailableView />
-        // }
-        console.log(shouldBeVisible)
-        console.debug(NotAvailableView)
+        const isDev = process.env.NODE_ENV === 'development'
+        if (!isDev && !shouldBeVisible) {
+            return <NotAvailableView />
+        }
         if (isAuthenticated) {
             return <AuthenticatedPage elliePayload={elliePayload} />
         } else {
