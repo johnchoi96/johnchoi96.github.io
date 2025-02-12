@@ -54,7 +54,7 @@ function GeorgiaTech({ isDarkMode }) {
                     <p>
                         Master of Science - MS, Computer Science
                         <br />
-                        Computing Systems Specialization
+                        Interactive Intelligence Specialization
                     </p>
                 </div>
             </Tooltip>
