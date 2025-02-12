@@ -1,4 +1,5 @@
 import { config } from "../Constants"
+import _ from 'lodash'
 
 export async function postRequestForContactMe(data) {
     const requestOptions = {
@@ -47,4 +48,29 @@ export async function postRequestForHaveWeMetOnVal(data) {
     };
 
     return await fetch(config.endpoint.valorant.have_we_met_on_val, requestOptions)
+}
+
+export async function getElliePasswordCheck(password) {
+    if (_.isNil(password)) {
+        return
+    }
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+    }
+    return await fetch(`${config.endpoint.ellie.check}?password=${password}`, requestOptions)
+}
+
+export async function getElliePayload() {
+    const requestOptions = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        mode: 'cors'
+    }
+    return await fetch(`${config.endpoint.ellie.payload}`, requestOptions)
 }

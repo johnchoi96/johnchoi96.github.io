@@ -10,6 +10,11 @@ export const config = {
         uptime: `${url}/api/test/uptime`,
         valorant: {
             have_we_met_on_val: 'https://hjj3730tu2.execute-api.us-east-2.amazonaws.com/prod/lookup'
+        },
+
+        ellie: {
+            check: `${url}/api/ellie/check`,
+            payload: `${url}/api/ellie/payload`
         }
     }
 }
