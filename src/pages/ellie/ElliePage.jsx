@@ -173,6 +173,8 @@ export default function ElliePage() {
         // if (!shouldBeVisible) {
         //     return <NotAvailableView />
         // }
+        console.log(shouldBeVisible)
+        console.debug(NotAvailableView)
         if (isAuthenticated) {
             return <AuthenticatedPage elliePayload={elliePayload} />
         } else {
