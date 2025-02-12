@@ -101,8 +101,17 @@ const LoginPage = ({ elliePayload, passwordState, handleLogin }) => {
     )
 }
 
-export default function ElliePage() {
+const NotAvailableView = () => {
+    return (
+        <>
+            <h1>Content Not Available Yet</h1>
+            <p>Come back on Feb 14th ;)</p>
+        </>
+    )
+}
 
+export default function ElliePage() {
+    const [shouldBeVisible, setShouldBeVisible] = useState(false)
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [password, setPassword] = useState("")
 
@@ -112,6 +121,12 @@ export default function ElliePage() {
         noMessage: '',
         helloKorean: ''
     })
+
+    useEffect(() => {
+        const targetDate = new Date(Date.UTC(2025, 1, 14, 14, 0, 0))
+        const now = new Date()
+        setShouldBeVisible(now > targetDate)
+    }, [])
 
     useEffect(() => {
         getElliePayload()
@@ -154,21 +169,29 @@ export default function ElliePage() {
             })
     };
 
+    const content = () => {
+        // if (!shouldBeVisible) {
+        //     return <NotAvailableView />
+        // }
+        if (isAuthenticated) {
+            return <AuthenticatedPage elliePayload={elliePayload} />
+        } else {
+            return (
+                <LoginPage
+                    elliePayload={elliePayload}
+                    passwordState={{password, setPassword}}
+                    handleLogin={handleLogin}
+                />
+            )
+        }
+    }
     return (
         <div style={{
             paddingTop: '44px',
             backgroundColor: '#EEC1CE',
             minHeight: (window.innerHeight - 44)
         }}>
-        {isAuthenticated ?
-            <AuthenticatedPage elliePayload={elliePayload} />
-            :
-            <LoginPage
-                elliePayload={elliePayload}
-                passwordState={{password, setPassword}}
-                handleLogin={handleLogin}
-            />
-        }
-      </div>
+            {content()}
+        </div>
     );
 }
