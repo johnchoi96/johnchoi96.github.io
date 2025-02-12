@@ -2,16 +2,20 @@ import React, { useState, useEffect } from 'react'
 import { getElliePasswordCheck, getElliePayload } from '../../Utils/httpRequests'
 import { Button } from '@mui/material'
 import _ from 'lodash'
+import Tooltip from './Tooltip'
 
 import gif1 from '../../assets/images/ellie/cute-dog.gif'
 import gif2 from '../../assets/images/ellie/couple-ilu.gif'
 
 const ValentineAcceptedView = ({ elliePayload }) => {
+    const [showTooltip, setShowTooltip] = useState(false)
+
     return (
         <>
             <h1>{elliePayload.offerAcceptedTitle}</h1>
             <p>{elliePayload.offerAcceptedBody}</p>
-            <img style={{justifyContent: 'center' }} src={gif2} alt='cute gif 2' width='40%' />
+            <img style={{ justifyContent: 'center' }} src={gif2} alt='cute gif 2' width='40%' />
+            <Tooltip text={elliePayload.offerAcceptedTooltip} showTooltipState={{ showTooltip, setShowTooltip }} />
         </>
     )
 }
@@ -88,6 +92,7 @@ const AuthenticatedPage = ({ elliePayload }) => {
 
 const LoginPage = ({ elliePayload, passwordState, handleLogin }) => {
     const [greetingMsg, setGreetingMsg] = useState('Hello!')
+    const [showTooltip, setShowTooltip] = useState(false)
 
     return (
         <div style={{
@@ -112,6 +117,7 @@ const LoginPage = ({ elliePayload, passwordState, handleLogin }) => {
                 />
                 <button onClick={() => handleLogin(passwordState.password)}>Login</button>
             </div>
+            <Tooltip text={elliePayload.authenticationTooltip} showTooltipState={{ showTooltip, setShowTooltip }} />
         </div>
     )
 }
@@ -158,7 +164,9 @@ export default function ElliePage() {
                     noMessage: data['noMessage'],
                     helloKorean: data['helloKorean'],
                     offerAcceptedTitle: data['offerAcceptedTitle'],
-                    offerAcceptedBody: data['offerAcceptedBody']
+                    offerAcceptedBody: data['offerAcceptedBody'],
+                    offerAcceptedTooltip: data['offerAcceptedTooltip'],
+                    authenticationTooltip: data['authenticationTooltip']
                 }
                 setElliePayload(newPayload)
             })
