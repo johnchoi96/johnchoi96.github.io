@@ -119,10 +119,16 @@ const LoginPage = ({ elliePayload, passwordState, handleLogin }) => {
             </h1>
             <div style={{ display: 'flex' }}>
                 <input
+                    style={{ marginRight: '0.5rem' }}
                     type='password'
                     value={passwordState.password}
                     onChange={(e) => passwordState.setPassword(e.target.value)}
                     placeholder='Enter password'
+                    onKeyDown={(event) => {
+                        if (event.key === 'Enter') {
+                            handleLogin(passwordState.password)
+                        }
+                    }}
                 />
                 <button onClick={() => handleLogin(passwordState.password)}>Login</button>
             </div>
@@ -135,7 +141,7 @@ const NotAvailableView = () => {
     return (
         <>
             <h1>Content Not Available Yet</h1>
-            <p>Come back on Feb 14th ;)</p>
+            <p>Come back on Feb 14th 5pm ;)</p>
         </>
     )
 }
@@ -158,7 +164,7 @@ export default function ElliePage() {
     })
 
     useEffect(() => {
-        const targetDate = new Date(Date.UTC(2025, 1, 14, 14, 0, 0))
+        const targetDate = new Date(Date.UTC(2025, 1, 14, 22, 0, 0))
         const now = new Date()
         setShouldBeVisible(now > targetDate)
     }, [])
