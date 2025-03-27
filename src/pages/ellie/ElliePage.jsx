@@ -140,14 +140,14 @@ const LoginPage = ({ elliePayload, passwordState, handleLogin }) => {
 const NotAvailableView = () => {
     return (
         <>
-            <h1>Content Not Available Yet</h1>
-            <p>Come back on Feb 14th 5pm ;)</p>
+            <h1>Content Not Available</h1>
+            <p>Please contact the admin</p>
         </>
     )
 }
 
 export default function ElliePage() {
-    const [shouldBeVisible, setShouldBeVisible] = useState(false)
+
     const [isAuthenticated, setIsAuthenticated] = useState(false)
     const [password, setPassword] = useState("")
 
@@ -162,12 +162,6 @@ export default function ElliePage() {
         modelMessage: 'Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit',
         modalTitle: 'Modal Title',
     })
-
-    useEffect(() => {
-        const targetDate = new Date(Date.UTC(2025, 1, 14, 22, 0, 0))
-        const now = new Date()
-        setShouldBeVisible(now > targetDate)
-    }, [])
 
     useEffect(() => {
         getElliePayload()
@@ -216,7 +210,7 @@ export default function ElliePage() {
 
     const content = () => {
         const isDev = process.env.NODE_ENV === 'development'
-        if (!isDev && !shouldBeVisible) {
+        if (!isDev) {
             return <NotAvailableView />
         }
         if (isAuthenticated) {
@@ -231,6 +225,7 @@ export default function ElliePage() {
             )
         }
     }
+
     return (
         <div style={{
             paddingTop: '44px',
