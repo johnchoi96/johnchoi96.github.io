@@ -9,7 +9,6 @@ import Error404 from './pages/error/Error404'
 import HaveWeMetOnVal from './pages/gamepage/valorant/HaveWeMetOnVal'
 
 import { Route } from 'react-router-dom'
-import ElliePage from './pages/ellie/ElliePage'
 
 export default function routes() {
     return (
@@ -46,8 +45,6 @@ export default function routes() {
                 element={<HaveWeMetOnVal />}
             />
             <Route path='*' element={<Error404 />} />
-
-            <Route exact path='/ellie' element={<ElliePage />} />
         </>
     )
 }
