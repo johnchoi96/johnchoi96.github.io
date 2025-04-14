@@ -5,8 +5,8 @@
   "homepage": "https://johnchoi96.com/",
   "dependencies": {
     "-": "0.0.1",
-    "@mui/icons-material": "^5.16.14",
-    "@mui/material": "^5.16.14",
+    "@mui/icons-material": "^5.17.1",
+    "@mui/material": "^5.17.1",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "gh-pages": "^6.3.0",
