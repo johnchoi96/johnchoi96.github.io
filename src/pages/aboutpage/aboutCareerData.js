@@ -1,6 +1,23 @@
 // order matters: most recent position at top
 export const companies = [
     {
+        company: 'Apple Inc.',
+        position: 'Software Engineer',
+        location: 'Austin, TX',
+        start: 'June 2025',
+        end: 'Present',
+        image: {
+            path: 'apple.svg',
+            width: '50%',
+            marginTop: '0.55rem'
+        },
+        color: '#000000',
+        descriptions: [
+            'Software Engineer in Apple IS&T group',
+            "IS&T supports both customer-facing and internal platforms — from apple.com and Apple Retail systems, to tools used by AppleCare, People teams, and enterprise-wide data and identity platforms."
+        ]
+    },
+    {
         company: 'JPMorganChase',
         position: 'Software Engineer II',
         location: 'Columbus, OH',

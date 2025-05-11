@@ -27,6 +27,20 @@ export default function HomePage() {
         document.body.style.overflow = 'hidden'
     }, [isDarkMode])
 
+    function getPositionText() {
+        const currentDate = new Date()
+        const jpmcLastDay = new Date('2025-05-22')
+        const appleStartDate = new Date('2025-06-16')
+
+        if (currentDate < jpmcLastDay) {
+            return 'Software Engineer II at JPMorganChase'
+        }
+        if (currentDate < appleStartDate) {
+            return 'Incoming Software Engineer at Apple'
+        }
+        return 'Software Engineer at Apple'
+    }
+
     return (
         <div
             className={
@@ -45,7 +59,7 @@ export default function HomePage() {
                     <SplitText text='John Choi' />
                 </h1>
                 <h6>
-                    <SplitText text='Software Engineer II at JPMorganChase' />
+                    <SplitText text={getPositionText()} />
                 </h6>
             </div>
         </div>
