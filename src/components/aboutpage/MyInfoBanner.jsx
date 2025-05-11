@@ -13,6 +13,20 @@ export default function MyInfoBanner() {
     const { isDarkMode } = useContext(ThemeContext)
     const introFontSize = Math.max(window.innerWidth, window.innerHeight) * 0.02 // font is 2 percent of the longest side of screen
 
+    const positionText = () => {
+        const currentDate = new Date()
+        const jpmcLastDay = new Date('2025-05-22')
+        const appleStartDate = new Date('2025-06-16')
+
+        if (currentDate < jpmcLastDay) {
+            return 'Full Stack Software Engineer at JPMorganChase'
+        }
+        if (currentDate < appleStartDate) {
+            return 'Incoming Software Engineer at Apple'
+        }
+        return 'Software Engineer at Apple'
+    }
+
     return (
         <div className='my-info-banner'>
             <div className='row'>
@@ -49,7 +63,7 @@ export default function MyInfoBanner() {
                                 smooth
                                 to='#experiences'
                             >
-                                Full Stack Software Engineer at JPMorganChase
+                                {positionText()}
                             </HashLink>
                             <br />
                             <Tooltip title={gatechDescription}>
