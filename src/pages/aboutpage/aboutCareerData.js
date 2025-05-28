@@ -14,7 +14,7 @@ export const companies = [
         color: '#000000',
         descriptions: [
             'Software Engineer in Apple IS&T group',
-            "IS&T supports both customer-facing and internal platforms — from apple.com and Apple Retail systems, to tools used by AppleCare, People teams, and enterprise-wide data and identity platforms."
+            "IS&T supports both customer-facing and internal platforms from apple.com and Apple Retail systems, to tools used by AppleCare, People teams, and enterprise-wide data and identity platforms."
         ]
     },
     {
@@ -22,7 +22,7 @@ export const companies = [
         position: 'Software Engineer II',
         location: 'Columbus, OH',
         start: 'Jan 2025',
-        end: 'Present',
+        end: 'May 2025',
         image: {
             path: 'jpmc.svg',
             width: '100%',
