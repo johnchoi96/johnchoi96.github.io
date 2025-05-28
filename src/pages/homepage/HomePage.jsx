@@ -1,6 +1,9 @@
 import React, { useEffect, useContext } from 'react'
 import { ThemeContext } from '../../App'
 import './HomePage.styles.css'
+import Lottie from 'lottie-react'
+import sun from '../../assets/lottie/sun.json'
+import crescent from '../../assets/lottie/crescent.json'
 import '../../App.css'
 
 const SplitText = ({ text }) => {
@@ -15,6 +18,32 @@ const SplitText = ({ text }) => {
                 )
             })}
         </span>
+    )
+}
+
+const EnvAnimation = ({ isDarkMode }) => {
+
+    const mobileTopPlacement = () => {
+        if (window.innerWidth < 768) {
+            return '20vh'
+        }
+        return '10vh'
+    }
+
+    return (
+        <div
+            style={{
+                position: "absolute",
+                top: mobileTopPlacement(),
+                left: "70vw",
+                transform: "translate(-50%, -50%)",
+                width: "20%",   // Responsive width
+                height: "20%",  // Keep it square; tweak as needed
+                pointerEvents: "none",
+            }}
+        >
+            <Lottie animationData={isDarkMode ? crescent : sun} loop autoplay />
+        </div>
     )
 }
 
@@ -45,10 +74,11 @@ export default function HomePage() {
         <div
             className={
                 isDarkMode
-                    ? 'backgroundGif-dark text-white'
-                    : 'backgroundGif-light text-dark'
+                    ? 'background-dark text-white'
+                    : 'background-light text-dark'
             }
         >
+            <EnvAnimation isDarkMode={isDarkMode} />
             <div className='centertext'>
                 <h1
                     style={{
