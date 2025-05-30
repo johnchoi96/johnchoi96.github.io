@@ -106,18 +106,20 @@ export default function WebServiceStatusDetailModal({ setModalOpen }) {
                             <p className={`${textColor}`}>
                                 The web app had trouble connecting to the web server.
                             </p>
-                            <a
-                                className={`${textColor}`}
-                                href={`${url}`}
-                                target='_blank'
-                                rel='noreferrer'
-                            >
-                                Click here to visit the web service.
-                            </a>
                         </Typography>
                     ) : (
                         <></>
                     )}
+                    <Typography id='modal-modal-description' sx={{ mt: 2 }}>
+                        <a
+                            className={`${textColor}`}
+                            href={`${url}`}
+                            target='_blank'
+                            rel='noreferrer'
+                        >
+                            Click here to visit the web service.
+                        </a>
+                    </Typography>
                     <br />
                     <Button
                         id='button'
