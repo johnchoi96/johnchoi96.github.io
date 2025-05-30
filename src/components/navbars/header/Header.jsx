@@ -150,7 +150,7 @@ export default function Header({ setToastState }) {
                                             className='dropdown-item'
                                             target='_blank'
                                             rel='noopener noreferrer'
-                                            href='https://github.com/johnchoi96/johnchoi96.github.io'
+                                            href='https://github.com/johnchoi96/web-app'
                                             onClick={() => {
                                                 sendPageview(
                                                     '/github-source',

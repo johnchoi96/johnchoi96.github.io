@@ -1,13 +1,10 @@
-# johnchoi96.github.io
+# web-app
 Personal Webpage
 
-## Build Status
-[![Tests](https://github.com/johnchoi96/johnchoi96.github.io/actions/workflows/tests.yml/badge.svg)](https://github.com/johnchoi96/johnchoi96.github.io/actions/workflows/tests.yml)
-[![pages-build-deployment](https://github.com/johnchoi96/johnchoi96.github.io/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/johnchoi96/johnchoi96.github.io/actions/workflows/pages/pages-build-deployment)
-
 ## Deployment
-https://www.c-sharpcorner.com/article/how-to-deploy-react-application-on-github-pages/
+* Amazon Route 53 for domain registration
+* Amazon Cloudfront to handle HTTPS and point to S3 bucket
+* Amazon S3 to host static web app
 
 ## Environment
 * https://johnchoi96.com/
-* https://johnchoi96.github.io/
