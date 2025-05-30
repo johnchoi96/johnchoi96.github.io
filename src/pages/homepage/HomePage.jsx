@@ -5,6 +5,9 @@ import Lottie from 'lottie-react'
 import sun from '../../assets/lottie/sun.json'
 import crescent from '../../assets/lottie/crescent.json'
 import '../../App.css'
+import Avatar from '@mui/material/Avatar'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
 
 const SplitText = ({ text }) => {
     return (
@@ -91,6 +94,29 @@ export default function HomePage() {
                 <h6>
                     <SplitText text={getPositionText()} />
                 </h6>
+                <div className='link-circles'>
+                    <Avatar
+                        alt="GitHub icon"
+                        component="a"
+                        href="https://github.com/johnchoi96"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{ cursor: 'pointer', bgcolor: '#24292e' }}
+                    >
+                        <GitHubIcon />
+                    </Avatar>
+
+                    <Avatar
+                        alt="LinkedIn icon"
+                        component="a"
+                        href="https://www.linkedin.com/in/johnchoi96/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        sx={{ cursor: 'pointer', bgcolor: '#0072b1' }}
+                    >
+                        <LinkedInIcon />
+                    </Avatar>
+                </div>
             </div>
         </div>
     )
