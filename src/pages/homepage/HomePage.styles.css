@@ -38,6 +38,13 @@ h1 span, h6 span {
     transform: translate(-50%, -50%);
 }
 
+.link-circles {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
 .disable-text-selection {
   -moz-user-select:none; /* firefox */
   -webkit-user-select: none; /* Safari */
